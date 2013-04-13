@@ -1,0 +1,21 @@
+[
+{
+  "modid": "Fm",
+  "name": "Fuels Mod",
+  "description": "Additional fuels",
+  "version": "@VERSION@",
+  "url": "",
+  "updateUrl": "",
+  "authorList": [
+    "Cyntain",
+    "Anton"
+  ],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [
+  ],
+  "parent":"",
+  "dependencies": [
+  ]
+}
+]
