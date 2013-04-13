@@ -1,6 +1,6 @@
 package com.cyntain.Fm.lib;
 
-public class ItemID {
+public class ItemIDs {
 
     /* Default item id */
     public static int COPPER_INGOT_DEFAULT = 6483;
