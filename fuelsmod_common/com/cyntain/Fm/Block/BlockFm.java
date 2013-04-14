@@ -1,5 +1,6 @@
 package com.cyntain.Fm.Block;
 
+import com.cyntain.Fm.CreativeTab.CreativeTabFm;
 import com.cyntain.Fm.lib.Reference;
 
 import cpw.mods.fml.relauncher.Side;
@@ -11,7 +12,7 @@ import net.minecraft.client.renderer.texture.IconRegister;
     public abstract class BlockFm extends BlockContainer {
      public BlockFm(int id, Material material) {
          super(id, material);
-         
+         setCreativeTab(CreativeTabFm.tabsFuelMod);
          
      }
 //Load textures

@@ -7,6 +7,7 @@ public class Strings {
     
     public static String COPPER_INGOT_NAME = "copperIngot";
     public static String COPPER_CHUNK_NAME = "copperOreChunk";
+    public static String COPPER_CLUSTER_NAME = "copperOreCluster";
     public static String OSMIUM_INGOT_NAME = "osmiumIngot";
     public static String OSMIUM_CHUNK_NAME = "osmiumOreChunk";
     public static String BERYLLIUM_INGOT_NAME = "berylliumIngot";

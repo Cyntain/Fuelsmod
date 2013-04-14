@@ -9,6 +9,7 @@ public class ItemIDs {
     public static int OSMIUM_CHUNK_DEFAULT = 6486;
     public static int BERYLLIUM_INGOT_DEFAULT = 6487;
     public static int BERYLLIUM_CHUNK_DEFAULT = 6488;
+    public static int COPPER_CLUSTER_DEFAULT = 6489;
    
  
 }

@@ -2,6 +2,7 @@ package com.cyntain.Fm.Item;
 import com.cyntain.Fm.lib.ItemIDs;
 
 
+//import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.minecraft.item.Item;
@@ -14,6 +15,7 @@ public class ModItem {
   /* Mod item instances */
     public static Item copperIngot;
     public static Item ChunkCopper;  
+    public static Item ClusterCopper;
     public static Item osmiumIngot;
     public static Item ChunkOsmium;
     public static Item berylliumIngot;
@@ -28,6 +30,8 @@ public class ModItem {
       LanguageRegistry.addName(copperIngot, "Copper Ingot");
       ChunkCopper = new itemCopperOreChunk(ItemIDs.COPPER_CHUNK_DEFAULT); 
       LanguageRegistry.addName(ChunkCopper, "Copper Ore Chunk");
+      ClusterCopper = new itemClusterCopper(ItemIDs.COPPER_CLUSTER_DEFAULT);
+      LanguageRegistry.addName(ClusterCopper, "Copper Ore Cluster");
       osmiumIngot = new itemOsmiumIngot(ItemIDs.OSMIUM_INGOT_DEFAULT);
       LanguageRegistry.addName(osmiumIngot, "Osmium Ingot");
       ChunkOsmium = new itemOsmiumChunk(ItemIDs.OSMIUM_CHUNK_DEFAULT);
@@ -41,7 +45,10 @@ public class ModItem {
       GameRegistry.addSmelting(ModItem.ChunkCopper.itemID, new ItemStack(copperIngot), 5.0f);
       GameRegistry.addSmelting(ModItem.ChunkOsmium.itemID, new ItemStack(osmiumIngot), 5.0f);
       GameRegistry.addSmelting(ModItem.ChunkBeryllium.itemID, new ItemStack(berylliumIngot), 5.0f);
-     
+      GameRegistry.addSmelting(ModItem.ClusterCopper.itemID, new ItemStack(copperIngot, 9), 10.0f);
+    
+      /* Shaped Crafting Recipe*/
+      GameRegistry.addRecipe(new ItemStack(ModItem.ClusterCopper, 1), "XXX", "XXX", "XXX", Character.valueOf('X'), ModItem.ChunkCopper);
       
       
    }
