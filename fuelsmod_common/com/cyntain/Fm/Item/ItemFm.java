@@ -15,7 +15,7 @@ public class ItemFm extends Item {
         
         super(id);
            maxStackSize = 64;
-               setCreativeTab(CreativeTabs.tabMisc);
+               setCreativeTab(CreativeTabs.tabMaterials);
     }
     @SideOnly(Side.CLIENT)
     @Override
