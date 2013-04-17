@@ -1,13 +1,7 @@
 Done:
-•  Copper Ingot
-•	Copper Ore Chunk
-•	Osmium Ingot
-•  Osmium Ore Chunk
-•	Beryllium Ingot
-•	Beryllium Ore Chunk
-•	Smelting from Ore Chunk to desired Ingot
-Pending:
-•  Creating the Ore blocks
-•  Creating the ore generation
-•  Creating the ore to drop the Ore Chunks and not the block it self.
 
+Pending:
+• Start to add the engines
+• Finish adding items
+• Help Anton set up his DEVELOPMENT environment
+• Work on the solid fuels 

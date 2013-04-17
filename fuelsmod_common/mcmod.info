@@ -2,15 +2,15 @@
 {
   "modid": "Fm",
   "name": "Fuels Mod",
-  "description": "Additional fuels",
-  "version": "0.0.0",
+  "description": "Additional fuels into the game that will allow complex machines to work.",
+  "version": "a: 0.0.0",
   "url": "",
   "updateUrl": "",
   "authorList": [
     "Cyntain",
     "Anton"
   ],
-  "credits": "",
+  "credits": "Visual_Argonian, Pahimar and Plenty_of_Fish",
   "logoFile": "",
   "screenshots": [
   ],

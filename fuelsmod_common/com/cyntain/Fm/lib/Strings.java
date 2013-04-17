@@ -12,7 +12,9 @@ public class Strings {
     public static String OSMIUM_CHUNK_NAME = "osmiumOreChunk";
     public static String BERYLLIUM_INGOT_NAME = "berylliumIngot";
     public static String BERYLLIUM_CHUNK_NAME = "berylliumOreChunk";
-  
+    public static String BERYLLIUM_CLUSTER_NAME = "berylliumOreCluster";
+    public static String ZEOLITE_DUST_NAME = "zeoliteDust";
+    
     /* Block Names */
     public static String COPPER_ORE = "copperOre";
     public static String OSMIUM_ORE = "osmiumOre";

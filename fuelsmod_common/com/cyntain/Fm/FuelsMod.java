@@ -1,9 +1,5 @@
 package com.cyntain.Fm;
 
-//import net.minecraft.creativetab.CreativeTabs;
-
-//import com.cyntain.Fm.CreativeTab.CreativeTabFm;
-
 import com.cyntain.Fm.Block.ModBlock;
 import com.cyntain.Fm.Item.ModItem;
 import com.cyntain.Fm.core.proxy.CommonProxy;
@@ -17,12 +13,23 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 
+/*Fuels Mod
+ * 
+ * @Authors: Cyntain and Paronamixxe
+ * 
+ * FuelsMod
+ * 
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ * @credit: Visual_Argonian, Pahimar (enim mihi inspirante) and Plenty_of_Fish
+ * */
+
 @Mod(  modid = Reference.MOD_ID,
         name = Reference.MOD_NAME,
          version = Reference.VERSION_NUMBER)
 
 @NetworkMod( clientSideRequired = true,
-             serverSideRequired = false)
+              serverSideRequired = false)
 
 
 
@@ -36,7 +43,7 @@ import cpw.mods.fml.common.network.NetworkMod;
     
 @SidedProxy(
             clientSide = Reference.CLIENT_PROXY_CLASS,
-            serverSide = Reference.SERVER_PROXY_CLASS)
+             serverSide = Reference.SERVER_PROXY_CLASS)
                 public static CommonProxy proxy;
     
     
@@ -45,8 +52,8 @@ import cpw.mods.fml.common.network.NetworkMod;
 @PreInit
         public void preInit(FMLPreInitializationEvent event) {
             proxy.registerRenders();
-            ModItem.init();
-            ModBlock.init();
+             ModItem.init();
+              ModBlock.init();
 
     }
 @Init
