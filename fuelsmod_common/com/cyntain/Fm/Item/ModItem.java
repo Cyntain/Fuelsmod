@@ -20,7 +20,7 @@ import net.minecraft.item.ItemStack;
 
 
 public class ModItem {
-    
+ 
   /* Mod item instances */
     public static Item copperIngot;
     public static Item ChunkCopper;  

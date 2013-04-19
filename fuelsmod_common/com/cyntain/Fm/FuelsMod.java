@@ -3,6 +3,7 @@ package com.cyntain.Fm;
 import com.cyntain.Fm.Block.ModBlock;
 import com.cyntain.Fm.Item.ModItem;
 import com.cyntain.Fm.core.proxy.CommonProxy;
+import com.cyntain.Fm.lib.ModLoaded;
 import com.cyntain.Fm.lib.Reference;
 
 import cpw.mods.fml.common.*;
@@ -13,7 +14,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 
-/*Fuels Mod
+/*            FuelsMod     
  * 
  * @Authors: Cyntain and Paronamixxe
  * 
@@ -21,7 +22,7 @@ import cpw.mods.fml.common.network.NetworkMod;
  * 
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
  * 
- * @credit: Visual_Argonian, Pahimar (enim mihi inspirante) and Plenty_of_Fish
+ * @credit: Visual_Argonian, Pahimar and Plenty_of_Fish
  * */
 
 @Mod(  modid = Reference.MOD_ID,
@@ -35,7 +36,7 @@ import cpw.mods.fml.common.network.NetworkMod;
 
     public class FuelsMod {
                
-   // public static CreativeTabs CreativeTab = new CreativeTabFm (CreativeTabs.getNextID(),"Fm");
+  
                 
 @Instance(Reference.MOD_ID)
                 public static FuelsMod instance;
@@ -52,13 +53,15 @@ import cpw.mods.fml.common.network.NetworkMod;
 @PreInit
         public void preInit(FMLPreInitializationEvent event) {
             proxy.registerRenders();
-             ModItem.init();
-              ModBlock.init();
-
+            
+            ModItem.init();
+            ModBlock.init();  
+           ModLoaded.Mod_Loaded();
+                             
     }
 @Init
        public void load(FMLInitializationEvent event) {
-   
+    ModLoaded.Mod_Loaded();
         }
     
 }
