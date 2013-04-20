@@ -67,7 +67,7 @@ public class ModItem {
       // ZEOLITE ITEMs
       zeoliteDust = new itemZeoliteDust(ItemIDs.ZEOLITE_DUST);
       LanguageRegistry.addName(zeoliteDust, "Zeolite Dust");
-      zeoliteDustVial = new itemZeoliteDust(ItemIDs.ZEOLITE_DUST_VIAL);
+      zeoliteDustVial = new itemZeoliteVial(ItemIDs.ZEOLITE_DUST_VIAL);
       LanguageRegistry.addName(zeoliteDustVial, "Vial of Zeolite Dust");
       
       /* Register + Initialise Smelting Recipes */
