@@ -14,7 +14,7 @@ import net.minecraft.item.Item;
  * 
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
  * 
- * @credit: Visual_Argonian, Pahimar (enim mihi inspirante) and Plenty_of_Fish
+ * @credit: Visual_Argonian, Pahimar  and Plenty_of_Fish
  * */
 
 

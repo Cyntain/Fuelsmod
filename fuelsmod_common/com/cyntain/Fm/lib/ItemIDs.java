@@ -17,6 +17,7 @@ public class ItemIDs {
     public static int BERYLLIUM_CLUSTER_DEFAULT = 6491;
  
     public static int ZEOLITE_DUST = 6492;
+    public static int ZEOLITE_DUST_VIAL = 6493;
    
    
 }

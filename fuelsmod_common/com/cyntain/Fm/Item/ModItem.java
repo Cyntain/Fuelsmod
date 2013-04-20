@@ -31,7 +31,7 @@ public class ModItem {
     public static Item ChunkBeryllium;
     public static Item clusterBeryllium;
     public static Item zeoliteDust;
-    
+    public static Item zeoliteDustVial;
     
     public static void init(){
       
@@ -67,6 +67,8 @@ public class ModItem {
       // ZEOLITE ITEMs
       zeoliteDust = new itemZeoliteDust(ItemIDs.ZEOLITE_DUST);
       LanguageRegistry.addName(zeoliteDust, "Zeolite Dust");
+      zeoliteDustVial = new itemZeoliteDust(ItemIDs.ZEOLITE_DUST_VIAL);
+      LanguageRegistry.addName(zeoliteDustVial, "Vial of Zeolite Dust");
       
       /* Register + Initialise Smelting Recipes */
       GameRegistry.addSmelting(ModItem.ChunkCopper.itemID, new ItemStack(copperIngot), 5.0f);
@@ -78,6 +80,6 @@ public class ModItem {
       /* Shaped Crafting Recipe*/
       GameRegistry.addRecipe(new ItemStack(ModItem.ClusterCopper, 1), "XXX", "XXX", "XXX", Character.valueOf('X'), ModItem.ChunkCopper);
       GameRegistry.addRecipe(new ItemStack(ModItem.clusterBeryllium, 1), "XXX", "XXX", "XXX", Character.valueOf('X'), ModItem.ChunkBeryllium);
-      
+      GameRegistry.addRecipe(new ItemStack(ModItem.zeoliteDustVial, 1), "XXX", "XYX", "XXX", Character.valueOf('X'), ModItem.zeoliteDust, Character.valueOf('Y'), Item.glassBottle);
    }
 }
