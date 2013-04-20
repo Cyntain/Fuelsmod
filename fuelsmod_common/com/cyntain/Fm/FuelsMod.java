@@ -65,10 +65,10 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 @PreInit
         public void preInit(FMLPreInitializationEvent event) {
            
-   // proxy.registerRenders();
+
+ proxy.registerRenders();
             
             ModItem.init();
-            //ModBlock.init();  
            ModLoaded.Mod_Loaded();
            
            
@@ -80,11 +80,14 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 @Init
        public void load(FMLInitializationEvent event) {
     ModLoaded.Mod_Loaded();
-    System.out.println("has this code run");
-    copperOre = new blockCopperOre(BlockIDs.COPPER_ORE_DEFAULT, Material.rock).setUnlocalizedName(Strings.COPPER_ORE);
+    
+    
+    // COPPER BLOCKS
+     copperOre = new BlockCopperOre(BlockIDs.COPPER_ORE_DEFAULT, Material.rock).setUnlocalizedName(Strings.COPPER_ORE);
     GameRegistry.registerBlock(copperOre, Reference.MOD_ID + copperOre.getUnlocalizedName2());
     LanguageRegistry.addName(copperOre, "Copper Ore");
-    System.out.println("has this code run after the block?");
+   
+    ModLoaded.Mod_Loaded();
     
         }
     
