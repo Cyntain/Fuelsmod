@@ -8,6 +8,10 @@ public class BlockIDs {
     public static int OSMIUM_ORE_DEFAULT = 701;
     public static int BERYLLIUM_ORE_DEFAULT = 702;
     public static int ZEOLITE_ORE_DEFAULT = 703;
+    public static int COPPER_BLOCK_DEFAULT = 704;
+    public static int OSMIUM_BLOCK_DEFAULT = 705;
+    public static int BERYLLIUM_BLOCK_DEFAULT = 706;
+     
     
     
     /* Current Block id */

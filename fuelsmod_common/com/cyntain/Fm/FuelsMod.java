@@ -3,11 +3,16 @@ package com.cyntain.Fm;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import net.minecraft.item.crafting.*;
 
 import com.cyntain.Fm.Achivement.FmAchivement;
+import com.cyntain.Fm.Block.BlockBeryllium;
 import com.cyntain.Fm.Block.BlockBerylliumOre;
+import com.cyntain.Fm.Block.BlockCopper;
 import com.cyntain.Fm.Block.BlockCopperOre;
+import com.cyntain.Fm.Block.BlockOsmium;
 import com.cyntain.Fm.Block.BlockOsmiumOre;
 import com.cyntain.Fm.Block.BlockZeoliteOre;
 import com.cyntain.Fm.Block.ModBlock;
@@ -60,6 +65,9 @@ import java.util.Random;
             public static Block osmiumOre;
             public static Block berylliumOre;
             public static Block zeoliteOre;
+            public static Block copperBlock;
+            public static Block osmiumBlock;
+            public static Block berylliumBlock;
              
 @Instance(Reference.MOD_ID)
                 public static FuelsMod instance;
@@ -85,16 +93,25 @@ import java.util.Random;
     copperOre = new BlockCopperOre(BlockIDs.COPPER_ORE_DEFAULT, Material.rock).setUnlocalizedName(Strings.COPPER_ORE);
     GameRegistry.registerBlock(copperOre, Reference.MOD_ID + copperOre.getUnlocalizedName2());
     LanguageRegistry.addName(copperOre, "Copper Ore");
+    copperBlock = new BlockCopper(BlockIDs.COPPER_BLOCK_DEFAULT, Material.rock).setUnlocalizedName(Strings.COPPER_BLOCK);
+    GameRegistry.registerBlock(copperBlock, Reference.MOD_ID + copperBlock.getUnlocalizedName2());
+    LanguageRegistry.addName(copperBlock, "Block of Copper");
     
     /* Block statements: Osmium Blocks */
     osmiumOre = new BlockOsmiumOre(BlockIDs.OSMIUM_ORE_DEFAULT, Material.rock).setUnlocalizedName(Strings.OSMIUM_ORE);
     GameRegistry.registerBlock(osmiumOre, Reference.MOD_ID + osmiumOre.getUnlocalizedName2());
     LanguageRegistry.addName(osmiumOre, "Osmium Ore");
+    osmiumBlock = new BlockOsmium(BlockIDs.OSMIUM_BLOCK_DEFAULT, Material.rock).setUnlocalizedName(Strings.OSMIUM_BLOCK);
+    GameRegistry.registerBlock(osmiumBlock, Reference.MOD_ID + osmiumBlock.getUnlocalizedName2());
+    LanguageRegistry.addName(osmiumBlock, "Block of Osmium");
     
     /* Block statements: Beryllium Blocks */
     berylliumOre = new BlockBerylliumOre(BlockIDs.BERYLLIUM_ORE_DEFAULT, Material.rock).setUnlocalizedName(Strings.BERYLLIUM_ORE);
     GameRegistry.registerBlock(berylliumOre, Reference.MOD_ID + berylliumOre.getUnlocalizedName2());
     LanguageRegistry.addName(berylliumOre, "Beryllium Ore");
+    berylliumBlock = new BlockBeryllium(BlockIDs.BERYLLIUM_BLOCK_DEFAULT, Material.rock).setUnlocalizedName(Strings.BERYLLIUM_BLOCK);
+    GameRegistry.registerBlock(berylliumBlock, Reference.MOD_ID + berylliumBlock.getUnlocalizedName2());
+    LanguageRegistry.addName(berylliumBlock, "Block of Beryllium");
     
     /* Block statements: Zeolite Blocks */
     zeoliteOre = new BlockZeoliteOre(BlockIDs.ZEOLITE_ORE_DEFAULT, Material.rock).setUnlocalizedName(Strings.ZEOLITE_ORE);
@@ -107,7 +124,7 @@ import java.util.Random;
 
     public void GenerateSurface(World world, Random random, int i, int j){
         
-        
+        //GENERATION CODE HERE - TODO
         
     }
 

@@ -20,4 +20,8 @@ public class Strings {
     public static String OSMIUM_ORE = "osmiumOre";
     public static String BERYLLIUM_ORE = "berylliumOre";
     public static String ZEOLITE_ORE = "zeoliteOre" ;
+    public static String COPPER_BLOCK = "copperBlock";
+    public static String OSMIUM_BLOCK = "osmiumBlock";
+    public static String BERYLLIUM_BLOCK = "berylliumBlock";
+    
 }
