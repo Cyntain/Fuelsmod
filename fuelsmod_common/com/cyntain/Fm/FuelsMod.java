@@ -3,6 +3,7 @@ package com.cyntain.Fm;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 
+import com.cyntain.Fm.Achivement.FmAchivement;
 //import com.cyntain.Fm.Block.ModBlock;
 import com.cyntain.Fm.Item.ModItem;
 import com.cyntain.Fm.core.proxy.CommonProxy;
@@ -33,8 +34,8 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
  * */
 
 @Mod(  modid = Reference.MOD_ID,
-        name = Reference.MOD_NAME,
-         version = Reference.VERSION_NUMBER)
+       name = Reference.MOD_NAME,
+       version = Reference.VERSION_NUMBER)
 
 @NetworkMod( clientSideRequired = true,
               serverSideRequired = false)
@@ -42,53 +43,42 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 
 
     public class FuelsMod {
-               
+    
+      /* Block statements */         
     public static Block copperOre;
-    
-    
-    
-    
-    
-                
+               
 @Instance(Reference.MOD_ID)
                 public static FuelsMod instance;
-    
-    
+  
 @SidedProxy(
             clientSide = Reference.CLIENT_PROXY_CLASS,
              serverSide = Reference.SERVER_PROXY_CLASS)
                 public static CommonProxy proxy;
-    
-    
-    
-   
+ 
 @PreInit
         public void preInit(FMLPreInitializationEvent event) {
-           
-
- proxy.registerRenders();
+        proxy.registerRenders();
             
             ModItem.init();
-           ModLoaded.Mod_Loaded();
-           
-           
-         
-           
-       
-                             
+           ModLoaded.Mod_Loaded();                       
     }
 @Init
        public void load(FMLInitializationEvent event) {
     ModLoaded.Mod_Loaded();
+    FmAchivement.addAchievementLocalizations();
     
-    
-    // COPPER BLOCKS
+    /* Block statements: Copper Blocks */  
      copperOre = new BlockCopperOre(BlockIDs.COPPER_ORE_DEFAULT, Material.rock).setUnlocalizedName(Strings.COPPER_ORE);
     GameRegistry.registerBlock(copperOre, Reference.MOD_ID + copperOre.getUnlocalizedName2());
     LanguageRegistry.addName(copperOre, "Copper Ore");
-   
-    ModLoaded.Mod_Loaded();
+    
+    /* Block statements: Osmium Blocks */
+    
+    /* Block statements: Beryllium Blocks */
+    
+    /* Block statements: Zeolite Blocks */
+    
+    ModLoaded.Mod_Loaded();          //keep at the end of the load method shows if all blocks have been initialised 
     
         }
-    
-}
+    }
