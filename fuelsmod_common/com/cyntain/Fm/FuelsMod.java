@@ -17,6 +17,7 @@ import com.cyntain.Fm.Block.BlockOsmium;
 import com.cyntain.Fm.Block.BlockOsmiumOre;
 import com.cyntain.Fm.Block.BlockZeoliteOre;
 import com.cyntain.Fm.Block.ModBlock;
+import com.cyntain.Fm.Block.WorldGenerator;
 //import com.cyntain.Fm.Block.ModBlock;
 import com.cyntain.Fm.Item.ModItem;
 import com.cyntain.Fm.core.proxy.CommonProxy;
@@ -89,6 +90,7 @@ import java.util.Random;
     public void load(FMLInitializationEvent event) {
     ModLoaded.Mod_Loaded();
     FmAchivement.addAchievementLocalizations();
+    GameRegistry.registerWorldGenerator(new WorldGenerator());
     
     /* Block statements: Copper Blocks */  
     copperOre = new BlockCopperOre(BlockIDs.COPPER_ORE_DEFAULT, Material.rock).setUnlocalizedName(Strings.COPPER_ORE);
@@ -119,22 +121,13 @@ import java.util.Random;
     GameRegistry.registerBlock(zeoliteOre, Reference.MOD_ID + zeoliteOre.getUnlocalizedName2());
     LanguageRegistry.addName(zeoliteOre, "Zeolite Ore");
     
+    //Recipes
+    GameRegistry.addRecipe(new ItemStack(copperBlock, 1), "XXX", "XXX", "XXX", Character.valueOf('X'), ModItem.copperIngot);
+    GameRegistry.addRecipe(new ItemStack(osmiumBlock, 1), "XXX", "XXX", "XXX", Character.valueOf('X'), ModItem.osmiumIngot);
+    GameRegistry.addRecipe(new ItemStack(berylliumBlock, 1), "XXX", "XXX", "XXX", Character.valueOf('X'), ModItem.berylliumIngot);
+    
     ModLoaded.Mod_Loaded();          //keep at the end of the load method shows if all blocks have been initialised 
     
     }
-
-    public void GenerateSurface(World world, Random random, int i, int j)
-    {
-        for(int i4 = 0; i4 < 20; i4++)
-    {
-        int j7 = i + random.nextInt(16);
-        int k10 = random.nextInt(128);
-        int j13 = j + random.nextInt(16);
-        (new WorldGenMinable(BlockIDs.COPPER_ORE_DEFAULT, 7)).generate(world, random, j7, k10, j13);
-        system.out.println("does this code run?");
-        
-    }
-
-}
 
     }
