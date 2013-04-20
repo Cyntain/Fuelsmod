@@ -5,6 +5,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraft.item.crafting.*;
 
 import com.cyntain.Fm.Achivement.FmAchivement;
@@ -122,10 +123,18 @@ import java.util.Random;
     
     }
 
-    public void GenerateSurface(World world, Random random, int i, int j){
-        
-        //GENERATION CODE HERE - TODO
+    public void GenerateSurface(World world, Random random, int i, int j)
+    {
+        for(int i4 = 0; i4 < 20; i4++)
+    {
+        int j7 = i + random.nextInt(16);
+        int k10 = random.nextInt(128);
+        int j13 = j + random.nextInt(16);
+        (new WorldGenMinable(BlockIDs.COPPER_ORE_DEFAULT, 7)).generate(world, random, j7, k10, j13);
+        system.out.println("does this code run?");
         
     }
+
+}
 
     }
