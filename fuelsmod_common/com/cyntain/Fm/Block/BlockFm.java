@@ -1,5 +1,6 @@
 package com.cyntain.Fm.Block;
 
+import com.cyntain.Fm.CreativeTab.CreativeTabFm;
 import com.cyntain.Fm.lib.Reference;
 
 import cpw.mods.fml.relauncher.Side;
@@ -20,7 +21,7 @@ public abstract class BlockFm extends Block {
     public BlockFm(int id, Material material){
         
         super(id, material);
-        
+        setCreativeTab(CreativeTabFm.tabsFuelMod);
         
         
     }
