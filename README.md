@@ -1,5 +1,5 @@
-Fuelsmod  (working title)
-========
+Fuels Evolved  
+=============
 Modification to the game MINECRAFT. This MOD adds fuels into the game that will allow complex machines to work. We have a plan file with features that the core mod will add, but if you wish to help please read the section below.
 
 Contributing
