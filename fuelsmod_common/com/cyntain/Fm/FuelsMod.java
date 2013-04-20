@@ -3,6 +3,7 @@ package com.cyntain.Fm;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.world.World;
 
 import com.cyntain.Fm.Achivement.FmAchivement;
 import com.cyntain.Fm.Block.BlockBerylliumOre;
@@ -29,6 +30,8 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+
+import java.util.Random;
 
 /*            FuelsMod     
  * 
@@ -100,5 +103,12 @@ import cpw.mods.fml.relauncher.SideOnly;
     
     ModLoaded.Mod_Loaded();          //keep at the end of the load method shows if all blocks have been initialised 
     
-        }
+    }
+
+    public void GenerateSurface(World world, Random random, int i, int j){
+        
+        
+        
+    }
+
     }

@@ -1,6 +1,9 @@
 package com.cyntain.Fm.Block;
 
+import java.util.Random;
+
 import com.cyntain.Fm.CreativeTab.CreativeTabFm;
+import com.cyntain.Fm.lib.ItemIDs;
 import com.cyntain.Fm.lib.Reference;
 
 import cpw.mods.fml.relauncher.Side;
@@ -24,4 +27,9 @@ public class BlockBerylliumOre extends Block{
         this.blockIcon = iconRegister.registerIcon(Reference.MOD_ID + ":" + this.getUnlocalizedName2());
     }
 
+    public int idDropped(int par1, Random par2Random, int par3)
+    {
+        return ItemIDs.BERYLLIUM_CHUNK_DEFAULT;
+    }
+    
 }

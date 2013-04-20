@@ -1,6 +1,9 @@
 package com.cyntain.Fm.Block;
 
+import java.util.Random;
+
 import com.cyntain.Fm.CreativeTab.CreativeTabFm;
+import com.cyntain.Fm.lib.ItemIDs;
 import com.cyntain.Fm.lib.Reference;
 
 import cpw.mods.fml.relauncher.Side;
@@ -22,6 +25,21 @@ public class BlockZeoliteOre extends Block {
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister iconRegister) {
         this.blockIcon = iconRegister.registerIcon(Reference.MOD_ID + ":" + this.getUnlocalizedName2());
+    }
+    
+    public int idDropped(int par1, Random par2Random, int par3)
+    {
+        return ItemIDs.ZEOLITE_DUST;
+    }
+    
+    public int quantityDroppedWithBonus(int par1, Random par2Random)
+    {
+        return this.quantityDropped(par2Random) + par2Random.nextInt(par1 + 1);
+    }
+
+    public int quantityDropped(Random par1Random)
+    {
+        return 4 + par1Random.nextInt(2);
     }
     
 }
