@@ -13,7 +13,7 @@ public class FmAchivement {
     /*This is the Dust Collector achievement*/
     static final Achievement ZeoliteDust = new Achievement(2001, "ZeoliteDust", 4, 6, ModItem.zeoliteDust, AchievementList.buildPickaxe ).setSpecial().registerAchievement();
     /*This is the Cluster Hunter achievement*/
-    static final Achievement copper_Cluster = new Achievement(2002, "Copper_Cluster", 6, 4, ModItem.ClusterCopper, AchievementList.buildBetterPickaxe).setSpecial().registerAchievement();
+    static final Achievement CopperCluster = new Achievement(2002, "CopperCluster", 6, 4, ModItem.ClusterCopper, AchievementList.buildBetterPickaxe).setSpecial().registerAchievement();
     
     
     public static void addAchievementName(String ach, String name)
@@ -29,9 +29,9 @@ public class FmAchivement {
    public static void addAchievementLocalizations()
     {
                    addAchievementName("ZeoliteDust", "Dust Collector");
-                   addAchievementDesc("ZeoliteDust", "You collected dust!");
-                   addAchievementName("Copper_Cluster", "Cluster Hunter");
-                   addAchievementDesc("Copper_Cluster", "You are heading towards molten Metal");
+                   addAchievementDesc("ZeoliteDust", "Another one bites the dust!");
+                   addAchievementName("CopperCluster", "Cluster F*ck");
+                   addAchievementDesc("CopperCluster", "1+1 = 2");
     }
     
    
