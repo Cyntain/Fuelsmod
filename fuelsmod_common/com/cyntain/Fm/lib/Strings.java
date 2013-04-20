@@ -19,4 +19,5 @@ public class Strings {
     public static String COPPER_ORE = "copperOre";
     public static String OSMIUM_ORE = "osmiumOre";
     public static String BERYLLIUM_ORE = "berylliumOre";
+    public static String ZEOLITE_ORE = "zeoliteOre" ;
 }
