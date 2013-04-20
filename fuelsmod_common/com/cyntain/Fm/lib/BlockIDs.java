@@ -1,6 +1,6 @@
 package com.cyntain.Fm.lib;
 
-public class BlockID {
+public class BlockIDs {
 
     /* Default Block id */
     
@@ -11,8 +11,6 @@ public class BlockID {
     
     /* Current Block id */
     
-    public static int COPPER_ORE;
-    public static int OSMIUM_ORE;
-    public static int BERYLLIUM_ORE;
+    
     
 }
