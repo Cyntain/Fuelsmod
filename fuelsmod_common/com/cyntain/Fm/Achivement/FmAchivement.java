@@ -30,7 +30,7 @@ public class FmAchivement {
     {
                    addAchievementName("ZeoliteDust", "Dust Collector");
                    addAchievementDesc("ZeoliteDust", "Another one bites the dust!");
-                   addAchievementName("CopperCluster", "Cluster F*ck");
+                   addAchievementName("CopperCluster", "Clustering Algorithms");
                    addAchievementDesc("CopperCluster", "1+1 = 2");
     }
     
