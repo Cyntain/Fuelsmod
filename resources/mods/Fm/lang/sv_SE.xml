@@ -1,1 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties version="1.0">
+	<comment>Swedish (sv_SE) Localization File</comment>
+	<entry key="item.copperIngot.name">Koppargöt</entry>
+	<entry key="item.copperOreChunk.name">Kopparmalm Klump</entry>
+	<entry key="item.copperOreCluster.name">Kopparmalm kluster</entry>
+	<entry key="item.osmiumIngot.name">Osmium Göt</entry>
+	<entry key="item.osmiumOreChunk.name">Osmium Malm Klump</entry>
+	<entry key="item.berylliumIngot.name">Beryllium Göt</entry>
+	<entry key="item.berylliumOreChunk.name">Beryllium Malm Klump</entry>
+	<entry key="item.berylliumOreCluster.name">Beryllium Malm Kluster</entry>
+	<entry key="item.zeoliteDust.name">Zeolite Salt</entry>
+	<entry key="item.emptyVial.name">Tomm Flaska</entry>
+	<entry key="item.glassZeoliteDust.name">Flaska av Zeolite Salt</entry>
+	<entry key="tile.copperOre.name">Kopparmalm</entry>
+	<entry key="tile.osmiumOre.name">Osmium Malm</entry>
+	<entry key="tile.berylliumOre.name">Beryllium Malm</entry>
+	<entry key="tile.zeoliteOre.name">Zeolite Malm</entry>
+	<entry key="tile.copperBlock.name">Block av Koppar</entry>
+	<entry key="tile.osmiumBlock.name">Block av Osmium</entry>
+	<entry key="tile.berylliumBlock.name">Block av Beryllium</entry>
+	<entry key="tile.heatproofBrickBlock.name">Värmetåligt Tegel</entry>
+</properties>
