@@ -15,6 +15,7 @@ public class Strings {
     public static String BERYLLIUM_CLUSTER_NAME = "berylliumOreCluster";
     public static String ZEOLITE_DUST_NAME = "zeoliteDust";
     public static String ZEOLITE_DUST_GLASS_NAME = "glassZeoliteDust";
+    public static String EMPTY_VIAL_NAME = "emptyVial";
     /* Block Names */
     public static String COPPER_ORE = "copperOre";
     public static String OSMIUM_ORE = "osmiumOre";

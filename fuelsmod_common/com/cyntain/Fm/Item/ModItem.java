@@ -59,7 +59,7 @@ public class ModItem {
       zeoliteDustVial = new itemZeoliteVial(ItemIDs.ZEOLITE_DUST_VIAL_DEFAULT);
       
       // OTHER ITEMs
-      //emptyVial = new itemEmptyVial(ItemIDs.EMPTY_VIAL_DEFAULT);
+      emptyVial = new itemEmptyVial(ItemIDs.EMPTY_VIAL_DEFAULT);
       
       /* Register + Initialise Smelting Recipes */
       GameRegistry.addSmelting(ModItem.ChunkCopper.itemID, new ItemStack(copperIngot), 5.0f);
