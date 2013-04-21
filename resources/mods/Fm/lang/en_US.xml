@@ -12,12 +12,12 @@
 	<entry key="item.berylliumOreCluster.name">Beryllium Ore Cluster</entry>
 	<entry key="item.zeoliteDust.name">Zeolite Dust</entry>
 	<entry key="item.glassZeoliteDust.name">Vial of Zeolite Dust</entry>
-	<entry key="copperOre.name">Copper Ore</entry>
-	<entry key="block.osmiumOre.name">Osmium Ore</entry>
-	<entry key="block.berylliumOre.name">Beryllium Ore</entry>
-	<entry key="block.zeoliteOre.name">Zeolite Ore</entry>
-	<entry key="block.copperBlock.name">Block of Copper</entry>
-	<entry key="block.osmiumBlock.name">Block of Osmium</entry>
-	<entry key="block.berylliumBlock.name">Block of Beryllium</entry>
-	<entry key="block.heatproofBrickBlock.name">Heatproof Brick</entry>
+	<entry key="tile.copperOre.name">Copper Ore</entry>
+	<entry key="tile.osmiumOre.name">Osmium Ore</entry>
+	<entry key="tile.berylliumOre.name">Beryllium Ore</entry>
+	<entry key="tile.zeoliteOre.name">Zeolite Ore</entry>
+	<entry key="tile.copperBlock.name">Block of Copper</entry>
+	<entry key="tile.osmiumBlock.name">Block of Osmium</entry>
+	<entry key="tile.berylliumBlock.name">Block of Beryllium</entry>
+	<entry key="tile.heatproofBrickBlock.name">Heatproof Brick</entry>
 </properties>
