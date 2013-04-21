@@ -4,6 +4,7 @@ import com.cyntain.Fm.Achivement.FmAchivement;
 import com.cyntain.Fm.Block.WorldGenerator;
 import com.cyntain.Fm.Item.ModItem;
 import com.cyntain.Fm.Block.ModBlock;
+import com.cyntain.Fm.core.handlers.LocalizationHandler;
 import com.cyntain.Fm.core.proxy.CommonProxy;
 import com.cyntain.Fm.lib.ModLoaded;
 import com.cyntain.Fm.lib.Reference;
@@ -50,7 +51,8 @@ import cpw.mods.fml.common.registry.GameRegistry;
 @PreInit
         public void preInit(FMLPreInitializationEvent event) {
         proxy.registerRenders();
-            
+        
+           LocalizationHandler.loadLanguages();
            ModItem.init();
            ModBlock.init();
            ModLoaded.Mod_Loaded();                       

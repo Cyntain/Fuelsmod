@@ -29,7 +29,7 @@ public class ModBlock{
         /* Block statements: Copper Blocks */  
         copperOre = new BlockCopperOre(BlockIDs.COPPER_ORE_DEFAULT, Material.rock).setUnlocalizedName(Strings.COPPER_ORE);
         GameRegistry.registerBlock(copperOre, Reference.MOD_ID + copperOre.getUnlocalizedName2());
-        LanguageRegistry.addName(copperOre, "Copper Ore");
+        //LanguageRegistry.addName(copperOre, "Copper Ore");
         copperBlock = new BlockCopper(BlockIDs.COPPER_BLOCK_DEFAULT, Material.rock).setUnlocalizedName(Strings.COPPER_BLOCK);
         GameRegistry.registerBlock(copperBlock, Reference.MOD_ID + copperBlock.getUnlocalizedName2());
         LanguageRegistry.addName(copperBlock, "Block of Copper");
