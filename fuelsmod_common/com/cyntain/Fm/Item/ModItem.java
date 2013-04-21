@@ -41,26 +41,26 @@ public class ModItem {
   /* Initialise each mod item individually */
         
         // COPPER ITEMs
-      copperIngot = new itemCopperIngot(ItemIDs.COPPER_INGOT_DEFAULT); 
-      ChunkCopper = new itemCopperOreChunk(ItemIDs.COPPER_CHUNK_DEFAULT); 
-      ClusterCopper = new itemClusterCopper(ItemIDs.COPPER_CLUSTER_DEFAULT);
+      copperIngot = new itemCopperIngot(ItemIDs.COPPER_INGOT); 
+      ChunkCopper = new itemCopperOreChunk(ItemIDs.COPPER_CHUNK); 
+      ClusterCopper = new itemClusterCopper(ItemIDs.COPPER_CLUSTER);
      
       
       // OSMIUM ITEMs
-      osmiumIngot = new itemOsmiumIngot(ItemIDs.OSMIUM_INGOT_DEFAULT);
-      ChunkOsmium = new itemOsmiumChunk(ItemIDs.OSMIUM_CHUNK_DEFAULT);
+      osmiumIngot = new itemOsmiumIngot(ItemIDs.OSMIUM_INGOT);
+      ChunkOsmium = new itemOsmiumChunk(ItemIDs.OSMIUM_CHUNK);
    
       // BERYLLIUM ITEMs
-      berylliumIngot = new itemBerylliumIngot(ItemIDs.BERYLLIUM_INGOT_DEFAULT);
-      ChunkBeryllium = new itemChunkBeryllium(ItemIDs.BERYLLIUM_CHUNK_DEFAULT);
-      clusterBeryllium = new itemClusterBeryllium(ItemIDs.BERYLLIUM_CLUSTER_DEFAULT);
+      berylliumIngot = new itemBerylliumIngot(ItemIDs.BERYLLIUM_INGOT);
+      ChunkBeryllium = new itemChunkBeryllium(ItemIDs.BERYLLIUM_CHUNK);
+      clusterBeryllium = new itemClusterBeryllium(ItemIDs.BERYLLIUM_CLUSTER);
 
       // ZEOLITE ITEMs
-      zeoliteDust = new itemZeoliteDust(ItemIDs.ZEOLITE_DUST_DEFAULT);
-      zeoliteDustVial = new itemZeoliteVial(ItemIDs.ZEOLITE_DUST_VIAL_DEFAULT);
+      zeoliteDust = new itemZeoliteDust(ItemIDs.ZEOLITE_DUST);
+      zeoliteDustVial = new itemZeoliteVial(ItemIDs.ZEOLITE_DUST_VIAL);
       
       // OTHER ITEMs
-      emptyVial = new itemEmptyVial(ItemIDs.EMPTY_VIAL_DEFAULT);
+      emptyVial = new itemEmptyVial(ItemIDs.EMPTY_VIAL);
       
       /* Register + Initialise Smelting Recipes */
       GameRegistry.addSmelting(ModItem.ChunkCopper.itemID, new ItemStack(copperIngot), 5.0f);

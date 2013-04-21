@@ -1,9 +1,12 @@
 package com.cyntain.Fm;
 
+import java.io.File;
+
 import com.cyntain.Fm.Achivement.FmAchivement;
 import com.cyntain.Fm.Block.WorldGenerator;
 import com.cyntain.Fm.Item.ModItem;
 import com.cyntain.Fm.Block.ModBlock;
+import com.cyntain.Fm.Configuration.ConfigurationHandler;
 import com.cyntain.Fm.core.handlers.LocalizationHandler;
 import com.cyntain.Fm.core.proxy.CommonProxy;
 import com.cyntain.Fm.lib.ModLoaded;
@@ -52,17 +55,18 @@ import cpw.mods.fml.common.registry.GameRegistry;
         public void preInit(FMLPreInitializationEvent event) {
         proxy.registerRenders();
         
-           LocalizationHandler.loadLanguages();
+        ConfigurationHandler.init(new File(event.getModConfigurationDirectory().getAbsolutePath() + File.separator + Reference.CHANNEL_NAME + File.separator + Reference.MOD_ID + ".cfg"));
+           
+        LocalizationHandler.loadLanguages();
            ModItem.init();
            ModBlock.init();
            ModLoaded.Mod_Loaded();                       
     }
 @Init
     public void load(FMLInitializationEvent event) {
-    ModLoaded.Mod_Loaded();
     FmAchivement.addAchievementLocalizations();
     GameRegistry.registerWorldGenerator(new WorldGenerator());
-    
+   
     ModLoaded.Mod_Loaded();          //keep at the end of the load method shows if all blocks have been initialised 
     
     }
