@@ -22,7 +22,7 @@ public class ModBlock{
         public static Block copperBlock;
         public static Block osmiumBlock;
         public static Block berylliumBlock;
-        public static Block heatproofbrickBlock;
+        public static Block heatproofBrickBlock;
     
     public static void init() {
         
@@ -56,9 +56,9 @@ public class ModBlock{
         LanguageRegistry.addName(zeoliteOre, "Zeolite Ore");
         
         /* Block statements: HeatProofBrick Blocks */
-        heatproofbrickBlock = new Blockheatproofbrick(BlockIDs.HEATPROOFBRICK_BLOCK_DEFAULT, Material.rock).setUnlocalizedName(Strings.HEATPROOFBRICK_BLOCK);
-        GameRegistry.registerBlock(heatproofbrickBlock, Reference.MOD_ID + heatproofbrickBlock.getUnlocalizedName2());
-        LanguageRegistry.addName(heatproofbrickBlock, "Heatproof Brick");
+        heatproofBrickBlock = new Blockheatproofbrick(BlockIDs.HEATPROOFBRICK_BLOCK_DEFAULT, Material.rock).setUnlocalizedName(Strings.HEATPROOFBRICK_BLOCK);
+        GameRegistry.registerBlock(heatproofBrickBlock, Reference.MOD_ID + heatproofBrickBlock.getUnlocalizedName2());
+        LanguageRegistry.addName(heatproofBrickBlock, "Heatproof Brick");
         
         //Recipes
         GameRegistry.addRecipe(new ItemStack(copperBlock, 1), "XXX", "XXX", "XXX", Character.valueOf('X'), ModItem.copperIngot);

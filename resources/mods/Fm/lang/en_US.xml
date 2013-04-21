@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties version="1.0">
+	<comment>English (en_US) Localization File</comment>
+	<entry key="item.copperIngot.name">Copper Ingot</entry>
+	<entry key="item.copperOreChunk.name">Copper Ore Chunk</entry>
+	<entry key="item.copperOreCluster.name">Copper Ore Cluster</entry>
+	<entry key="item.osmiumIngot.name">Osmium Ingot</entry>
+	<entry key="item.osmiumOreChunk.name">Osmium Ore Chunk</entry>
+	<entry key="item.berylliumIngot.name">Beryllium Ingot</entry>
+	<entry key="item.berylliumOreChunk.name">Beryllium Ore Chunk</entry>
+	<entry key="item.berylliumOreCluster.name">Beryllium Ore Cluster</entry>
+	<entry key="item.zeoliteDust.name">Zeolite Dust</entry>
+	<entry key="item.glassZeoliteDust.name">Vial of Zeolite Dust</entry>
+	<entry key="block.copperOre.name">Copper Ore</entry>
+	<entry key="block.osmiumOre.name">Osmium Ore</entry>
+	<entry key="block.berylliumOre.name">Beryllium Ore</entry>
+	<entry key="block.zeoliteOre.name">Zeolite Ore</entry>
+	<entry key="block.copperBlock.name">Block of Copper</entry>
+	<entry key="block.osmiumBlock.name">Block of Osmium</entry>
+	<entry key="block.berylliumBlock.name">Block of Beryllium</entry>
+	<entry key="block.heatproofBrickBlock.name">Heatproof Brick</entry>
+</properties>
