@@ -1,1 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties version="1.0">
+	<comment>Japanese (ja_JA) Localization File</comment>
+	<entry key="item.copperIngot.name">銅インゴット</entry>
+	<entry key="item.copperOreChunk.name">銅鉱石の塊</entry>
+	<entry key="item.copperOreCluster.name">銅鉱石クラスタ</entry>
+	<entry key="item.osmiumIngot.name">オスミウムインゴット</entry>
+	<entry key="item.osmiumOreChunk.name">オスミウム鉱石の塊</entry>
+	<entry key="item.berylliumIngot.name">ベリリウムインゴット</entry>
+	<entry key="item.berylliumOreChunk.name">ベリリウム鉱石の塊</entry>
+	<entry key="item.berylliumOreCluster.name">ベリリウム鉱石クラスタ</entry>
+	<entry key="item.zeoliteDust.name">ゼオライトほこり</entry>
+	<entry key="item.emptyVial.name">空バイアル</entry>
+	<entry key="item.glassZeoliteDust.name">ゼオライトほこりのバイアル</entry>
+	<entry key="tile.copperOre.name">銅鉱石</entry>
+	<entry key="tile.osmiumOre.name">オスミウム鉱石</entry>
+	<entry key="tile.berylliumOre.name">ベリリウム鉱石</entry>
+	<entry key="tile.zeoliteOre.name">ゼオライト鉱石</entry>
+	<entry key="tile.copperBlock.name">銅のブロック</entry>
+	<entry key="tile.osmiumBlock.name">オスミウムのブロック</entry>
+	<entry key="tile.berylliumBlock.name">ベリリウムのブロック</entry>
+	<entry key="tile.heatproofBrickBlock.name">耐熱煉瓦</entry>
+</properties>
