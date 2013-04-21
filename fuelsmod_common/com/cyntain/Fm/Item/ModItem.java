@@ -71,6 +71,7 @@ public class ModItem {
       /* Shaped Crafting Recipe*/
       GameRegistry.addRecipe(new ItemStack(ModItem.ClusterCopper, 1), "XXX", "XXX", "XXX", Character.valueOf('X'), ModItem.ChunkCopper);
       GameRegistry.addRecipe(new ItemStack(ModItem.clusterBeryllium, 1), "XXX", "XXX", "XXX", Character.valueOf('X'), ModItem.ChunkBeryllium);
-      GameRegistry.addRecipe(new ItemStack(ModItem.zeoliteDustVial, 1), "XXX", "XYX", "XXX", Character.valueOf('X'), ModItem.zeoliteDust, Character.valueOf('Y'), Item.glassBottle);
+      GameRegistry.addRecipe(new ItemStack(ModItem.emptyVial, 1), "X X", "X X", " X ", Character.valueOf('X'), Item.glassBottle);
+      GameRegistry.addRecipe(new ItemStack(ModItem.zeoliteDustVial, 1), "XXX", "XYX", "XXX", Character.valueOf('X'), ModItem.zeoliteDust, Character.valueOf('Y'), ModItem.emptyVial);
    }
 }

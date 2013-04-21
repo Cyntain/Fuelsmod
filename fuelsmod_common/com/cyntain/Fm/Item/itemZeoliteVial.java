@@ -4,7 +4,6 @@ package com.cyntain.Fm.Item;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumAction;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
@@ -51,7 +50,7 @@ public class itemZeoliteVial extends ItemFood  {
 public void onFoodEaten(ItemStack itemStack, World world, EntityPlayer player){
     player.getFoodStats().addStats(this);
     this.addPotionEffects(itemStack, world, player);
-    player.inventory.addItemStackToInventory(new ItemStack(Item.glassBottle));
+    player.inventory.addItemStackToInventory(new ItemStack(ModItem.emptyVial));
     player.inventory.consumeInventoryItem(ItemIDs.ZEOLITE_DUST_VIAL_DEFAULT);
 }
 
