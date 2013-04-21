@@ -11,6 +11,7 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 
 import com.cyntain.Fm.CreativeTab.CreativeTabFm;
+import com.cyntain.Fm.lib.ItemIDs;
 import com.cyntain.Fm.lib.Reference;
 import com.cyntain.Fm.lib.Strings;
 
@@ -33,7 +34,7 @@ public class itemZeoliteVial extends ItemFood  {
          this.setUnlocalizedName(Strings.ZEOLITE_DUST_GLASS_NAME);
          this.setAlwaysEdible();
          this.setCreativeTab(CreativeTabFm.tabsFuelMod);
-         this.setMaxStackSize(16);
+         this.maxStackSize = 16;
     }
 
 
@@ -48,10 +49,12 @@ public class itemZeoliteVial extends ItemFood  {
 
 
 public void onFoodEaten(ItemStack itemStack, World world, EntityPlayer player){
-    --itemStack.stackSize;
+    //--itemStack.stackSize;
+   System.out.println("does this code run");
     player.getFoodStats().addStats(this);
     this.addPotionEffects(itemStack, world, player);
     player.inventory.addItemStackToInventory(new ItemStack(Item.glassBottle));
+    player.inventory.consumeInventoryItem(ItemIDs.ZEOLITE_DUST_VIAL);
 }
 
 
