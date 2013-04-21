@@ -11,11 +11,10 @@ public class BlockIDs {
     public static int COPPER_BLOCK_DEFAULT = 704;
     public static int OSMIUM_BLOCK_DEFAULT = 705;
     public static int BERYLLIUM_BLOCK_DEFAULT = 706;
+    public static int HEATPROOFBRICK_BLOCK_DEFAULT = 707;
      
     
-    
     /* Current Block id */
-    
     
     
 }
