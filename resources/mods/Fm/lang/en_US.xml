@@ -12,6 +12,7 @@
 	<entry key="item.berylliumOreCluster.name">Beryllium Ore Cluster</entry>
 	<entry key="item.zeoliteDust.name">Zeolite Dust</entry>
 	<entry key="item.glassZeoliteDust.name">Vial of Zeolite Dust</entry>
+	<entry key="item.emptyVial.name">Empty Vial</entry>
 	<entry key="tile.copperOre.name">Copper Ore</entry>
 	<entry key="tile.osmiumOre.name">Osmium Ore</entry>
 	<entry key="tile.berylliumOre.name">Beryllium Ore</entry>
