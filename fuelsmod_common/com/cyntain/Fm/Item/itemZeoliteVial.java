@@ -52,7 +52,7 @@ public void onFoodEaten(ItemStack itemStack, World world, EntityPlayer player){
     player.getFoodStats().addStats(this);
     this.addPotionEffects(itemStack, world, player);
     player.inventory.addItemStackToInventory(new ItemStack(Item.glassBottle));
-    player.inventory.consumeInventoryItem(ItemIDs.ZEOLITE_DUST_VIAL);
+    player.inventory.consumeInventoryItem(ItemIDs.ZEOLITE_DUST_VIAL_DEFAULT);
 }
 
 

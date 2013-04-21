@@ -29,7 +29,7 @@ public class BlockZeoliteOre extends Block {
     
     public int idDropped(int par1, Random par2Random, int par3)
     {
-        return ItemIDs.ZEOLITE_DUST;
+        return ItemIDs.ZEOLITE_DUST_DEFAULT;
     }
     
     public int quantityDroppedWithBonus(int par1, Random par2Random)
