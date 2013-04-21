@@ -14,16 +14,16 @@ import net.minecraftforge.common.Configuration;
 public class ConfigurationHandler {
 
     public static Configuration configuration;
-
     
+       
     public static void init(File configFile){
         
         configuration = new Configuration(configFile);
         try {
             configuration.load();
-            
-            
    
+            
+            
             
             ItemIDs.BERYLLIUM_CHUNK = configuration.getItem(Strings.BERYLLIUM_CHUNK_NAME, ItemIDs.BERYLLIUM_CHUNK_DEFAULT).getInt(ItemIDs.BERYLLIUM_CHUNK_DEFAULT);
             ItemIDs.BERYLLIUM_CLUSTER = configuration.getItem(Strings.BERYLLIUM_CLUSTER_NAME, ItemIDs.BERYLLIUM_CLUSTER_DEFAULT).getInt(ItemIDs.BERYLLIUM_CLUSTER_DEFAULT);
@@ -34,7 +34,6 @@ public class ConfigurationHandler {
             ItemIDs.COPPER_INGOT = configuration.getItem(Strings.COPPER_INGOT_NAME, ItemIDs.COPPER_INGOT_DEFAULT).getInt(ItemIDs.COPPER_INGOT_DEFAULT);
             
             ItemIDs.OSMIUM_CHUNK = configuration.getItem(Strings.OSMIUM_CHUNK_NAME, ItemIDs.OSMIUM_CHUNK_DEFAULT).getInt(ItemIDs.OSMIUM_CHUNK_DEFAULT);
-           // ItemIDs.OSMIUM_CLUSTER = configuration.getItem(Strings.OSMIUM_CLUSTER_NAME, ItemIDs.OSMIUM_CLUSTER_DEFAULT).getInt(ItemIDs.OSMIUM_CLUSTER_DEFAULT);
             ItemIDs.OSMIUM_INGOT = configuration.getItem(Strings.OSMIUM_INGOT_NAME, ItemIDs.OSMIUM_INGOT_DEFAULT).getInt(ItemIDs.OSMIUM_INGOT_DEFAULT);
             
             ItemIDs.ZEOLITE_DUST = configuration.getItem(Strings.ZEOLITE_DUST_NAME, ItemIDs.ZEOLITE_DUST_DEFAULT).getInt(ItemIDs.ZEOLITE_DUST_DEFAULT);
@@ -45,7 +44,10 @@ public class ConfigurationHandler {
         FMLLog.log(Level.SEVERE, e, Reference.MOD_NAME + " has had a problem loading its configuration");
     }
     finally {
+        
         configuration.save();
+        System.out.println("[FUELSMOD] Configuration File: loaded");
     }
+       
     
 }}
