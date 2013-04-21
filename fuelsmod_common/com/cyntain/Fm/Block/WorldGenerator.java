@@ -62,7 +62,6 @@ public class WorldGenerator implements IWorldGenerator {
             (new WorldGenMinable(BlockIDs.ZEOLITE_ORE_DEFAULT, 8)).generate(world, random, xCord, yCord, zCord);
         }
         
-        System.out.println("does this code run");
     }
 
     private void generateNether(World world, Random random, int chunkX, int chunkZ) {

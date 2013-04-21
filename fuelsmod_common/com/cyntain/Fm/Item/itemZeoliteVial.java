@@ -4,6 +4,7 @@ package com.cyntain.Fm.Item;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumAction;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
@@ -50,17 +51,17 @@ public void onFoodEaten(ItemStack itemStack, World world, EntityPlayer player){
     --itemStack.stackSize;
     player.getFoodStats().addStats(this);
     this.addPotionEffects(itemStack, world, player);
+    player.inventory.addItemStackToInventory(new ItemStack(Item.glassBottle));
 }
 
 
-private void addPotionEffects(ItemStack itemStack, World world,
-        EntityPlayer player) {
+private void addPotionEffects(ItemStack itemStack, World world, EntityPlayer player) {
 
   player.addPotionEffect(new PotionEffect(potionEffect[0], potionDuration[0] * 20, potionTeir[0]));
     
 }
     public EnumAction onItemRightClick(ItemStack itemStack){
-        return EnumAction.drink;        
+        return EnumAction.drink;
     }
 
     public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer player){
