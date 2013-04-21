@@ -1,1 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties version="1.0">
+	<comment>German (de_DE) Localization File</comment>
+	<entry key="item.copperIngot.name">Kobberbarre</entry>
+	<entry key="item.copperOreChunk.name">Kobbermalm Luns</entry>
+	<entry key="item.copperOreCluster.name">Kobbermalm Cluster</entry>
+	<entry key="item.osmiumIngot.name">Osmium Barre</entry>
+	<entry key="item.osmiumOreChunk.name">Osmium Malm Luns</entry>
+	<entry key="item.berylliumIngot.name">Beryllium Barre</entry>
+	<entry key="item.berylliumOreChunk.name">Beryllium Malm Luns</entry>
+	<entry key="item.berylliumOreCluster.name">Beryllium Malm Cluster</entry>
+	<entry key="item.zeoliteDust.name">Zeolit ​​Støv</entry>
+	<entry key="item.emptyVial.name">Tomme Hætteglas</entry>
+	<entry key="item.glassZeoliteDust.name">Hætteglas af Zeolit ​​Støv</entry>
+	<entry key="tile.copperOre.name">Kobbermalm</entry>
+	<entry key="tile.osmiumOre.name">Osmium Malm</entry>
+	<entry key="tile.berylliumOre.name">Beryllium Malm</entry>
+	<entry key="tile.zeoliteOre.name">Zeolit Malm</entry>
+	<entry key="tile.copperBlock.name">Blok af Kobber</entry>
+	<entry key="tile.osmiumBlock.name">Block af Osmium</entry>
+	<entry key="tile.berylliumBlock.name">Block af Beryllium</entry>
+	<entry key="tile.heatproofBrickBlock.name">Varmebestandig Mursten</entry>
+</properties>

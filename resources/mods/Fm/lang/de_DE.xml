@@ -1,1 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties version="1.0">
+	<comment>German (de_DE) Localization File</comment>
+	<entry key="item.copperIngot.name">Kupfer Barren</entry>
+	<entry key="item.copperOreChunk.name">Kupferez Brocken</entry>
+	<entry key="item.copperOreCluster.name">Kupferez Cluster</entry>
+	<entry key="item.osmiumIngot.name">Osmium Barren</entry>
+	<entry key="item.osmiumOreChunk.name">Osmium Erz Brocken</entry>
+	<entry key="item.berylliumIngot.name">Beryllium Barren</entry>
+	<entry key="item.berylliumOreChunk.name">Beryllium Erz Brocken</entry>
+	<entry key="item.berylliumOreCluster.name">Beryllium Erz Cluster</entry>
+	<entry key="item.zeoliteDust.name">Zeolith Staub</entry>
+	<entry key="item.emptyVial.name">Leeres Fläschchen</entry>
+	<entry key="item.glassZeoliteDust.name">Fläschchen von Zeolith Staub</entry>
+	<entry key="tile.copperOre.name">Kupfererz</entry>
+	<entry key="tile.osmiumOre.name">Osmium Erz</entry>
+	<entry key="tile.berylliumOre.name">Beryllium Erz</entry>
+	<entry key="tile.zeoliteOre.name">Zeolith Erz</entry>
+	<entry key="tile.copperBlock.name">Kupferblock</entry>
+	<entry key="tile.osmiumBlock.name">Block Osmium</entry>
+	<entry key="tile.berylliumBlock.name">Block aus Beryllium</entry>
+	<entry key="tile.heatproofBrickBlock.name">Hitzebeständig Ziegel</entry>
+</properties>

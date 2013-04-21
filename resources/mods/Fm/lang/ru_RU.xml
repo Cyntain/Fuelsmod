@@ -1,1 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties version="1.0">
+	<comment>Russian (ru_RU) Localization File</comment>
+	<entry key="item.copperIngot.name">медные слитки</entry>
+	<entry key="item.copperOreChunk.name">кусок медной руды</entry>
+	<entry key="item.copperOreCluster.name">кластера медной руды</entry>
+	<entry key="item.osmiumIngot.name">осмия слитка</entry>
+	<entry key="item.osmiumOreChunk.name">осмия кусок руды</entry>
+	<entry key="item.berylliumIngot.name">бериллия слитка</entry>
+	<entry key="item.berylliumOreChunk.name">кусок бериллиевой руды</entry>
+	<entry key="item.berylliumOreCluster.name">бериллиевой руды кластера</entry>
+	<entry key="item.zeoliteDust.name">цеолита пыли</entry>
+	<entry key="item.emptyVial.name">пустая колба</entry>
+	<entry key="item.glassZeoliteDust.name">флакона цеолита пыли</entry>
+	<entry key="tile.copperOre.name">медной руды</entry>
+	<entry key="tile.osmiumOre.name">осмия руды</entry>
+	<entry key="tile.berylliumOre.name">бериллиевых руд</entry>
+	<entry key="tile.zeoliteOre.name">цеолита руды</entry>
+	<entry key="tile.copperBlock.name">Блок меди</entry>
+	<entry key="tile.osmiumBlock.name">Блок осмия</entry>
+	<entry key="tile.berylliumBlock.name">Блок бериллия</entry>
+	<entry key="tile.heatproofBrickBlock.name">жаропрочных кирпича</entry>
+</properties>
