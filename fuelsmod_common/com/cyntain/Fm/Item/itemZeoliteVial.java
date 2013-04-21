@@ -49,8 +49,6 @@ public class itemZeoliteVial extends ItemFood  {
 
 
 public void onFoodEaten(ItemStack itemStack, World world, EntityPlayer player){
-    //--itemStack.stackSize;
-   System.out.println("does this code run");
     player.getFoodStats().addStats(this);
     this.addPotionEffects(itemStack, world, player);
     player.inventory.addItemStackToInventory(new ItemStack(Item.glassBottle));
