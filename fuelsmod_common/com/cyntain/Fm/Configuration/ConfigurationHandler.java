@@ -35,6 +35,7 @@ public class ConfigurationHandler {
             
             ItemIDs.OSMIUM_CHUNK = configuration.getItem(Strings.OSMIUM_CHUNK_NAME, ItemIDs.OSMIUM_CHUNK_DEFAULT).getInt(ItemIDs.OSMIUM_CHUNK_DEFAULT);
             ItemIDs.OSMIUM_INGOT = configuration.getItem(Strings.OSMIUM_INGOT_NAME, ItemIDs.OSMIUM_INGOT_DEFAULT).getInt(ItemIDs.OSMIUM_INGOT_DEFAULT);
+            ItemIDs.OSMIUM_GRATE = configuration.getItem(Strings.OSMIUM_GRATE_NAME, ItemIDs.OSMIUM_GRATE_DEFAULT).getInt(ItemIDs.OSMIUM_GRATE_DEFAULT);
             
             ItemIDs.ZEOLITE_DUST = configuration.getItem(Strings.ZEOLITE_DUST_NAME, ItemIDs.ZEOLITE_DUST_DEFAULT).getInt(ItemIDs.ZEOLITE_DUST_DEFAULT);
             ItemIDs.ZEOLITE_DUST_VIAL = configuration.getItem(Strings.ZEOLITE_DUST_GLASS_NAME, ItemIDs.ZEOLITE_DUST_VIAL_DEFAULT).getInt(ItemIDs.ZEOLITE_DUST_VIAL_DEFAULT);

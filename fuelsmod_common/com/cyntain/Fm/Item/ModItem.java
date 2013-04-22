@@ -5,7 +5,6 @@ import com.cyntain.Fm.lib.ItemIDs;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 import net.minecraft.block.Block;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
@@ -29,12 +28,14 @@ public class ModItem {
     public static Item ClusterCopper;
     public static Item osmiumIngot;
     public static Item ChunkOsmium;
+    public static Item osmiumGrate;
     public static Item berylliumIngot;
     public static Item ChunkBeryllium;
     public static Item clusterBeryllium;
     public static Item zeoliteDust;
     public static Item zeoliteDustVial;
     public static Item emptyVial;
+
     
     
     public static void init(){
@@ -50,7 +51,7 @@ public class ModItem {
       // OSMIUM ITEMs
       osmiumIngot = new itemOsmiumIngot(ItemIDs.OSMIUM_INGOT);
       ChunkOsmium = new itemOsmiumChunk(ItemIDs.OSMIUM_CHUNK);
-   
+      osmiumGrate = new itemOsmiumGrate(ItemIDs.OSMIUM_GRATE);
       // BERYLLIUM ITEMs
       berylliumIngot = new itemBerylliumIngot(ItemIDs.BERYLLIUM_INGOT);
       ChunkBeryllium = new itemChunkBeryllium(ItemIDs.BERYLLIUM_CHUNK);
