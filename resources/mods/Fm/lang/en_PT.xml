@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties version="1.0">
+	<comment>Pirate Speak (en_PT) Localization File</comment>
+	<entry key="item.copperIngot.name">Copparr Bullion</entry>
+	<entry key="item.copperOreChunk.name">Copparr Orrre Nugget</entry>
+	<entry key="item.copperOreCluster.name">Copparr Orrre Clump</entry>
+	<entry key="item.osmiumIngot.name">Osmium Bullion</entry>
+	<entry key="item.osmiumOreChunk.name">Osmium Orrre Nugger</entry>
+	<entry key="item.berylliumIngot.name">Beryl'um Bullion</entry>
+	<entry key="item.berylliumOreChunk.name">Beryl'um Orrre Nugget</entry>
+	<entry key="item.berylliumOreCluster.name">Beryl'um Orrre Clump</entry>
+	<entry key="item.zeoliteDust.name">Zolit' Salt</entry>
+	<entry key="item.emptyVial.name">Empty Bottle</entry>
+	<entry key="item.glassZeoliteDust.name">Bottle O' Zolit' Salts</entry>
+	<entry key="tile.copperOre.name">Coppar Orrre</entry>
+	<entry key="tile.osmiumOre.name">Osmium Orrre</entry>
+	<entry key="tile.berylliumOre.name">Beryl'um Ore</entry>
+	<entry key="tile.zeoliteOre.name">Zolit' Orrre</entry>
+	<entry key="tile.copperBlock.name">Chunk O' Copparr</entry>
+	<entry key="tile.osmiumBlock.name">Chunk O' Osmium</entry>
+	<entry key="tile.berylliumBlock.name">Chunk O' Beryl'um</entry>
+	<entry key="tile.heatproofBrickBlock.name">Torchproof Brick</entry>
+</properties>
