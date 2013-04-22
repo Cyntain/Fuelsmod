@@ -5,6 +5,7 @@ import com.cyntain.Fm.lib.ItemIDs;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 import net.minecraft.block.Block;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
@@ -74,5 +75,6 @@ public class ModItem {
       GameRegistry.addRecipe(new ItemStack(ModItem.clusterBeryllium, 1), "XXX", "XXX", "XXX", Character.valueOf('X'), ModItem.ChunkBeryllium);
       GameRegistry.addRecipe(new ItemStack(ModItem.emptyVial, 1), "X X", "X X", " X ", Character.valueOf('X'), Block.glass);
       GameRegistry.addRecipe(new ItemStack(ModItem.zeoliteDustVial, 1), "XXX", "XYX", "XXX", Character.valueOf('X'), ModItem.zeoliteDust, Character.valueOf('Y'), ModItem.emptyVial);
+      GameRegistry.addRecipe(new ItemStack(ModItem.zeoliteDust, 8) , "X", Character.valueOf('X'), ModItem.zeoliteDustVial);
    }
 }
