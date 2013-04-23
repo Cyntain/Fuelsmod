@@ -21,10 +21,7 @@ public class ConfigurationHandler {
         configuration = new Configuration(configFile);
         try {
             configuration.load();
-   
-            
-            
-            
+
             ItemIDs.BERYLLIUM_CHUNK = configuration.getItem(Strings.BERYLLIUM_CHUNK_NAME, ItemIDs.BERYLLIUM_CHUNK_DEFAULT).getInt(ItemIDs.BERYLLIUM_CHUNK_DEFAULT);
             ItemIDs.BERYLLIUM_CLUSTER = configuration.getItem(Strings.BERYLLIUM_CLUSTER_NAME, ItemIDs.BERYLLIUM_CLUSTER_DEFAULT).getInt(ItemIDs.BERYLLIUM_CLUSTER_DEFAULT);
             ItemIDs.BERYLLIUM_INGOT = configuration.getItem(Strings.BERYLLIUM_INGOT_NAME, ItemIDs.BERYLLIUM_INGOT_DEFAULT).getInt(ItemIDs.BERYLLIUM_INGOT_DEFAULT);
