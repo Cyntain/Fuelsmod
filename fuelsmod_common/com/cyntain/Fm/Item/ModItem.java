@@ -35,8 +35,6 @@ public class ModItem {
     public static Item zeoliteDust;
     public static Item zeoliteDustVial;
     public static Item emptyVial;
-
-    
     
     public static void init(){
       
@@ -47,11 +45,11 @@ public class ModItem {
       ChunkCopper = new itemCopperOreChunk(ItemIDs.COPPER_CHUNK); 
       ClusterCopper = new itemClusterCopper(ItemIDs.COPPER_CLUSTER);
      
-      
       // OSMIUM ITEMs
       osmiumIngot = new itemOsmiumIngot(ItemIDs.OSMIUM_INGOT);
       ChunkOsmium = new itemOsmiumChunk(ItemIDs.OSMIUM_CHUNK);
       osmiumGrate = new itemOsmiumGrate(ItemIDs.OSMIUM_GRATE);
+      
       // BERYLLIUM ITEMs
       berylliumIngot = new itemBerylliumIngot(ItemIDs.BERYLLIUM_INGOT);
       ChunkBeryllium = new itemChunkBeryllium(ItemIDs.BERYLLIUM_CHUNK);
