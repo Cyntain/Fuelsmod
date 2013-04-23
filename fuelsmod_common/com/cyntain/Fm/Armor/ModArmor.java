@@ -1,10 +1,11 @@
-package com.cyntain.Fm.Armour;
+package com.cyntain.Fm.Armor;
 
 import com.cyntain.Fm.lib.ItemIDs;
 
+import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.Item;
 
-public class ModArmour {
+public class ModArmor {
     
     //Mod armour instances
     public static Item miningHelmet;
@@ -14,7 +15,7 @@ public class ModArmour {
         //Initialize each mod item individually
         
         //miningHelmet
-        miningHelmet = new armourMiningHelmet(ItemIDs.MINING_HELMET_DEFAULT);
+        miningHelmet = new armorMiningHelmet(ItemIDs.MINING_HELMET_DEFAULT, EnumArmorMaterial.IRON, 0 );
         
     }
     
