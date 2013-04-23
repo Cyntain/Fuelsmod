@@ -18,6 +18,10 @@ public class ItemIDs {
     public static int ZEOLITE_DUST_VIAL_DEFAULT = 6493;
     public static int EMPTY_VIAL_DEFAULT = 6494;
     public static int OSMIUM_GRATE_DEFAULT = 6494;
+    
+    
+    //Armour
+    public static int MINING_HELMET_DEFAULT = 7000;
    
     
     

@@ -4,7 +4,6 @@ public class Strings {
 
     
     /* Item Names */
-    
     public static String COPPER_INGOT_NAME = "copperIngot";
     public static String COPPER_CHUNK_NAME = "copperOreChunk";
     public static String COPPER_CLUSTER_NAME = "copperOreCluster";
@@ -17,6 +16,8 @@ public class Strings {
     public static String ZEOLITE_DUST_NAME = "zeoliteDust";
     public static String ZEOLITE_DUST_GLASS_NAME = "glassZeoliteDust";
     public static String EMPTY_VIAL_NAME = "emptyVial";
+    //Armour Names
+    public static String MINING_HELMET_NAME = "miningHelmet";
     /* Block Names */
     public static String COPPER_ORE = "copperOre";
     public static String OSMIUM_ORE = "osmiumOre";
