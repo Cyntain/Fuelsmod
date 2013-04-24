@@ -14,6 +14,9 @@ public class BlockIDs {
     public static int HEATPROOFBRICK_BLOCK_DEFAULT = 707;
      
     
+    public static int MULTIBLOCK_SMELTER_CORE_DEFAULT = 710;
+    public static int MULTIBLOCK_SMELTER_DUMMY_DEFAULT = 711;
+    
     /* Current Block id */
     
     

@@ -25,5 +25,7 @@ public class Strings {
     public static String OSMIUM_BLOCK = "osmiumBlock";
     public static String BERYLLIUM_BLOCK = "berylliumBlock";
     public static String HEATPROOFBRICK_BLOCK = "heatproofBrickBlock";
+    public static String SMELTER_CORE = "smelterCore";
+    public static String SMELTER_DUMMY = "smelterDummy";
     
 }
