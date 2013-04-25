@@ -18,7 +18,6 @@ public class ModMultiBlock {
         multiSmelterDummy = new blockMultiSmelterCore(BlockIDs.MULTIBLOCK_SMELTER_DUMMY_DEFAULT);
         GameRegistry.registerBlock(multiSmelterCore, "blockMultiSmelterCore");
         GameRegistry.registerBlock(multiSmelterDummy, "blockMultiSmelterDummy");
-        
     }
     
     
