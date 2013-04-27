@@ -19,7 +19,7 @@ public class BlockCopperOre extends Block {
     public BlockCopperOre(int id, Material par2Material){
         super(id, par2Material);
         this.setCreativeTab(CreativeTabFm.tabsFuelMod);
-        this.setHardness(5f);
+        this.setHardness(3f);
         
     }
                 

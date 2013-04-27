@@ -18,7 +18,7 @@ public class BlockBerylliumOre extends Block{
     public BlockBerylliumOre(int id, Material par2Material){
         super(id, par2Material);
         this.setCreativeTab(CreativeTabFm.tabsFuelMod);
-        this.setHardness(5f);
+        this.setHardness(4f);
             
     }
     
