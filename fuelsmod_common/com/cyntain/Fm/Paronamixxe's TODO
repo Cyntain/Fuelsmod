@@ -1,8 +1,9 @@
 Pending:
 • Renders file
 • Rendered models
+
+Extra:
 • Mining helmet (code + texture) // too bloody hard to do, leave it since it was not part of the original plan
-• Pirate language file
 
 Done: 
 • Set up development environment
@@ -10,3 +11,4 @@ Done:
 • Metal blocks (Block of Copper, Block of Osmium, block of beryllium)
 • Try to relocate the block code to its propper place
 • Languages
+• Pirate language file
