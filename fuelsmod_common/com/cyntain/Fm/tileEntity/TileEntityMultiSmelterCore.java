@@ -34,7 +34,8 @@ public class TileEntityMultiSmelterCore extends TileEntity implements ISidedInve
     
     private boolean isValidMultiblock = false;
     
-    public TileEntityMultiSmelterCore(){
+    public TileEntityMultiSmelterCore()
+    {
     }
     
     public boolean getIsValid()

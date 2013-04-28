@@ -16,8 +16,7 @@ public class TileEntityMultiSmelterDummy extends TileEntity implements ISidedInv
     int coreZ;
     
     public TileEntityMultiSmelterDummy()
-    {
-        
+    {    
     }
     
     public void setCore(TileEntityMultiSmelterCore core)
@@ -58,31 +57,27 @@ public class TileEntityMultiSmelterDummy extends TileEntity implements ISidedInv
     
     @Override
     public int getSizeInventory() {
-        // TODO Auto-generated method stub
         return tileEntityCore.getSizeInventory();
     }
 
     @Override
     public ItemStack getStackInSlot(int i) {
-        // TODO Auto-generated method stub
+        
         return tileEntityCore.getStackInSlot(i);
     }
 
     @Override
     public ItemStack decrStackSize(int i, int j) {
-        // TODO Auto-generated method stub
         return tileEntityCore.decrStackSize(i, j);
     }
 
     @Override
     public ItemStack getStackInSlotOnClosing(int i) {
-        // TODO Auto-generated method stub
         return tileEntityCore.getStackInSlotOnClosing(i);
     }
 
     @Override
     public void setInventorySlotContents(int i, ItemStack itemstack) {
-        // TODO Auto-generated method stub
         tileEntityCore.setInventorySlotContents(i, itemstack);
     }
 
@@ -118,25 +113,21 @@ public class TileEntityMultiSmelterDummy extends TileEntity implements ISidedInv
 
     @Override
     public boolean isStackValidForSlot(int i, ItemStack itemstack) {
-        // TODO Auto-generated method stub
         return tileEntityCore.isStackValidForSlot(i, itemstack);
     }
 
     @Override
     public int[] getSizeInventorySide(int var1) {
-        // TODO Auto-generated method stub
         return tileEntityCore.getSizeInventorySide(var1);
     }
 
     @Override
     public boolean func_102007_a(int i, ItemStack itemstack, int j) {
-        // TODO Auto-generated method stub
         return tileEntityCore.func_102007_a(i, itemstack, j);
     }
 
     @Override
     public boolean func_102008_b(int i, ItemStack itemstack, int j) {
-        // TODO Auto-generated method stub
         return tileEntityCore.func_102008_b(i, itemstack, j);
     }
 }

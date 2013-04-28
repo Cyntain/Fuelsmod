@@ -8,6 +8,7 @@ import com.cyntain.Fm.lib.GUIIDs;
 import com.cyntain.Fm.lib.Strings;
 import com.cyntain.Fm.tileEntity.TileEntityMultiSmelterCore;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 
@@ -42,7 +43,9 @@ public class blockMultiSmelterCore extends BlockContainer {
     
     public blockMultiSmelterCore(int id){
         super(id, Material.rock);
+        
         setUnlocalizedName(Strings.SMELTER_CORE);
+        setStepSound(Block.soundStoneFootstep);
         setHardness(3.5f);
         setCreativeTab(CreativeTabFm.tabsFuelMod);
     }
@@ -214,8 +217,7 @@ public class blockMultiSmelterCore extends BlockContainer {
                 item.stackSize = 0;
             }
         }
-    }
-    
-    }
+    }    
+}
     
 

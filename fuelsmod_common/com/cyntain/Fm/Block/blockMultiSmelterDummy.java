@@ -8,6 +8,7 @@ import com.cyntain.Fm.tileEntity.TileEntityMultiSmelterCore;
 import com.cyntain.Fm.tileEntity.TileEntityMultiSmelterDummy;
 
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 
@@ -22,6 +23,7 @@ public class blockMultiSmelterDummy extends BlockContainer {
     public blockMultiSmelterDummy(int id){
         super(id, Material.rock);
         setUnlocalizedName(Strings.SMELTER_DUMMY);
+        setStepSound(Block.soundStoneFootstep);
         setHardness(3.5f);
         setCreativeTab(CreativeTabFm.tabsFuelMod);
     }

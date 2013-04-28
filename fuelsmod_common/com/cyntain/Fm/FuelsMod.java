@@ -3,6 +3,7 @@ package com.cyntain.Fm;
 import java.io.File;
 
 import com.cyntain.Fm.Achivement.FmAchivement;
+import com.cyntain.Fm.Block.ModMultiBlock;
 //import com.cyntain.Fm.Block.ModMultiBlock;
 import com.cyntain.Fm.Block.WorldGenerator;
 import com.cyntain.Fm.Item.ModItem;
@@ -20,9 +21,11 @@ import cpw.mods.fml.common.Mod.PreInit;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
+import cpw.mods.fml.common.network.NetworkRegistry;
 //import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 //import cpw.mods.fml.common.registry.LanguageRegistry;
+import cpw.mods.fml.common.registry.LanguageRegistry;
 
 /*            FuelsMod     
  * 
@@ -72,10 +75,10 @@ import cpw.mods.fml.common.registry.GameRegistry;
     
     GameRegistry.registerWorldGenerator(new WorldGenerator());
    // Does not work! 
-   // ModMultiBlock.Init();
-       // proxy.registerTileEntities();
-            //LanguageRegistry.instance().addStringLocalization("multiSmelter.container.multiSmelter", "Multi-Smelter");
-               // NetworkRegistry.instance().registerGuiHandler(this, proxy);
+   ModMultiBlock.Init();
+       proxy.registerTileEntities();
+            LanguageRegistry.instance().addStringLocalization("multiSmelter.container.multiSmelter", "Multi-Smelter");
+               NetworkRegistry.instance().registerGuiHandler(this, proxy);
 
     ModLoaded.Mod_Loaded();          //keep at the end of the load method shows if all blocks have been initialised 
     

@@ -22,7 +22,7 @@ public class ModBlock{
         public static Block osmiumBlock;
         public static Block berylliumBlock;
         public static Block heatproofBrickBlock;
-    
+        
     public static void init() {
         
         /* Block statements: Copper Blocks */  
@@ -50,6 +50,10 @@ public class ModBlock{
         /* Block statements: HeatProofBrick Blocks */
         heatproofBrickBlock = new Blockheatproofbrick(BlockIDs.HEATPROOFBRICK_BLOCK_DEFAULT, Material.rock).setUnlocalizedName(Strings.HEATPROOFBRICK_BLOCK);
         GameRegistry.registerBlock(heatproofBrickBlock, Reference.MOD_ID + heatproofBrickBlock.getUnlocalizedName2());
+        
+        
+        
+        
         
         //Recipes
         GameRegistry.addRecipe(new ItemStack(copperBlock, 1), "XXX", "XXX", "XXX", Character.valueOf('X'), ModItem.copperIngot);

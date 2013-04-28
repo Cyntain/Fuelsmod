@@ -15,7 +15,7 @@ public class BlockIDs {
      
     
     public static int MULTIBLOCK_SMELTER_CORE_DEFAULT = 710;
-    public static int MULTIBLOCK_SMELTER_DUMMY_DEFAULT = 711;
+    public static int MULTIBLOCK_SMELTER_DUMMY_DEFAULT = 720;
     
     /* Current Block id */
     
