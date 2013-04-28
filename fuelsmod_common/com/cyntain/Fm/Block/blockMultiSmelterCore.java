@@ -97,7 +97,7 @@ public class blockMultiSmelterCore extends BlockContainer {
             return false;
         
         TileEntityMultiSmelterCore tileEntity = (TileEntityMultiSmelterCore)world.getBlockTileEntity(x, y, z);
-        
+        System.out.println("Activated");
         if(tileEntity != null)
         {
             // Determine if the Multiblock is currently known to be valid
@@ -108,6 +108,7 @@ public class blockMultiSmelterCore extends BlockContainer {
                     tileEntity.convertDummies();
                     if(world.isRemote)
                         player.sendChatToPlayer("Multi-Block Created: SMELTER");
+                    System.out.println("valid multiblock");
                 }
             }
             if(tileEntity.getIsValid())
@@ -201,7 +202,7 @@ public class blockMultiSmelterCore extends BlockContainer {
         TileEntityMultiSmelterCore tileEntity = (TileEntityMultiSmelterCore)world.getBlockTileEntity(x, y, z);
         if(tileEntity == null)
             return;
-        
+       
         for(int slot = 0; slot < tileEntity.getSizeInventory(); slot++)
         {
             ItemStack item = tileEntity.getStackInSlot(slot);

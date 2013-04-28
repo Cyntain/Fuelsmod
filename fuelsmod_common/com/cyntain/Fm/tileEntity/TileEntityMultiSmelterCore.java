@@ -54,7 +54,7 @@ public class TileEntityMultiSmelterCore extends TileEntity implements ISidedInve
         furnaceBurnTime = 0;
         currentItemBurnTime = 0;
         furnaceCookTime = 0;
-        
+        System.out.println("invalidatedmultiblock");
         revertDummies();
     }
     
@@ -64,7 +64,7 @@ public class TileEntityMultiSmelterCore extends TileEntity implements ISidedInve
         
         int depthMultiplier = ((dir == blockMultiSmelterCore.META_DIR_NORTH || dir == blockMultiSmelterCore.META_DIR_WEST) ? 1 : -1);
         boolean forwardZ = ((dir == blockMultiSmelterCore.META_DIR_NORTH) || (dir == blockMultiSmelterCore.META_DIR_SOUTH));
-        
+        System.out.println("checking if formed");
         /*
          *          FORWARD     BACKWARD
          * North:   -z              +z
@@ -116,7 +116,7 @@ public class TileEntityMultiSmelterCore extends TileEntity implements ISidedInve
         
         int depthMultiplier = ((dir == blockMultiSmelterCore.META_DIR_NORTH || dir == blockMultiSmelterCore.META_DIR_WEST) ? 1 : -1);
         boolean forwardZ = ((dir == blockMultiSmelterCore.META_DIR_NORTH) || (dir == blockMultiSmelterCore.META_DIR_SOUTH));
-        
+        System.out.println("converting dummys");
         /*
          *          FORWARD     BACKWARD
          * North:   -z              +z
@@ -157,7 +157,7 @@ public class TileEntityMultiSmelterCore extends TileEntity implements ISidedInve
         
         int depthMultiplier = ((dir == blockMultiSmelterCore.META_DIR_NORTH || dir == blockMultiSmelterCore.META_DIR_WEST) ? 1 : -1);
         boolean forwardZ = ((dir == blockMultiSmelterCore.META_DIR_NORTH) || (dir == blockMultiSmelterCore.META_DIR_SOUTH));
-        
+        System.out.println("reverting dummys");
         /*
          *          FORWARD     BACKWARD
          * North:   -z              +z
@@ -201,14 +201,13 @@ public class TileEntityMultiSmelterCore extends TileEntity implements ISidedInve
         if(!isValidMultiblock)
             return;
         
-        boolean flag = furnaceBurnTime > 0;
+       // boolean flag = furnaceBurnTime > 0;
         boolean flag1 = false;
         int metadata = getBlockMetadata();
         int isActive = (metadata >> 3);
         
         if(furnaceBurnTime > 0)
             furnaceBurnTime--;
-        System.out.println(flag);
         if(!this.worldObj.isRemote)
         {
             if(furnaceBurnTime == 0 && canSmelt())

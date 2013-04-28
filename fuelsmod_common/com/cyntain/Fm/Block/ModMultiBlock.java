@@ -15,7 +15,7 @@ public class ModMultiBlock {
     public static void Init()
     {
         
-       
+        System.out.println("register");
         multiSmelterCore = new blockMultiSmelterCore(BlockIDs.MULTIBLOCK_SMELTER_CORE_DEFAULT);
         multiSmelterDummy = new blockMultiSmelterCore(BlockIDs.MULTIBLOCK_SMELTER_DUMMY_DEFAULT);
         
