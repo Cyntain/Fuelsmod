@@ -13,9 +13,8 @@ public class BlockIDs {
     public static int BERYLLIUM_BLOCK_DEFAULT = 706;
     public static int HEATPROOFBRICK_BLOCK_DEFAULT = 707;
      
+    public static int STEAM_SMELTER_BLOCK_DEFAULT = 800;
     
-    public static int MULTIBLOCK_SMELTER_CORE_DEFAULT = 710;
-    public static int MULTIBLOCK_SMELTER_DUMMY_DEFAULT = 720;
     
     /* Current Block id */
     

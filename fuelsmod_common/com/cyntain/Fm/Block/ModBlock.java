@@ -22,6 +22,7 @@ public class ModBlock{
         public static Block osmiumBlock;
         public static Block berylliumBlock;
         public static Block heatproofBrickBlock;
+        public static Block steamSmelterBlock;
         
     public static void init() {
         
@@ -51,7 +52,8 @@ public class ModBlock{
         heatproofBrickBlock = new Blockheatproofbrick(BlockIDs.HEATPROOFBRICK_BLOCK_DEFAULT, Material.rock).setUnlocalizedName(Strings.HEATPROOFBRICK_BLOCK);
         GameRegistry.registerBlock(heatproofBrickBlock, Reference.MOD_ID + heatproofBrickBlock.getUnlocalizedName2());
         
-        
+        steamSmelterBlock = new blockSteamSmelter(BlockIDs.STEAM_SMELTER_BLOCK_DEFAULT, Material.rock).setUnlocalizedName(Strings.STEAM_SMELTER_BLOCK);
+        GameRegistry.registerBlock(steamSmelterBlock, Reference.MOD_ID + steamSmelterBlock.getUnlocalizedName2());
         
         
         
