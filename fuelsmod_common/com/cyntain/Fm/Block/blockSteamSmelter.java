@@ -1,5 +1,9 @@
 package com.cyntain.Fm.Block;
-
+/*
+ * This will be tier one tech item. 
+ * Need to make gui
+ * 
+ * */
 import com.cyntain.Fm.lib.Strings;
 
 import net.minecraft.block.material.Material;

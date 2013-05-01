@@ -1,5 +1,6 @@
 package com.cyntain.Fm.Item;
 
+import com.cyntain.Fm.CreativeTab.CreativeTabFm;
 import com.cyntain.Fm.lib.Strings;
 
 
@@ -7,6 +8,7 @@ import com.cyntain.Fm.lib.Strings;
         public itemZeoliteDust(int id){
             super(id);
              this.setUnlocalizedName(Strings.ZEOLITE_DUST_NAME);
+             setCreativeTab(CreativeTabFm.tabsFuelMod);
         }
 
 }

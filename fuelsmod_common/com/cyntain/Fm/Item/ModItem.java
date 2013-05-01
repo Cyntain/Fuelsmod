@@ -34,6 +34,7 @@ public class ModItem {
     public static Item clusterBeryllium;
     public static Item zeoliteDust;
     public static Item zeoliteDustVial;
+    public static Item zeoliteDustDyed;
     public static Item emptyVial;
     
     public static void init(){
@@ -58,6 +59,7 @@ public class ModItem {
       // ZEOLITE ITEMs
       zeoliteDust = new itemZeoliteDust(ItemIDs.ZEOLITE_DUST);
       zeoliteDustVial = new itemZeoliteVial(ItemIDs.ZEOLITE_DUST_VIAL);
+      zeoliteDustDyed = new itemZeoliteDyed(ItemIDs.ZEOLITE_DYED_DEFAULT); // need to add to config
       
       // OTHER ITEMs
       emptyVial = new itemEmptyVial(ItemIDs.EMPTY_VIAL);

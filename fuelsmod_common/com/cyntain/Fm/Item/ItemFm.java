@@ -1,6 +1,6 @@
 package com.cyntain.Fm.Item;
 
-import com.cyntain.Fm.CreativeTab.CreativeTabFm;
+
 import com.cyntain.Fm.lib.Reference;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -24,7 +24,8 @@ public class ItemFm extends Item {
         
         super(id - Reference.SHIFTED_ID_RANGE_CORRECTION);
            maxStackSize = 64;
-               setCreativeTab(CreativeTabFm.tabsFuelMod);
+           setNoRepair();
+               
     }
     @SideOnly(Side.CLIENT)
     @Override
