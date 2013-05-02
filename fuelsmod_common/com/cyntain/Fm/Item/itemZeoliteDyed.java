@@ -42,22 +42,30 @@ import cpw.mods.fml.relauncher.SideOnly;
         int meta = MathHelper.clamp_int(itemstack.getItemDamage(), 0, 3);
         return super.getUnlocalizedName() + ZEOLITE_DUST_DYED_NAMES[meta];      
     }
-    
+
+@Override
+@SideOnly(Side.CLIENT)
+public Icon getIconFromDamage(int meta) {
+
+    int j = MathHelper.clamp_int(meta, 0, 5);
+    return icons[j];
+}
+@Override
 @SideOnly(Side.CLIENT)
 
-    public void registerIcons(IconRegister iconregister) {
+    public void updateIcons(IconRegister iconregister) {
         
         icons = new Icon[ZEOLITE_DUST_DYED_NAMES.length];
         
         for (int i = 0; i < ZEOLITE_DUST_DYED_NAMES.length; ++i) {
-            icons[i] = iconregister.registerIcon(Reference.MOD_ID.toLowerCase() + ":" + Strings.ZEOLITE_DYED_NAME + ZEOLITE_DUST_DYED_NAMES[i]);
+            icons[i] = iconregister.registerIcon(Reference.MOD_ID.toLowerCase() + ":" + Strings.ZEOLITE_DYED_NAME + "_" + ZEOLITE_DUST_DYED_NAMES[i]);
         }
         
     }
-       
-@Override
 
-    public String getItemDisplayName(ItemStack itemStack) {
+
+@Override
+      public String getItemDisplayName(ItemStack itemStack) {
 
         int meta = MathHelper.clamp_int(itemStack.getItemDamage(), 0, 3);
 
