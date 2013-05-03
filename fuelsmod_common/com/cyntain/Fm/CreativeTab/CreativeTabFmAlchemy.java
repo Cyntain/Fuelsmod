@@ -1,5 +1,4 @@
 package com.cyntain.Fm.CreativeTab;
- 
 
 import com.cyntain.Fm.Item.ModItem;
 
@@ -8,9 +7,10 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 import net.minecraft.creativetab.CreativeTabs;
 
-    public final class CreativeTabFm extends CreativeTabs{
-  public CreativeTabFm(){
-      super("Fuels Mod");
+
+    public final class CreativeTabFmAlchemy extends CreativeTabs{
+  public CreativeTabFmAlchemy(){
+      super("Fuels Mod: Alchemy");
       }
 @SideOnly(Side.CLIENT)
 @Override
@@ -20,10 +20,10 @@ import net.minecraft.creativetab.CreativeTabs;
 @SideOnly(Side.CLIENT)
 @Override
   public int getTabIconItemIndex(){
-      return ModItem.ChunkCopper.itemID;
+      return ModItem.emptyVial.itemID;
   }
   
-  public static final CreativeTabs tabsFuelMod = new CreativeTabFm();
+  public static final CreativeTabs tabsFuelsmodAlchemy = new CreativeTabFmAlchemy();
   
   
 }

@@ -36,6 +36,7 @@ public class ModItem {
     public static Item zeoliteDustVial;
     public static Item zeoliteDustDyed;
     public static Item emptyVial;
+    public static Item compounds;
     
     public static void init(){
       
@@ -63,6 +64,7 @@ public class ModItem {
       
       // OTHER ITEMs
       emptyVial = new itemEmptyVial(ItemIDs.EMPTY_VIAL);
+      compounds = new itemCompounds(ItemIDs.COMPOUND_DEFAULT); // need to add to config
       
       /* Register + Initialise Smelting Recipes */
       GameRegistry.addSmelting(ModItem.ChunkCopper.itemID, new ItemStack(copperIngot), 5.0f);
@@ -78,5 +80,8 @@ public class ModItem {
       GameRegistry.addRecipe(new ItemStack(ModItem.emptyVial, 1), "X X", "X X", " X ", Character.valueOf('X'), Block.glass);
       GameRegistry.addRecipe(new ItemStack(ModItem.zeoliteDustVial, 1), "XXX", "XYX", "XXX", Character.valueOf('X'), ModItem.zeoliteDust, Character.valueOf('Y'), ModItem.emptyVial);
       GameRegistry.addRecipe(new ItemStack(ModItem.zeoliteDust, 8) , "X", Character.valueOf('X'), ModItem.zeoliteDustVial);
+      
+      /* Compound recipes*/
+   
    }
 }

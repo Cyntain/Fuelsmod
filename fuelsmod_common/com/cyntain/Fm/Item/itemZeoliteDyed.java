@@ -9,7 +9,7 @@ import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.Icon;
 import net.minecraft.util.MathHelper;
 
-import com.cyntain.Fm.CreativeTab.CreativeTabFm;
+import com.cyntain.Fm.CreativeTab.CreativeTabFmAlchemy;
 import com.cyntain.Fm.lib.Reference;
 import com.cyntain.Fm.lib.Strings;
 
@@ -32,7 +32,7 @@ import cpw.mods.fml.relauncher.SideOnly;
         super(id);
        this.setHasSubtypes(true);
        this.setUnlocalizedName(Strings.ZEOLITE_DYED_NAME);
-       this.setCreativeTab(CreativeTabFm.tabsFuelMod);
+       this.setCreativeTab(CreativeTabFmAlchemy.tabsFuelsmodAlchemy);
        maxStackSize = 64;
     }
 @Override

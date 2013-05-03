@@ -18,7 +18,8 @@ public class ItemIDs {
     public static int ZEOLITE_DUST_VIAL_DEFAULT = 6493;
     public static int EMPTY_VIAL_DEFAULT = 6494;
     public static int OSMIUM_GRATE_DEFAULT = 6495;
-    public static int ZEOLITE_DYED_DEFAULT = 6496; //metadata for the 8 types
+    public static int ZEOLITE_DYED_DEFAULT = 6496; //metadata for the 4 types
+    public static int COMPOUND_DEFAULT = 6497; //metadata for  the 4 types
 
     /* Config Id */
     public static int COPPER_INGOT;

@@ -9,7 +9,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 
-import com.cyntain.Fm.CreativeTab.CreativeTabFm;
+import com.cyntain.Fm.CreativeTab.CreativeTabFmAlchemy;
 import com.cyntain.Fm.lib.ItemIDs;
 import com.cyntain.Fm.lib.Reference;
 import com.cyntain.Fm.lib.Strings;
@@ -32,7 +32,7 @@ public class itemZeoliteVial extends ItemFood  {
         super(id, 0, 0F, false);
          this.setUnlocalizedName(Strings.ZEOLITE_DUST_GLASS_NAME);
          this.setAlwaysEdible();
-         this.setCreativeTab(CreativeTabFm.tabsFuelMod);
+         this.setCreativeTab(CreativeTabFmAlchemy.tabsFuelsmodAlchemy);
          this.maxStackSize = 16;
     }
 
