@@ -4,6 +4,7 @@ import java.util.List;
 
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.Icon;
@@ -81,6 +82,26 @@ public Icon getIconFromDamage(int meta) {
             default:
                 return EnumChatFormatting.WHITE + super.getItemDisplayName(itemStack);
         }
+    }
+@SuppressWarnings({ "unchecked", "rawtypes" })
+@SideOnly(Side.CLIENT)
+public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4){
+   
+    int meta = MathHelper.clamp_int(par1ItemStack.getItemDamage(), 0, 3);
+   
+    switch(meta){
+        case 0:
+            par3List.add("Try adding this red coloured dust to a vial?"); break;
+        case 1:
+            par3List.add("Try adding this green coloured dust to a vial?");break;
+        case 2:
+            par3List.add("Try adding this yellow coloured dust to a vial?");break;
+        case 3: 
+            par3List.add("Try adding this blue coloured dust to a vial?");break;
+         default: 
+             par3List.add("Try adding this white coloured dust to a vial?");break;
+    }
+            
     }
     
 @Override
