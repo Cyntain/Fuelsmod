@@ -8,5 +8,6 @@ public class itemOsmiumGrate extends ItemFm {
      super(id);
      this.setUnlocalizedName(Strings.OSMIUM_GRATE_NAME);
      setCreativeTab(CreativeTabFm.tabsFuelMod);
- }
+    
+}	 
 }

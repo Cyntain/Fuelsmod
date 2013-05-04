@@ -18,7 +18,11 @@
 	<entry key="item.zeoliteDyedreden.name">Reden Zeolite Dust</entry>
 	<entry key="item.glassZeoliteDust.name">Vial Of Zeolite</entry>
         <entry key="item.emptyVial.name">Empty Glass Vial</entry>
-        <entry key="tile.copperOre.name">Copper Ore</entry>
+	<entry key="item.Compoundsredscar.name">Compound Of Redscar</entry>
+	<entry key="item.Compoundsgreenite.name">Compound Of Greenite</entry>
+        <entry key="item.Compoundsyellownale.name">Compound Of Yellownale</entry>
+	<entry key="item.Compoundsbluetonium.name">Compound Of Bluetonium</entry>
+	<entry key="tile.CopperOre.name">Copper Ore</entry>
         <entry key="tile.osmiumOre.name">Osmium Ore</entry>
 	<entry key="tile.berylliumOre.name">Beryllium Ore</entry>
 	<entry key="tile.zeoliteOre.name">Zeolite Ore</entry>
@@ -26,4 +30,4 @@
 	<entry key="tile.osmiumBlock.name">Block of Osmium</entry>
 	<entry key="tile.berylliumBlock.name">Block of Beryllium</entry>
 	<entry key="tile.heatproofBrickBlock.name">Heatproof Brick</entry>
-</properties>
+ </properties>

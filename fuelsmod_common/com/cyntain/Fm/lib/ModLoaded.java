@@ -9,8 +9,8 @@ import net.minecraft.src.ModLoader;
  
      public static void Mod_Loaded(){
       
-       if   (loaded == true){
-                   System.out.println("[FUELSMOD]  Mod Loaded: TRUE");
+       if   (loaded == true){     
+    	   System.out.println("[FUELSMOD]  Mod Loaded: TRUE");
        }
        else if (loaded == false)
        {

@@ -20,7 +20,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class itemCompounds extends Item{
     
-    private static final String [] COMPOUND_NAMES = new String[] {"redscar", "greenite", "yellownale", "Bluetonium" };
+    private static final String [] COMPOUND_NAMES = new String[] {"redscar", "greenite", "yellownale", "bluetonium" };
    
 @SideOnly(Side.CLIENT)
 
@@ -31,7 +31,7 @@ public itemCompounds(int id) {
     
     super(id);
    this.setHasSubtypes(true);
-   this.setUnlocalizedName(Strings.COMPOUND_NAME);
+   this.setUnlocalizedName(Strings.ITEM_COMPOUND_NAME);
    this.setCreativeTab(CreativeTabFmAlchemy.tabsFuelsmodAlchemy);
    maxStackSize = 64;
 }
@@ -39,7 +39,7 @@ public itemCompounds(int id) {
 
 public String getUnlocalizedName(ItemStack itemstack){
     
-    int meta = MathHelper.clamp_int(itemstack.getItemDamage(), 0, 3);
+    int meta = MathHelper.clamp_int(itemstack.getItemDamage(), 0, 5);
     return super.getUnlocalizedName() + COMPOUND_NAMES[meta];      
 }
 
@@ -50,6 +50,7 @@ public Icon getIconFromDamage(int meta) {
 int j = MathHelper.clamp_int(meta, 0, 5);
 return icons[j];
 }
+
 @Override
 @SideOnly(Side.CLIENT)
 
@@ -58,7 +59,7 @@ public void updateIcons(IconRegister iconregister) {
     icons = new Icon[COMPOUND_NAMES.length];
     
     for (int i = 0; i < COMPOUND_NAMES.length; ++i) {
-        icons[i] = iconregister.registerIcon(Reference.MOD_ID.toLowerCase() + ":" + Strings.COMPOUND_NAME + "_" + COMPOUND_NAMES[i]);
+        icons[i] = iconregister.registerIcon(Reference.MOD_ID.toLowerCase() + ":" + Strings.ITEM_COMPOUND_NAME + "_" + COMPOUND_NAMES[i]);
     }
     
 }
@@ -103,9 +104,7 @@ public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlaye
              par3List.add("Strange, a white hue to the compound"); break;
     }
             
-    }
-    
-
+}
 
 @Override
 @SuppressWarnings({ "unchecked", "rawtypes" })

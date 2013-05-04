@@ -91,15 +91,15 @@ public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlaye
    
     switch(meta){
         case 0:
-            par3List.add("Try adding this red coloured dust to a vial?"); break;
+            par3List.add("Zeolite and redscar"); break;
         case 1:
-            par3List.add("Try adding this green coloured dust to a vial?");break;
+            par3List.add("Zeolite and greenite");break;
         case 2:
-            par3List.add("Try adding this yellow coloured dust to a vial?");break;
+            par3List.add("Zeolite and yellownale");break;
         case 3: 
-            par3List.add("Try adding this blue coloured dust to a vial?");break;
+            par3List.add("Zeolite and bluetonium");break;
          default: 
-             par3List.add("Try adding this white coloured dust to a vial?");break;
+             par3List.add("Zeolite");break;
     }
             
     }

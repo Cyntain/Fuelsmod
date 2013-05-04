@@ -15,7 +15,7 @@ public class Strings {
     public static String ZEOLITE_DYED_NAME = "zeoliteDyed";
     public static String ZEOLITE_DUST_GLASS_NAME = "glassZeoliteDust";
     public static String EMPTY_VIAL_NAME = "emptyVial";
-    public static String COMPOUND_NAME = "compound";
+    public static String ITEM_COMPOUND_NAME = "compound";
     
     /* Block Names */
     public static String COPPER_ORE = "copperOre";

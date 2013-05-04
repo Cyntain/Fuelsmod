@@ -8,18 +8,6 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
-/*Fuels Mod
- * 
- * @Authors: Cyntain and Paronamixxe
- * 
- * FuelsMod
- * 
- * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
- * 
- * @credit: Visual_Argonian, Pahimar and Plenty_of_Fish
- * */
-
-
 public class ModItem {
  
   /* Mod item instances */
@@ -66,7 +54,10 @@ public class ModItem {
       emptyVial = new itemEmptyVial(ItemIDs.EMPTY_VIAL);
       compounds = new itemCompounds(ItemIDs.COMPOUND_DEFAULT); // need to add to config
       
-      /* Register + Initialise Smelting Recipes */
+      
+      
+      
+      /* Register + Initialize Smelting Recipes */
       GameRegistry.addSmelting(ModItem.ChunkCopper.itemID, new ItemStack(copperIngot), 5.0f);
       GameRegistry.addSmelting(ModItem.ChunkOsmium.itemID, new ItemStack(osmiumIngot), 5.0f);
       GameRegistry.addSmelting(ModItem.ChunkBeryllium.itemID, new ItemStack(berylliumIngot), 5.0f);
@@ -82,6 +73,10 @@ public class ModItem {
       GameRegistry.addRecipe(new ItemStack(ModItem.zeoliteDust, 8) , "X", Character.valueOf('X'), ModItem.zeoliteDustVial);
       
       /* Compound recipes*/
-   
-   }
+     GameRegistry.addRecipe(new ItemStack(ModItem.compounds, 1, 0), "RRR", "RZR", "GGG", Character.valueOf('R'),Item.redstone, Character.valueOf('Z'), ModItem.zeoliteDust, Character.valueOf('G'), Item.lightStoneDust);
+     GameRegistry.addRecipe(new ItemStack(ModItem.compounds, 1, 1), "XXX", "XZX", "GGG", Character.valueOf('X'),Item.emerald, Character.valueOf('Z'), ModItem.zeoliteDust, Character.valueOf('G'), Item.lightStoneDust);
+     GameRegistry.addRecipe(new ItemStack(ModItem.compounds, 1, 2), "YYY", "YZY", "GGG", Character.valueOf('Y'),new ItemStack(Item.dyePowder,1,11), Character.valueOf('Z'), ModItem.zeoliteDust, Character.valueOf('G'), Item.lightStoneDust);
+     GameRegistry.addRecipe(new ItemStack(ModItem.compounds, 1, 3), "LLL", "LZL", "GGG", Character.valueOf('L'),new ItemStack(Item.dyePowder,1,4), Character.valueOf('Z'), ModItem.zeoliteDust, Character.valueOf('G'), Item.lightStoneDust);
+    
+    }
 }
