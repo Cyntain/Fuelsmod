@@ -85,21 +85,26 @@ public Icon getIconFromDamage(int meta) {
     }
 @SuppressWarnings({ "unchecked", "rawtypes" })
 @SideOnly(Side.CLIENT)
-public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4){
+public void addInformation(ItemStack itemStack, EntityPlayer player, List list, boolean par4){
    
-    int meta = MathHelper.clamp_int(par1ItemStack.getItemDamage(), 0, 3);
+    int meta = MathHelper.clamp_int(itemStack.getItemDamage(), 0, 3);
    
     switch(meta){
         case 0:
-            par3List.add("Zeolite and redscar"); break;
+            	list.add("Zeolite and redscar"); 
+            break;
         case 1:
-            par3List.add("Zeolite and greenite");break;
+        		list.add("Zeolite and greenite");	
+            break;
         case 2:
-            par3List.add("Zeolite and yellownale");break;
+            	list.add("Zeolite and yellownale");
+            break;
         case 3: 
-            par3List.add("Zeolite and bluetonium");break;
-         default: 
-             par3List.add("Zeolite");break;
+            	list.add("Zeolite and bluetonium");
+            break;
+        default: 
+             	list.add("Zeolite");
+            break;
     }
             
     }

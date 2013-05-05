@@ -1,6 +1,8 @@
 package com.cyntain.Fm.Item;
 
 
+import java.util.List;
+
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumAction;
@@ -44,6 +46,11 @@ public class itemZeoliteVial extends ItemFood  {
       
                     
         }
+    
+    @SuppressWarnings({ "unchecked", "rawtypes" })
+	public void addInformation(ItemStack itemStack, EntityPlayer player, List list, boolean par){  
+    	list.add("Tasty! But where does it keep going?");
+    }
     
 
 

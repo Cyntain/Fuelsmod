@@ -72,11 +72,16 @@ public class ModItem {
       GameRegistry.addRecipe(new ItemStack(ModItem.zeoliteDustVial, 1), "XXX", "XYX", "XXX", Character.valueOf('X'), ModItem.zeoliteDust, Character.valueOf('Y'), ModItem.emptyVial);
       GameRegistry.addRecipe(new ItemStack(ModItem.zeoliteDust, 8) , "X", Character.valueOf('X'), ModItem.zeoliteDustVial);
       
-      /* Compound recipes*/
+      /* Compound recipes */
      GameRegistry.addRecipe(new ItemStack(ModItem.compounds, 1, 0), "RRR", "RZR", "GGG", Character.valueOf('R'),Item.redstone, Character.valueOf('Z'), ModItem.zeoliteDust, Character.valueOf('G'), Item.lightStoneDust);
      GameRegistry.addRecipe(new ItemStack(ModItem.compounds, 1, 1), "XXX", "XZX", "GGG", Character.valueOf('X'),Item.emerald, Character.valueOf('Z'), ModItem.zeoliteDust, Character.valueOf('G'), Item.lightStoneDust);
      GameRegistry.addRecipe(new ItemStack(ModItem.compounds, 1, 2), "YYY", "YZY", "GGG", Character.valueOf('Y'),new ItemStack(Item.dyePowder,1,11), Character.valueOf('Z'), ModItem.zeoliteDust, Character.valueOf('G'), Item.lightStoneDust);
      GameRegistry.addRecipe(new ItemStack(ModItem.compounds, 1, 3), "LLL", "LZL", "GGG", Character.valueOf('L'),new ItemStack(Item.dyePowder,1,4), Character.valueOf('Z'), ModItem.zeoliteDust, Character.valueOf('G'), Item.lightStoneDust);
     
+     /* Dyed Zeolite dust recipes, Shapeless recipes */
+     GameRegistry.addShapelessRecipe(new ItemStack(ModItem.zeoliteDustDyed, 1, 0), ModItem.zeoliteDust, new ItemStack(ModItem.compounds,1,0 ));
+     GameRegistry.addShapelessRecipe(new ItemStack(ModItem.zeoliteDustDyed, 1, 1), ModItem.zeoliteDust, new ItemStack(ModItem.compounds,1,1 ));
+     GameRegistry.addShapelessRecipe(new ItemStack(ModItem.zeoliteDustDyed, 1, 2), ModItem.zeoliteDust, new ItemStack(ModItem.compounds,1,2 ));
+     GameRegistry.addShapelessRecipe(new ItemStack(ModItem.zeoliteDustDyed, 1, 3), ModItem.zeoliteDust, new ItemStack(ModItem.compounds,1,3 ));
     }
 }
