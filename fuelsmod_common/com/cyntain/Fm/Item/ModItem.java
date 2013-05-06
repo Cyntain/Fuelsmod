@@ -54,9 +54,7 @@ public class ModItem {
       emptyVial = new itemEmptyVial(ItemIDs.EMPTY_VIAL);
       compounds = new itemCompounds(ItemIDs.COMPOUND);
       
-      
-      
-      
+
       /* Register + Initialize Smelting Recipes */
       GameRegistry.addSmelting(ModItem.ChunkCopper.itemID, new ItemStack(copperIngot), 5.0f);
       GameRegistry.addSmelting(ModItem.ChunkOsmium.itemID, new ItemStack(osmiumIngot), 5.0f);
