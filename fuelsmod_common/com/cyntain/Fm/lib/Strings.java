@@ -28,4 +28,9 @@ public class Strings {
     public static String HEATPROOFBRICK_BLOCK = "heatproofBrickBlock";
     public static String STEAM_SMELTER_BLOCK = "steamSmelterBlock";
     
+    
+    /*  Achievement pages names*/
+    public static String Page1_Name = "Fuels Mod";
+    
+    
 }

@@ -12,6 +12,7 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 
 import com.cyntain.Fm.CreativeTab.CreativeTabFmAlchemy;
+import com.cyntain.Fm.lib.Colours;
 import com.cyntain.Fm.lib.ItemIDs;
 import com.cyntain.Fm.lib.Reference;
 import com.cyntain.Fm.lib.Strings;
@@ -22,8 +23,8 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class itemZeoliteVial extends ItemFood  {
     
-   
-    
+   public boolean effect = false;
+    public String discovered = "Invisablity";
     private int[] potionEffect = {14};
     private int[] potionDuration = {60};
     private int[] potionTeir = {3};
@@ -42,14 +43,19 @@ public class itemZeoliteVial extends ItemFood  {
     @SideOnly(Side.CLIENT)
     @Override
             public void updateIcons(IconRegister iconRegister) {
-                    this.iconIndex = iconRegister.registerIcon(Reference.MOD_ID + ":" + this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1) );
-      
-                    
+                    this.iconIndex = iconRegister.registerIcon(Reference.MOD_ID + ":" + this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1) );         
         }
     
     @SuppressWarnings({ "unchecked", "rawtypes" })
 	public void addInformation(ItemStack itemStack, EntityPlayer player, List list, boolean par){  
     	list.add("Tasty! But where does it keep going?");
+    	
+    	if(effect == true)
+    	{
+    	list.add(Colours.WHITE + "Effect:" + " " + Colours.RED + discovered.toUpperCase());
+  }else{
+    	list.add(Colours.WHITE + "Effect:" + " " + Colours.GRAY + "Unknown".toUpperCase());
+    	}
     }
     
 
@@ -59,6 +65,7 @@ public void onFoodEaten(ItemStack itemStack, World world, EntityPlayer player){
     this.addPotionEffects(itemStack, world, player);
     player.inventory.addItemStackToInventory(new ItemStack(ModItem.emptyVial));
     player.inventory.consumeInventoryItem(ItemIDs.ZEOLITE_DUST_VIAL_DEFAULT);
+    effect = true;
 }
 
 
