@@ -23,6 +23,8 @@ public class ModBlock{
         public static Block berylliumBlock;
         public static Block heatproofBrickBlock;
         public static Block steamSmelterBlock;
+        public static Block worktableBlock;
+        public static Block workshopTableBlock;
         
     public static void init() {
         
@@ -52,10 +54,17 @@ public class ModBlock{
         heatproofBrickBlock = new Blockheatproofbrick(BlockIDs.HEATPROOFBRICK_BLOCK_DEFAULT, Material.rock).setUnlocalizedName(Strings.HEATPROOFBRICK_BLOCK);
         GameRegistry.registerBlock(heatproofBrickBlock, Reference.MOD_ID + heatproofBrickBlock.getUnlocalizedName2());
         
-        steamSmelterBlock = new blockSteamSmelter(BlockIDs.STEAM_SMELTER_BLOCK_DEFAULT, Material.rock).setUnlocalizedName(Strings.STEAM_SMELTER_BLOCK);
+        /* Block statements: SteamSmelter Blocks */
+        steamSmelterBlock = new BlockSteamSmelter(BlockIDs.STEAM_SMELTER_BLOCK_DEFAULT, Material.rock).setUnlocalizedName(Strings.STEAM_SMELTER_BLOCK);
         GameRegistry.registerBlock(steamSmelterBlock, Reference.MOD_ID + steamSmelterBlock.getUnlocalizedName2());
         
+        /* Block statements: Worktable Blocks */
+        worktableBlock = new BlockWorktable(BlockIDs.WORKTABLE_BLOCK_DEFAULT, Material.rock).setUnlocalizedName(Strings.WORKTABLE_BLOCK);
+        GameRegistry.registerBlock(worktableBlock, Reference.MOD_ID + worktableBlock.getUnlocalizedName2());
         
+        /* Block statements: WorkshopTable Blocks */
+        workshopTableBlock = new BlockWorkshopTable(BlockIDs.WORKSHOPTABLE_BLOCK_DEFAULT, Material.rock).setUnlocalizedName(Strings.WORKSHOPTABLE_BLOCK);
+        GameRegistry.registerBlock(workshopTableBlock, Reference.MOD_ID + workshopTableBlock.getUnlocalizedName2());
         
         //Recipes
         GameRegistry.addRecipe(new ItemStack(copperBlock, 1), "XXX", "XXX", "XXX", Character.valueOf('X'), ModItem.copperIngot);

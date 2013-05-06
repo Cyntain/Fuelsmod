@@ -27,6 +27,8 @@ public class Strings {
     public static String BERYLLIUM_BLOCK = "berylliumBlock";
     public static String HEATPROOFBRICK_BLOCK = "heatproofBrickBlock";
     public static String STEAM_SMELTER_BLOCK = "steamSmelterBlock";
+    public static String WORKTABLE_BLOCK = "worktableBlock";
+    public static String WORKSHOPTABLE_BLOCK = "workshopTableBlock";
     
     
     /*  Achievement pages names*/
