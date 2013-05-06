@@ -35,7 +35,8 @@ public class ItemIDs {
     public static int ZEOLITE_DUST_VIAL;
     public static int EMPTY_VIAL;
     public static int OSMIUM_GRATE;
-    
+    public static int ZEOLITE_DYED;
+    public static int COMPOUND;
     
     
     

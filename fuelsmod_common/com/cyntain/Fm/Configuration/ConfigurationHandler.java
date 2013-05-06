@@ -11,6 +11,7 @@ import cpw.mods.fml.common.FMLLog;
 
 import net.minecraftforge.common.Configuration;
 
+
 public class ConfigurationHandler {
 
     public static Configuration configuration;
@@ -36,15 +37,21 @@ public class ConfigurationHandler {
             
             ItemIDs.ZEOLITE_DUST = configuration.getItem(Strings.ZEOLITE_DUST_NAME, ItemIDs.ZEOLITE_DUST_DEFAULT).getInt(ItemIDs.ZEOLITE_DUST_DEFAULT);
             ItemIDs.ZEOLITE_DUST_VIAL = configuration.getItem(Strings.ZEOLITE_DUST_GLASS_NAME, ItemIDs.ZEOLITE_DUST_VIAL_DEFAULT).getInt(ItemIDs.ZEOLITE_DUST_VIAL_DEFAULT);
+            ItemIDs.ZEOLITE_DYED = configuration.getItem(Strings.ZEOLITE_DYED_NAME, ItemIDs.ZEOLITE_DYED_DEFAULT).getInt(ItemIDs.ZEOLITE_DYED_DEFAULT);
             
             ItemIDs.EMPTY_VIAL = configuration.getItem(Strings.EMPTY_VIAL_NAME, ItemIDs.EMPTY_VIAL_DEFAULT).getInt(ItemIDs.EMPTY_VIAL_DEFAULT);
+            
+            ItemIDs.COMPOUND = configuration.getItem(Strings.ITEM_COMPOUND_NAME, ItemIDs.COMPOUND_DEFAULT).getInt(ItemIDs.COMPOUND_DEFAULT);
+            
     }catch (Exception e) {
         FMLLog.log(Level.SEVERE, e, Reference.MOD_NAME + " has had a problem loading its configuration");
     }
     finally {
         
         configuration.save();
-        System.out.println("[FUELSMOD] Configuration File: loaded");
+       
+        System.out.println("[" + Reference.MOD_NAME.toUpperCase() + "]" + " loaded config file");
+        
     }
        
     

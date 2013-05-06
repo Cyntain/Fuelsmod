@@ -48,11 +48,11 @@ public class ModItem {
       // ZEOLITE ITEMs
       zeoliteDust = new itemZeoliteDust(ItemIDs.ZEOLITE_DUST);
       zeoliteDustVial = new itemZeoliteVial(ItemIDs.ZEOLITE_DUST_VIAL);
-      zeoliteDustDyed = new itemZeoliteDyed(ItemIDs.ZEOLITE_DYED_DEFAULT); // need to add to config
+      zeoliteDustDyed = new itemZeoliteDyed(ItemIDs.ZEOLITE_DYED); 
       
       // OTHER ITEMs
       emptyVial = new itemEmptyVial(ItemIDs.EMPTY_VIAL);
-      compounds = new itemCompounds(ItemIDs.COMPOUND_DEFAULT); // need to add to config
+      compounds = new itemCompounds(ItemIDs.COMPOUND);
       
       
       
