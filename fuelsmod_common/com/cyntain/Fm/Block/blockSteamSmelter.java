@@ -8,9 +8,9 @@ import com.cyntain.Fm.lib.Strings;
 
 import net.minecraft.block.material.Material;
 
-public class blockSteamSmelter extends BlockFm {
+public class BlockSteamSmelter extends BlockFm {
 
-    public blockSteamSmelter(int id, Material material) {
+    public BlockSteamSmelter(int id, Material material) {
 
         super(id, material);
         setUnlocalizedName(Strings.STEAM_SMELTER_BLOCK);

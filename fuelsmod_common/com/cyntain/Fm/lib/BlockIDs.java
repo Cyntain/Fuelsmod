@@ -14,6 +14,8 @@ public class BlockIDs {
     public static int HEATPROOFBRICK_BLOCK_DEFAULT = 707;
      
     public static int STEAM_SMELTER_BLOCK_DEFAULT = 800;
+    public static int WORKTABLE_BLOCK_DEFAULT = 801;
+    public static int WORKSHOPTABLE_BLOCK_DEFAULT = 802;
     
     
     /* Current Block id */

@@ -1,7 +1,7 @@
 Pending:
 • Renders file
 • Rendered models
-• to add the steam smelter name to the langauge files.
+• Add steam smelter + worktable  + workshop table to all lang files. (done en_US)
 
 • To talk about adding the buildcraft api for power.
 
@@ -15,3 +15,4 @@ Done:
 • Try to relocate the block code to its propper place
 • Languages
 • Pirate language file
+• to add the steam smelter name to the langauge files.
