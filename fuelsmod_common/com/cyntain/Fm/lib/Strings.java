@@ -29,6 +29,7 @@ public class Strings {
     public static String STEAM_SMELTER_BLOCK = "steamSmelterBlock";
     public static String WORKTABLE_BLOCK = "worktableBlock";
     public static String WORKSHOPTABLE_BLOCK = "workshopTableBlock";
+    public static String MIXINGTABLE_BLOCK = "mixingTableBlock";
     
     
     /*  Achievement pages names*/

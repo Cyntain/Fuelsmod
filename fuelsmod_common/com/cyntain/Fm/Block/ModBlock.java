@@ -25,6 +25,7 @@ public class ModBlock{
         public static Block steamSmelterBlock;
         public static Block worktableBlock;
         public static Block workshopTableBlock;
+        public static Block mixingTableBlock;
         
     public static void init() {
         
@@ -65,6 +66,11 @@ public class ModBlock{
         /* Block statements: WorkshopTable Blocks */
         workshopTableBlock = new BlockWorkshopTable(BlockIDs.WORKSHOPTABLE_BLOCK_DEFAULT, Material.rock).setUnlocalizedName(Strings.WORKSHOPTABLE_BLOCK);
         GameRegistry.registerBlock(workshopTableBlock, Reference.MOD_ID + workshopTableBlock.getUnlocalizedName2());
+        
+        /* Alchemical statements*/
+        mixingTableBlock = new BlockMixingTable(BlockIDs.MIXINGTABLE_BLOCK_DEFAULT, Material.anvil).setUnlocalizedName(Strings.MIXINGTABLE_BLOCK);
+        GameRegistry.registerBlock(mixingTableBlock, Reference.MOD_ID + mixingTableBlock.getUnlocalizedName2());
+        
         
         //Recipes
         GameRegistry.addRecipe(new ItemStack(copperBlock, 1), "XXX", "XXX", "XXX", Character.valueOf('X'), ModItem.copperIngot);

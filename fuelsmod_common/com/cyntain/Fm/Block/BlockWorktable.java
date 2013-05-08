@@ -16,11 +16,19 @@ public class BlockWorktable extends BlockFm {
         
     }
     
-    public boolean onBlockActivated(World par1World, int par2, int par3, int par4, EntityPlayer par5EntityPlayer, int par6, float par7, float par8, float par9)
+    public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int par6, float par7, float par8, float par9)
     {
-            par5EntityPlayer.displayGUIWorkbench(par2, par3, par4);
+        if(player.isSneaking() == false){
+       
+            player.displayGUIWorkbench(x, y, z);
             return true;
-            //DOES NOT WORK... JUST FLASHES... NEEDS TO BE FIXED*
+            
+        }else{
+            player.displayGUIWorkbench(x, y, z);
+            return false;
+            
+        }
+            
     }
     
 }

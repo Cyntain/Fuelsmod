@@ -17,8 +17,10 @@ public class BlockIDs {
     public static int WORKTABLE_BLOCK_DEFAULT = 801;
     public static int WORKSHOPTABLE_BLOCK_DEFAULT = 802;
     
+    public static int MIXINGTABLE_BLOCK_DEFAULT = 850;
     
-    /* Current Block id */
+    
+    /* Current Block id - config tba*/
     
     
 }
