@@ -2,6 +2,6 @@ package com.cyntain.Fm.lib;
 
 public class GUIIDs {
 
-    public static int multiSmelter = 0;
+    public static int mixingTable = 0;
     
 }
