@@ -17,6 +17,7 @@ public class ItemIDs {
     public static int OSMIUM_GRATE_DEFAULT = 6495;
     public static int ZEOLITE_DYED_DEFAULT = 6496;
     public static int COMPOUND_DEFAULT = 6497;
+    public static int BOILER_DEFAULT = 6490;
 
     /* Config Id */
     public static int COPPER_INGOT;

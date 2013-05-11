@@ -2,13 +2,13 @@ package com.cyntain.Fm.Block;
 
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.entity.player.EntityPlayer;
+//import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.Icon;
-import net.minecraft.world.World;
+//import net.minecraft.world.World;
 
-import com.cyntain.Fm.FuelsMod;
+//import com.cyntain.Fm.FuelsMod;
 import com.cyntain.Fm.CreativeTab.CreativeTabFm;
-import com.cyntain.Fm.lib.GUIIDs;
+//import com.cyntain.Fm.lib.GUIIDs;
 import com.cyntain.Fm.lib.Reference;
 
 import cpw.mods.fml.relauncher.Side;
@@ -59,23 +59,23 @@ public Icon getBlockTextureFromSideAndMetadata(int side, int meta)
     else {
         return sides; }
     }
-
+/*
 public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int par6, float par7, float par8, float par9)
 {
-    if(player.isSneaking() == false && world.isRemote){
-   
+    if(player.isSneaking() == false){
+        System.out.println("Block right clicked");
         player.openGui(FuelsMod.instance, GUIIDs.mixingTable, world, x, y, z);
-        return true;
         
+        return true;
     }else{
-        player.openGui(FuelsMod.instance, GUIIDs.mixingTable, world, x, y, z);
+       
         return false;
         
     }
         
 }
 
-
+*/
 }
    
     

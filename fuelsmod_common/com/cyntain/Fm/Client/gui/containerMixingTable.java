@@ -18,10 +18,4 @@ public boolean canInteractWith(EntityPlayer var1){
     
 }
 
-@Override
-public void onCraftGuiClosed(EntityPlayer player) {
-
-    super.onCraftGuiClosed(player);
-  
-}
 }

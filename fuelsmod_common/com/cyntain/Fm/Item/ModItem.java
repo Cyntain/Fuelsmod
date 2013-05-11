@@ -25,6 +25,7 @@ public class ModItem {
     public static Item zeoliteDustDyed;
     public static Item emptyVial;
     public static Item compounds;
+    public static Item boiler;
     
     public static void init(){
       
@@ -53,6 +54,7 @@ public class ModItem {
       // OTHER ITEMs
       emptyVial = new itemEmptyVial(ItemIDs.EMPTY_VIAL);
       compounds = new itemCompounds(ItemIDs.COMPOUND);
+      boiler = new itemBoiler(ItemIDs.BOILER_DEFAULT);
      
       /* Register + Initialize Smelting Recipes */
       GameRegistry.addSmelting(ModItem.ChunkCopper.itemID, new ItemStack(copperIngot), 5.0f);
