@@ -38,7 +38,7 @@ public class BlockMixingTable extends BlockFm {
         super(id, material);
         this.setCreativeTab(CreativeTabFm.tabsFuelMod);
         this.setHardness(5f);
-        this.setBlockBounds(0.1F, 0.0F, 0.1F, 0.9F, 1.0F, 0.9F);
+        
     }
          
     @SideOnly(Side.CLIENT)
@@ -75,11 +75,13 @@ public class BlockMixingTable extends BlockFm {
                     {
                         if (player.isSneaking())
                             return false;
-                        else {
+
+                    else {
                             if(!world.isRemote){
                                 tileMixingTable mixingtable = (tileMixingTable) world.getBlockTileEntity(x, y, z);
 
                                 if (mixingtable != null) {
+                                    System.out.println("Block activated");
                                     player.openGui(FuelsMod.instance, GUIIDs.mixingTable, world, x, y, z);
                                 }
                             }

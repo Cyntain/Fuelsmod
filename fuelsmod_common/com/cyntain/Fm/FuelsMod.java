@@ -12,6 +12,7 @@ import com.cyntain.Fm.core.handlers.LocalizationHandler;
 import com.cyntain.Fm.core.proxy.CommonProxy;
 import com.cyntain.Fm.lib.ModLoaded;
 import com.cyntain.Fm.lib.Reference;
+import com.cyntain.Fm.Network.*;
 
 import cpw.mods.fml.common.*;
 import cpw.mods.fml.common.Mod.Init;
@@ -29,9 +30,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
        version = Reference.VERSION_NUMBER
     )
 
-@NetworkMod( clientSideRequired = true,
-              serverSideRequired = false
-           )
+@NetworkMod(channels = { Reference.CHANNEL_NAME }, clientSideRequired = true, serverSideRequired = false, packetHandler = PacketHandler.class)
 
     public class FuelsMod {
              
