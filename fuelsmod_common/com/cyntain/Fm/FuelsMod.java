@@ -20,6 +20,7 @@ import cpw.mods.fml.common.Mod.PreInit;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
+import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 
@@ -53,6 +54,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
                 ModItem.init();
                     ModBlock.init();   
                     FmAchivementPage.Init();
+                   
                         ModLoaded.PreInit_modloaded(); 
          
     }
@@ -61,6 +63,8 @@ import cpw.mods.fml.common.registry.GameRegistry;
     
     FmAchivement.addAchievementLocalizations();
             GameRegistry.registerWorldGenerator(new WorldGenerator());  
+            NetworkRegistry.instance().registerGuiHandler(instance, proxy);
+            proxy.registerTileEntities();
                 ModLoaded.Mod_Loaded();          //keep at the end of the load method shows if all blocks+items+achievements+generation have been initialised 
     
     }

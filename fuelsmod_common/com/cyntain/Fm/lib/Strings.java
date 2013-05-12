@@ -33,6 +33,8 @@ public class Strings {
     public static final String MIXINGTABLE_BLOCK = "mixingTableBlock";
     
     
+    public static final String TE_MIXINGTABLE = "tileMixingTable";
+    
     /*  Achievement pages names*/
     public static String Page1_Name = "Fuels Mod";
     
