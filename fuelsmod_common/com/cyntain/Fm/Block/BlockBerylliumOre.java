@@ -1,4 +1,6 @@
+
 package com.cyntain.Fm.Block;
+
 
 import java.util.Random;
 
@@ -13,23 +15,29 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 
-public class BlockBerylliumOre extends Block{
-    
-    public BlockBerylliumOre(int id, Material par2Material){
+
+
+
+public class BlockBerylliumOre extends Block {
+
+    public BlockBerylliumOre(int id, Material par2Material) {
+
         super(id, par2Material);
         this.setCreativeTab(CreativeTabFm.tabsFuelMod);
         this.setHardness(4f);
-            
-    }
-    
-    @SideOnly(Side.CLIENT)
-    public void registerIcons(IconRegister iconRegister) {
-        this.blockIcon = iconRegister.registerIcon(Reference.MOD_ID + ":" + this.getUnlocalizedName2());
+
     }
 
-    public int idDropped(int par1, Random par2Random, int par3)
-    {
+    @SideOnly(Side.CLIENT)
+    public void registerIcons(IconRegister iconRegister) {
+
+        this.blockIcon = iconRegister.registerIcon(Reference.MOD_ID + ":"
+                + this.getUnlocalizedName2());
+    }
+
+    public int idDropped(int par1, Random par2Random, int par3) {
+
         return ItemIDs.BERYLLIUM_CHUNK_DEFAULT;
     }
-    
+
 }

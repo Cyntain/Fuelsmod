@@ -1,4 +1,6 @@
+
 package com.cyntain.Fm.Network.packet;
+
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -12,11 +14,14 @@ import com.cyntain.Fm.Network.PacketTypeHandler;
 
 import cpw.mods.fml.common.network.Player;
 
+
+
+
 public class PacketTileUpdate extends PacketFm {
 
-    public int x, y, z;
-    public byte orientation;
-    public byte state;
+    public int    x, y, z;
+    public byte   orientation;
+    public byte   state;
     public String customName;
 
     public PacketTileUpdate() {
@@ -24,7 +29,8 @@ public class PacketTileUpdate extends PacketFm {
         super(PacketTypeHandler.TILE, true);
     }
 
-    public PacketTileUpdate(int x, int y, int z, ForgeDirection orientation, byte state, String customName) {
+    public PacketTileUpdate(int x, int y, int z, ForgeDirection orientation,
+            byte state, String customName) {
 
         super(PacketTypeHandler.TILE, true);
         this.x = x;
@@ -61,7 +67,8 @@ public class PacketTileUpdate extends PacketFm {
     public void execute(INetworkManager manager, Player player) {
 
         System.out.println("PacketTileUpdate - Execute");
-        FuelsMod.proxy.handleTileEntityPacket(x, y, z, ForgeDirection.getOrientation(orientation), state, customName);
+        FuelsMod.proxy.handleTileEntityPacket(x, y, z,
+                ForgeDirection.getOrientation(orientation), state, customName);
     }
 
 }

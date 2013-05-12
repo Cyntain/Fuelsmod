@@ -1,4 +1,6 @@
+
 package com.cyntain.Fm.Client.gui;
+
 
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -9,22 +11,36 @@ import org.lwjgl.opengl.GL11;
 import com.cyntain.Fm.TileEntity.tileMixingTable;
 import com.cyntain.Fm.lib.Strings;
 
-public class guiMixingTable extends GuiContainer  {
-   
+
+
+
+public class guiMixingTable extends GuiContainer {
+
     private tileMixingTable tilemixingtable;
-    
-    public guiMixingTable(InventoryPlayer player, tileMixingTable tilemixingtable) {
+
+    public guiMixingTable(InventoryPlayer player,
+            tileMixingTable tilemixingtable) {
 
         super(new containerMixingTable(player, tilemixingtable));
         ySize = 176;
+        xSize = 176;
         this.tilemixingtable = tilemixingtable;
     }
+
     @Override
     protected void drawGuiContainerForegroundLayer(int par1, int par2) {
-        String containerName = tilemixingtable.isInvNameLocalized() ? tilemixingtable.getInvName() : StatCollector.translateToLocal(tilemixingtable.getInvName());
-        fontRenderer.drawString(containerName, xSize / 2 - fontRenderer.getStringWidth(containerName) / 2, 6, 4210752);
-        fontRenderer.drawString(StatCollector.translateToLocal(Strings.CONTAINER_INVENTORY), 8, ySize - 96 + 2, 4210752);
+
+        String containerName = tilemixingtable.isInvNameLocalized() ? tilemixingtable
+                .getInvName() : StatCollector.translateToLocal(tilemixingtable
+                .getInvName());
+        fontRenderer.drawString(containerName,
+                xSize / 2 - fontRenderer.getStringWidth(containerName) / 2, 6,
+                4210752);
+        fontRenderer.drawString(
+                StatCollector.translateToLocal(Strings.CONTAINER_INVENTORY), 8,
+                ySize - 104 + 2, 4210752);
     }
+
     @Override
     protected void drawGuiContainerBackgroundLayer(float f, int i, int j) {
 
@@ -33,7 +49,6 @@ public class guiMixingTable extends GuiContainer  {
         int var5 = (width - xSize) / 2;
         int var6 = (height - ySize) / 2;
         this.drawTexturedModalRect(var5, var6, 0, 0, xSize, ySize);
-        
+
     }
 }
-

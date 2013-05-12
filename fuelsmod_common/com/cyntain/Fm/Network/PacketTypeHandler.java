@@ -1,4 +1,6 @@
+
 package com.cyntain.Fm.Network;
+
 
 import java.io.ByteArrayInputStream;
 import java.io.DataInputStream;
@@ -10,11 +12,13 @@ import com.cyntain.Fm.lib.Reference;
 import net.minecraft.network.packet.Packet;
 import net.minecraft.network.packet.Packet250CustomPayload;
 
+
+
+
 public enum PacketTypeHandler {
-     
+
     TILE(PacketTileUpdate.class);
-   
-    
+
     private Class<? extends PacketFm> clazz;
 
     PacketTypeHandler(Class<? extends PacketFm> clazz) {
@@ -32,8 +36,7 @@ public enum PacketTypeHandler {
 
         try {
             packet = values()[selector].clazz.newInstance();
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace(System.err);
         }
 
@@ -48,8 +51,7 @@ public enum PacketTypeHandler {
 
         try {
             packet = values()[type.ordinal()].clazz.newInstance();
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace(System.err);
         }
 

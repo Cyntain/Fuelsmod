@@ -1,4 +1,6 @@
+
 package com.cyntain.Fm.Network.packet;
+
 
 import java.io.ByteArrayOutputStream;
 import java.io.DataInputStream;
@@ -11,9 +13,12 @@ import cpw.mods.fml.common.network.Player;
 
 import net.minecraft.network.INetworkManager;
 
+
+
+
 public class PacketFm {
     public PacketTypeHandler packetType;
-    public boolean isChunkDataPacket;
+    public boolean           isChunkDataPacket;
 
     public PacketFm(PacketTypeHandler packetType, boolean isChunkDataPacket) {
 
@@ -29,8 +34,7 @@ public class PacketFm {
         try {
             dos.writeByte(packetType.ordinal());
             this.writeData(dos);
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace(System.err);
         }
 
@@ -41,8 +45,7 @@ public class PacketFm {
 
         try {
             this.readData(data);
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace(System.err);
         }
     }
