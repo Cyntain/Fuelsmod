@@ -38,8 +38,8 @@ public class Strings {
 
     /* Achievement pages names */
     public static String       Page1_Name              = "Fuels Mod";
-
+/* Inventory Text*/
     public static final String CONTAINER_INVENTORY     = "container.inventory";
-    public static final String CONTAINER_MIXINGTABLE   = "container.crafting";
+    public static final String CONTAINER_MIXINGTABLE   = "MixingTable";
 
 }
