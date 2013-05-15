@@ -38,6 +38,7 @@ public class itemZeoliteDyed extends ItemFm {
         this.setHasSubtypes(true);
         this.setUnlocalizedName(Strings.ZEOLITE_DYED_NAME);
         this.setCreativeTab(CreativeTabFmAlchemy.tabsFuelsmodAlchemy);
+        setHasSubtypes(true);
         maxStackSize = 64;
     }
 

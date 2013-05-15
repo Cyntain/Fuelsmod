@@ -28,7 +28,8 @@ public class tileMixingTable extends TileFm implements IInventory {
     private final int   INVENTORY_SIZE = 3;
     private int         tickCount;
     private int         progress;
-
+    private int numbers;
+    public ItemStack result;
     public tileMixingTable() {
 
         inventory = new ItemStack[INVENTORY_SIZE];
@@ -37,9 +38,7 @@ public class tileMixingTable extends TileFm implements IInventory {
 
     
     
-
-    public ItemStack result;
-
+    
     @Override
     public int getSizeInventory() {
 
@@ -75,49 +74,86 @@ public class tileMixingTable extends TileFm implements IInventory {
 
         ++tickCount;
         
+        
         if (!worldObj.isRemote) {
-            
+
             boolean hasToUpdate = false;
-            
+
             if (inventory[0] != null && inventory[1] != null) {
-                
+
                 hasToUpdate = true;
-                inventory[2] = inventory[0];
+                inventory[2] = null;
                 inventory[1] = null;
                 inventory[0] = null;
+                
+                for (int i = 0; i <= 500; i++) {
+                    numbers++;
+                    ++tickCount;
+                }
+                
+                System.out.println(numbers);
+                if (numbers >= 500) {
+      
+                    if (inventory[0] == new ItemStack(ModItem.compounds, 1, 0)
+                            && inventory[1] == new ItemStack(ModItem.compounds,
+                                    1, 2)
+                            || inventory[0] == new ItemStack(ModItem.compounds,
+                                    1, 2)
+                            && inventory[1] == new ItemStack(ModItem.compounds,
+                                    1, 0)) {
 
-                        
-                        if (inventory[0] == new ItemStack(ModItem.compounds, 1, 0)
-                        && inventory[1] == new ItemStack(ModItem.compounds, 1, 2)) {
-                            result = new ItemStack(ModItem.zeoliteDustDyed, 1, 0);
-                         
-                        } else if (inventory[0] == new ItemStack(ModItem.compounds, 1, 2)
-                                && inventory[1] == new ItemStack(ModItem.compounds, 1, 3)) {
-                            result = new ItemStack(ModItem.zeoliteDustDyed, 1, 1);
-                            
-                        } else if (inventory[0] == new ItemStack(ModItem.compounds, 1, 3)
-                                && inventory[1] == new ItemStack(ModItem.compounds, 1, 1)) {
-                            result = new ItemStack(ModItem.zeoliteDustDyed, 1, 2);
-                           
-                        } else if (inventory[0] == new ItemStack(ModItem.compounds, 1, 1)
-                                && inventory[1] == new ItemStack(ModItem.compounds, 1, 0)) {
-                            result = new ItemStack(ModItem.zeoliteDustDyed, 1, 3);
-                           
-                        } else {
-                            result = new ItemStack(ModItem.zeoliteDust);
-                            
-                        inventory[2] = result;
-                                
-                            
-                        inventory[1] = null;
-                        inventory[0] = null;
-                        hasToUpdate = true;
+                        result = new ItemStack(ModItem.zeoliteDustDyed, 1, 0);
+
+                    } else if (inventory[0] == new ItemStack(ModItem.compounds,
+                            1, 2)
+                            && inventory[1] == new ItemStack(ModItem.compounds,
+                                    1, 3)
+                            || inventory[0] == new ItemStack(ModItem.compounds,
+                                    1, 3)
+                            && inventory[1] == new ItemStack(ModItem.compounds,
+                                    1, 2)) {
+
+                        result = new ItemStack(ModItem.zeoliteDustDyed, 1, 1);
+
+                    } else if (inventory[0] == new ItemStack(ModItem.compounds,
+                            1, 3)
+                            && inventory[1] == new ItemStack(ModItem.compounds,
+                                    1, 1)
+                            || inventory[0] == new ItemStack(ModItem.compounds,
+                                    1, 1)
+                            && inventory[1] == new ItemStack(ModItem.compounds,
+                                    1, 3)) {
+
+                        result = new ItemStack(ModItem.zeoliteDustDyed, 1, 2);
+
+                    } else if (inventory[0] == new ItemStack(ModItem.compounds,
+                            1, 1)
+                            && inventory[1] == new ItemStack(ModItem.compounds,
+                                    1, 0)
+                            || inventory[0] == new ItemStack(ModItem.compounds,
+                                    1, 0)
+                            && inventory[1] == new ItemStack(ModItem.compounds,
+                                    1, 1)) {
+
+                        result = new ItemStack(ModItem.zeoliteDustDyed, 1, 3);
+
+                    } else {
+
+                        result = new ItemStack(ModItem.zeoliteDust);
 
                     }
 
+                    inventory[2] = result;
+
+                    inventory[1] = null;
+                    inventory[0] = null;
+                    hasToUpdate = true;
+                    numbers = 0;
+
                 }
 
-            
+            }
+
             if (hasToUpdate) {
                 PacketDispatcher.sendPacketToAllAround(xCoord, yCoord, zCoord,
                         8, this.worldObj.provider.dimensionId,
@@ -128,9 +164,7 @@ public class tileMixingTable extends TileFm implements IInventory {
                 tickCount = 0;
             }
         }
-        }
-        
-    
+    }
 
     public void onDataPacket(INetworkManager net, Packet132TileEntityData pkt) {
 

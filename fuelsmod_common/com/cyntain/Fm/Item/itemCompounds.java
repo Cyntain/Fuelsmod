@@ -37,6 +37,7 @@ public class itemCompounds extends Item {
         this.setHasSubtypes(true);
         this.setUnlocalizedName(Strings.ITEM_COMPOUND_NAME);
         this.setCreativeTab(CreativeTabFmAlchemy.tabsFuelsmodAlchemy);
+        setHasSubtypes(true);
         maxStackSize = 64;
     }
 

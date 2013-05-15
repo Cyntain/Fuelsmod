@@ -45,7 +45,8 @@ public class containerMixingTable extends Container {
                 }
             }
         });
-        this.addSlotToContainer(new Slot(mixingTable, 2, 80, 57));
+        this.addSlotToContainer(new Slot(mixingTable, 2, 80, 57) 
+            );
 
         for (int inventoryRowIndex = 0; inventoryRowIndex < 3; ++inventoryRowIndex) {
             for (int inventoryColumnIndex = 0; inventoryColumnIndex < 9; ++inventoryColumnIndex) {

@@ -52,6 +52,7 @@ public class itemZeoliteVial extends ItemFood {
         this.setUnlocalizedName(Strings.ZEOLITE_DUST_GLASS_NAME);
         this.setAlwaysEdible();
         this.setCreativeTab(CreativeTabFmAlchemy.tabsFuelsmodAlchemy);
+        setHasSubtypes(true);
         this.maxStackSize = 16;
     }
 
