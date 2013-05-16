@@ -17,11 +17,11 @@ public class ModItem {
 
     /* Mod item instances */
     public static Item oreChunks;
-    public static Item copperIngot;   
+    public static Item copperIngot;
     public static Item ClusterCopper;
     public static Item osmiumIngot;
     public static Item osmiumGrate;
-    public static Item berylliumIngot; 
+    public static Item berylliumIngot;
     public static Item clusterBeryllium;
     public static Item zeoliteDust;
     public static Item zeoliteDustVial;
@@ -39,11 +39,11 @@ public class ModItem {
         ClusterCopper = new itemClusterCopper(ItemIDs.COPPER_CLUSTER);
 
         // OSMIUM ITEMs
-        osmiumIngot = new itemOsmiumIngot(ItemIDs.OSMIUM_INGOT);        
+        osmiumIngot = new itemOsmiumIngot(ItemIDs.OSMIUM_INGOT);
         osmiumGrate = new itemOsmiumGrate(ItemIDs.OSMIUM_GRATE);
 
         // BERYLLIUM ITEMs
-        berylliumIngot = new itemBerylliumIngot(ItemIDs.BERYLLIUM_INGOT);     
+        berylliumIngot = new itemBerylliumIngot(ItemIDs.BERYLLIUM_INGOT);
         clusterBeryllium = new itemClusterBeryllium(ItemIDs.BERYLLIUM_CLUSTER);
 
         // ZEOLITE ITEMs
@@ -56,26 +56,16 @@ public class ModItem {
         compounds = new itemCompounds(ItemIDs.COMPOUND);
         boiler = new itemBoiler(ItemIDs.BOILER_DEFAULT);
         oreChunks = new itemOreChunks(ItemIDs.ORE_CHUNK);
-        
-        
-        
-        
-        
-        
-        
-        
+
         /* Register + Initialize Smelting Recipes */
-        
-        
-        
-        
+
         GameRegistry.addSmelting(ModItem.ClusterCopper.itemID, new ItemStack(
                 copperIngot, 9), 10.0f);
         GameRegistry.addSmelting(ModItem.clusterBeryllium.itemID,
                 new ItemStack(berylliumIngot, 9), 10.0f);
 
         /* Shaped Crafting Recipe */
-       
+
         GameRegistry.addRecipe(new ItemStack(ModItem.osmiumGrate, 4), "WXW",
                 "XXX", "WXW", Character.valueOf('W'), Item.ingotIron,
                 Character.valueOf('X'), ModItem.osmiumIngot);
@@ -87,15 +77,11 @@ public class ModItem {
         GameRegistry.addRecipe(new ItemStack(ModItem.zeoliteDust, 8), "X",
                 Character.valueOf('X'), ModItem.zeoliteDustVial);
 
-        
-        
-        
-        
-/**###################################################### ALCHEMY START ########################################################################################################*/
-        
-        
-        
-        
+        /**********************************
+         * ALCHEMY START
+         ********************************** 
+         */
+
         /* Compound recipes */
         GameRegistry.addRecipe(new ItemStack(ModItem.compounds, 1, 0), "RRR",
                 "RZR", "GGG", Character.valueOf('R'), Item.redstone,
@@ -115,7 +101,7 @@ public class ModItem {
                         Item.dyePowder, 1, 4), Character.valueOf('Z'),
                 ModItem.zeoliteDust, Character.valueOf('G'),
                 Item.lightStoneDust);
-    
+
         /* Dyed Zeolite dust recipes, Shapeless recipes */
         GameRegistry.addShapelessRecipe(new ItemStack(ModItem.zeoliteDustDyed,
                 1, 0), ModItem.zeoliteDust, new ItemStack(ModItem.compounds, 1,
