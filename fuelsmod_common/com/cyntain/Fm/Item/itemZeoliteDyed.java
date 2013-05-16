@@ -27,7 +27,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class itemZeoliteDyed extends ItemFm {
 
     private static final String[] ZEOLITE_DUST_DYED_NAMES = new String[] {
-            "reden", "greue", "yellen", "lueel"          };
+            "reden", "greue", "yellen", "lueel"};
 
     @SideOnly(Side.CLIENT)
     private Icon[]                icons;
@@ -35,7 +35,6 @@ public class itemZeoliteDyed extends ItemFm {
     public itemZeoliteDyed(int id) {
 
         super(id);
-        this.setHasSubtypes(true);
         this.setUnlocalizedName(Strings.ZEOLITE_DYED_NAME);
         this.setCreativeTab(CreativeTabFmAlchemy.tabsFuelsmodAlchemy);
         setHasSubtypes(true);
@@ -116,7 +115,7 @@ public class itemZeoliteDyed extends ItemFm {
                 list.add("Zeolite and bluetonium");
                 break;
             default:
-                list.add("Zeolite");
+                list.add("Zeolite and unknown");
                 break;
         }
 

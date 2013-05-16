@@ -26,10 +26,11 @@ public class ConfigurationHandler {
         try {
             configuration.load();
 
-            ItemIDs.BERYLLIUM_CHUNK = configuration.getItem(
-                    Strings.BERYLLIUM_CHUNK_NAME,
-                    ItemIDs.BERYLLIUM_CHUNK_DEFAULT).getInt(
-                    ItemIDs.BERYLLIUM_CHUNK_DEFAULT);
+            ItemIDs.ORE_CHUNK = configuration.getItem(
+                    Strings.ORE_CHUNK,
+                    ItemIDs.ORE_CHUNK_DEFAULT).getInt(
+                    ItemIDs.ORE_CHUNK_DEFAULT);
+            
             ItemIDs.BERYLLIUM_CLUSTER = configuration.getItem(
                     Strings.BERYLLIUM_CLUSTER_NAME,
                     ItemIDs.BERYLLIUM_CLUSTER_DEFAULT).getInt(
@@ -39,9 +40,7 @@ public class ConfigurationHandler {
                     ItemIDs.BERYLLIUM_INGOT_DEFAULT).getInt(
                     ItemIDs.BERYLLIUM_INGOT_DEFAULT);
 
-            ItemIDs.COPPER_CHUNK = configuration.getItem(
-                    Strings.COPPER_CHUNK_NAME, ItemIDs.COPPER_CHUNK_DEFAULT)
-                    .getInt(ItemIDs.COPPER_CHUNK_DEFAULT);
+           
             ItemIDs.COPPER_CLUSTER = configuration
                     .getItem(Strings.COPPER_CLUSTER_NAME,
                             ItemIDs.COPPER_CLUSTER_DEFAULT).getInt(
@@ -50,9 +49,7 @@ public class ConfigurationHandler {
                     Strings.COPPER_INGOT_NAME, ItemIDs.COPPER_INGOT_DEFAULT)
                     .getInt(ItemIDs.COPPER_INGOT_DEFAULT);
 
-            ItemIDs.OSMIUM_CHUNK = configuration.getItem(
-                    Strings.OSMIUM_CHUNK_NAME, ItemIDs.OSMIUM_CHUNK_DEFAULT)
-                    .getInt(ItemIDs.OSMIUM_CHUNK_DEFAULT);
+           
             ItemIDs.OSMIUM_INGOT = configuration.getItem(
                     Strings.OSMIUM_INGOT_NAME, ItemIDs.OSMIUM_INGOT_DEFAULT)
                     .getInt(ItemIDs.OSMIUM_INGOT_DEFAULT);

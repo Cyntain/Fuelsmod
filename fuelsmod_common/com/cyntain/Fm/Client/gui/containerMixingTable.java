@@ -12,6 +12,8 @@ import com.cyntain.Fm.Item.itemCompounds;
 import com.cyntain.Fm.TileEntity.tileMixingTable;
 
 
+
+
 /* DO NOT SHIFT CLICK*/
 
 public class containerMixingTable extends Container {
@@ -45,8 +47,14 @@ public class containerMixingTable extends Container {
                 }
             }
         });
-        this.addSlotToContainer(new Slot(mixingTable, 2, 80, 57) 
-            );
+        this.addSlotToContainer(new Slot(mixingTable, 2, 80, 57) {
+            @Override
+            public boolean isItemValid(ItemStack itemstack) {
+
+                return false;
+
+            }
+        });
 
         for (int inventoryRowIndex = 0; inventoryRowIndex < 3; ++inventoryRowIndex) {
             for (int inventoryColumnIndex = 0; inventoryColumnIndex < 9; ++inventoryColumnIndex) {

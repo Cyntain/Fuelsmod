@@ -4,16 +4,16 @@ package com.cyntain.Fm.Block;
 
 import java.util.Random;
 
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.texture.IconRegister;
+
 import com.cyntain.Fm.CreativeTab.CreativeTabFm;
-import com.cyntain.Fm.lib.ItemIDs;
+import com.cyntain.Fm.Item.ModItem;
 import com.cyntain.Fm.lib.Reference;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-
-import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IconRegister;
 
 
 
@@ -35,9 +35,13 @@ public class BlockBerylliumOre extends Block {
                 + this.getUnlocalizedName2());
     }
 
-    public int idDropped(int par1, Random par2Random, int par3) {
-
-        return ItemIDs.BERYLLIUM_CHUNK_DEFAULT;
-    }
+    @Override   
+    public int damageDropped(int metadata){
+     return metadata;
+         
+     }
+     public int idDropped(int meta, Random random, int fortune){
+         return ModItem.oreChunks.itemID;
+     }
 
 }

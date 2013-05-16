@@ -29,7 +29,7 @@ public final class CreativeTabFm extends CreativeTabs {
     @Override
     public int getTabIconItemIndex() {
 
-        return ModItem.ChunkCopper.itemID;
+        return ModItem.copperIngot.itemID;
     }
 
     public static final CreativeTabs tabsFuelMod = new CreativeTabFm();

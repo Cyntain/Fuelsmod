@@ -19,7 +19,9 @@ import net.minecraft.network.packet.Packet132TileEntityData;
 
 
 /*    Thank you PaleoCrafter for the crash course in doing all of this!
- * 
+ * TODO get the delay on the output working.
+ * TODO get the decease on the items in slots 0 and 1 working
+ * TODO get the increase on the items in slots 2 working
  * */
 
 public class tileMixingTable extends TileFm implements IInventory {
@@ -28,17 +30,18 @@ public class tileMixingTable extends TileFm implements IInventory {
     private final int   INVENTORY_SIZE = 3;
     private int         tickCount;
     private int         progress;
-    private int numbers;
-    public ItemStack result;
+    public int          changeSlot2;
+    public ItemStack    changeSlot1;
+    public ItemStack    changeSlot0;
+    public ItemStack    result;
+   
+
     public tileMixingTable() {
 
         inventory = new ItemStack[INVENTORY_SIZE];
 
     }
 
-    
-    
-    
     @Override
     public int getSizeInventory() {
 
@@ -73,8 +76,7 @@ public class tileMixingTable extends TileFm implements IInventory {
     public void updateEntity() {
 
         ++tickCount;
-        
-        
+
         if (!worldObj.isRemote) {
 
             boolean hasToUpdate = false;
@@ -82,86 +84,117 @@ public class tileMixingTable extends TileFm implements IInventory {
             if (inventory[0] != null && inventory[1] != null) {
 
                 hasToUpdate = true;
-                inventory[2] = null;
-                inventory[1] = null;
-                inventory[0] = null;
+
+/* TODO Need to rewrite this quick fix, as it is messy and bad also does not fully work. */
                 
-                for (int i = 0; i <= 500; i++) {
-                    numbers++;
-                    ++tickCount;
-                }
-                
-                System.out.println(numbers);
-                if (numbers >= 500) {
-      
-                    if (inventory[0] == new ItemStack(ModItem.compounds, 1, 0)
-                            && inventory[1] == new ItemStack(ModItem.compounds,
-                                    1, 2)
-                            || inventory[0] == new ItemStack(ModItem.compounds,
-                                    1, 2)
-                            && inventory[1] == new ItemStack(ModItem.compounds,
-                                    1, 0)) {
+/* Logic to decrease the number of items in slots 0 and 1 */
 
-                        result = new ItemStack(ModItem.zeoliteDustDyed, 1, 0);
+                ItemStack itemStackSlot1 = getStackInSlot(1);
+// counting the number of items in slot 1
+                ItemStack itemStackSlot0 = getStackInSlot(0); 
+// counting the number of items in slot 0
 
-                    } else if (inventory[0] == new ItemStack(ModItem.compounds,
-                            1, 2)
-                            && inventory[1] == new ItemStack(ModItem.compounds,
-                                    1, 3)
-                            || inventory[0] == new ItemStack(ModItem.compounds,
-                                    1, 3)
-                            && inventory[1] == new ItemStack(ModItem.compounds,
-                                    1, 2)) {
+                int stacksizeslot1 = itemStackSlot1.stackSize; 
+// making the number of items in slot 1 be stored in stacksize
+                int stacksizeslot0 = itemStackSlot0.stackSize;
+// making the number of items in slot 0 be stored in stacksizeslot0
 
-                        result = new ItemStack(ModItem.zeoliteDustDyed, 1, 1);
-
-                    } else if (inventory[0] == new ItemStack(ModItem.compounds,
-                            1, 3)
-                            && inventory[1] == new ItemStack(ModItem.compounds,
-                                    1, 1)
-                            || inventory[0] == new ItemStack(ModItem.compounds,
-                                    1, 1)
-                            && inventory[1] == new ItemStack(ModItem.compounds,
-                                    1, 3)) {
-
-                        result = new ItemStack(ModItem.zeoliteDustDyed, 1, 2);
-
-                    } else if (inventory[0] == new ItemStack(ModItem.compounds,
-                            1, 1)
-                            && inventory[1] == new ItemStack(ModItem.compounds,
-                                    1, 0)
-                            || inventory[0] == new ItemStack(ModItem.compounds,
-                                    1, 0)
-                            && inventory[1] == new ItemStack(ModItem.compounds,
-                                    1, 1)) {
-
-                        result = new ItemStack(ModItem.zeoliteDustDyed, 1, 3);
-
-                    } else {
-
-                        result = new ItemStack(ModItem.zeoliteDust);
-
+                if (itemStackSlot1.stackSize == 1
+                        || itemStackSlot0.stackSize == 1) {
+                    if (itemStackSlot1.stackSize == 1) {
+                        changeSlot1 = null;
+                    } else if (itemStackSlot0.stackSize == 1) {
+                        changeSlot0 = null;
                     }
 
-                    inventory[2] = result;
+                } else if (itemStackSlot1.stackSize > 1
+                        && itemStackSlot0.stackSize > 1) {
+// If in slot 0 or 1 there is a item and the number of items is greater then 1 then decrease the stacksize
+                    if (itemStackSlot1.stackSize >= 1) {
+                        --stacksizeslot1;
+                    }
+                    if (itemStackSlot0.stackSize >= 1) {
+                        --stacksizeslot0;
+                    }
 
-                    inventory[1] = null;
-                    inventory[0] = null;
-                    hasToUpdate = true;
-                    numbers = 0;
+                    changeSlot1 = decrStackSize(1, stacksizeslot1);
+                    changeSlot0 = decrStackSize(0, stacksizeslot0);
+                }
+                
+                
+/* Set the slots to contain something*/
+                inventory[2] = inventory[1]; // output
+                inventory[1] = changeSlot1; // input
+                inventory[0] = changeSlot0; // input
+
+                
+                
+                
+                /* Logic to test what should be outputted */
+
+                if (inventory[0] == new ItemStack(ModItem.compounds, 1, 0)
+                        && inventory[1] == new ItemStack(ModItem.compounds, 1,
+                                2)
+                        || inventory[0] == new ItemStack(ModItem.compounds, 1,
+                                2)
+                        && inventory[1] == new ItemStack(ModItem.compounds, 1,
+                                0)) {
+
+                    result = new ItemStack(ModItem.zeoliteDustDyed, 1, 0);
+
+                } else if (inventory[0] == new ItemStack(ModItem.compounds, 1,
+                        2)
+                        && inventory[1] == new ItemStack(ModItem.compounds, 1,
+                                3)
+                        || inventory[0] == new ItemStack(ModItem.compounds, 1,
+                                3)
+                        && inventory[1] == new ItemStack(ModItem.compounds, 1,
+                                2)) {
+
+                    result = new ItemStack(ModItem.zeoliteDustDyed, 1, 1);
+
+                } else if (inventory[0] == new ItemStack(ModItem.compounds, 1,
+                        3)
+                        && inventory[1] == new ItemStack(ModItem.compounds, 1,
+                                1)
+                        || inventory[0] == new ItemStack(ModItem.compounds, 1,
+                                1)
+                        && inventory[1] == new ItemStack(ModItem.compounds, 1,
+                                3)) {
+
+                    result = new ItemStack(ModItem.zeoliteDustDyed,
+                            changeSlot2, 2);
+
+                } else if (inventory[0] == new ItemStack(ModItem.compounds, 1,
+                        1)
+                        && inventory[1] == new ItemStack(ModItem.compounds, 1,
+                                0)
+                        || inventory[0] == new ItemStack(ModItem.compounds, 1,
+                                0)
+                        && inventory[1] == new ItemStack(ModItem.compounds, 1,
+                                1)) {
+
+                    result = new ItemStack(ModItem.zeoliteDustDyed, 1, 3);
+
+                } else {
+
+                    result = new ItemStack(ModItem.zeoliteDust);
+                }
+
+                inventory[2] = result; // setting the output to the result
+
+                hasToUpdate = true;
+
+                if (hasToUpdate) {
+                    PacketDispatcher.sendPacketToAllAround(xCoord, yCoord,
+                            zCoord, 8, this.worldObj.provider.dimensionId,
+                            getDescriptionPacket());
 
                 }
 
-            }
-
-            if (hasToUpdate) {
-                PacketDispatcher.sendPacketToAllAround(xCoord, yCoord, zCoord,
-                        8, this.worldObj.provider.dimensionId,
-                        getDescriptionPacket());
-
-            }
-            if (tickCount >= 20) {
-                tickCount = 0;
+                if (tickCount >= 20) {
+                    tickCount = 0;
+                }
             }
         }
     }

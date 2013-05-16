@@ -4,14 +4,12 @@ package com.cyntain.Fm.lib;
 public class Strings {
 
     /* Item Names */
+    public static final String ORE_CHUNK               = "oreChunk";
     public static final String COPPER_INGOT_NAME       = "copperIngot";
-    public static final String COPPER_CHUNK_NAME       = "copperOreChunk";
     public static final String COPPER_CLUSTER_NAME     = "copperOreCluster";
     public static final String OSMIUM_INGOT_NAME       = "osmiumIngot";
-    public static final String OSMIUM_CHUNK_NAME       = "osmiumOreChunk";
     public static final String OSMIUM_GRATE_NAME       = "osmiumGrate";
     public static final String BERYLLIUM_INGOT_NAME    = "berylliumIngot";
-    public static final String BERYLLIUM_CHUNK_NAME    = "berylliumOreChunk";
     public static final String BERYLLIUM_CLUSTER_NAME  = "berylliumOreCluster";
     public static final String ZEOLITE_DUST_NAME       = "zeoliteDust";
     public static final String ZEOLITE_DYED_NAME       = "zeoliteDyed";
@@ -38,7 +36,8 @@ public class Strings {
 
     /* Achievement pages names */
     public static String       Page1_Name              = "Fuels Mod";
-/* Inventory Text*/
+
+    /* Inventory Text */
     public static final String CONTAINER_INVENTORY     = "container.inventory";
     public static final String CONTAINER_MIXINGTABLE   = "MixingTable";
 
