@@ -1,15 +1,15 @@
 
-package com.cyntain.Fm.Item;
+package com.cyntain.Fm.item;
 
 
-import com.cyntain.Fm.CreativeTab.CreativeTabFm;
+import com.cyntain.Fm.creativetab.CreativeTabFm;
 import com.cyntain.Fm.lib.Strings;
 
 
 
 
-public class itemBerylliumIngot extends ItemFm {
-    public itemBerylliumIngot(int id) {
+public class ItemBerylliumIngot extends ItemFm {
+    public ItemBerylliumIngot(int id) {
 
         super(id);
         this.setUnlocalizedName(Strings.BERYLLIUM_INGOT_NAME);

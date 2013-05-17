@@ -1,12 +1,12 @@
 
-package com.cyntain.Fm.Network;
+package com.cyntain.Fm.network;
 
 
 import java.io.ByteArrayInputStream;
 import java.io.DataInputStream;
 
-import com.cyntain.Fm.Network.packet.PacketFm;
-import com.cyntain.Fm.Network.packet.PacketTileUpdate;
+import com.cyntain.Fm.network.packet.PacketFm;
+import com.cyntain.Fm.network.packet.PacketTileUpdate;
 import com.cyntain.Fm.lib.Reference;
 
 import net.minecraft.network.packet.Packet;

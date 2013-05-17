@@ -1,5 +1,5 @@
 
-package com.cyntain.Fm.Item;
+package com.cyntain.Fm.item;
 
 
 import com.cyntain.Fm.lib.ItemIDs;
@@ -35,27 +35,27 @@ public class ModItem {
         /* Initialise each mod item individually */
 
         // COPPER ITEMs
-        copperIngot = new itemCopperIngot(ItemIDs.COPPER_INGOT);
-        ClusterCopper = new itemClusterCopper(ItemIDs.COPPER_CLUSTER);
+        copperIngot = new ItemCopperIngot(ItemIDs.COPPER_INGOT);
+        ClusterCopper = new ItemClusterCopper(ItemIDs.COPPER_CLUSTER);
 
         // OSMIUM ITEMs
-        osmiumIngot = new itemOsmiumIngot(ItemIDs.OSMIUM_INGOT);
-        osmiumGrate = new itemOsmiumGrate(ItemIDs.OSMIUM_GRATE);
+        osmiumIngot = new ItemOsmiumIngot(ItemIDs.OSMIUM_INGOT);
+        osmiumGrate = new ItemOsmiumGrate(ItemIDs.OSMIUM_GRATE);
 
         // BERYLLIUM ITEMs
-        berylliumIngot = new itemBerylliumIngot(ItemIDs.BERYLLIUM_INGOT);
-        clusterBeryllium = new itemClusterBeryllium(ItemIDs.BERYLLIUM_CLUSTER);
+        berylliumIngot = new ItemBerylliumIngot(ItemIDs.BERYLLIUM_INGOT);
+        clusterBeryllium = new ItemClusterBeryllium(ItemIDs.BERYLLIUM_CLUSTER);
 
         // ZEOLITE ITEMs
-        zeoliteDust = new itemZeoliteDust(ItemIDs.ZEOLITE_DUST);
-        zeoliteDustVial = new itemZeoliteVial(ItemIDs.ZEOLITE_DUST_VIAL);
-        zeoliteDustDyed = new itemZeoliteDyed(ItemIDs.ZEOLITE_DYED);
+        zeoliteDust = new ItemZeoliteDust(ItemIDs.ZEOLITE_DUST);
+        zeoliteDustVial = new ItemZeoliteVial(ItemIDs.ZEOLITE_DUST_VIAL);
+        zeoliteDustDyed = new ItemZeoliteDyed(ItemIDs.ZEOLITE_DYED);
 
         // OTHER ITEMs
-        emptyVial = new itemEmptyVial(ItemIDs.EMPTY_VIAL);
-        compounds = new itemCompounds(ItemIDs.COMPOUND);
-        boiler = new itemBoiler(ItemIDs.BOILER_DEFAULT);
-        oreChunks = new itemOreChunks(ItemIDs.ORE_CHUNK);
+        emptyVial = new ItemEmptyVial(ItemIDs.EMPTY_VIAL);
+        compounds = new ItemCompounds(ItemIDs.COMPOUND);
+        boiler = new ItemBoiler(ItemIDs.BOILER_DEFAULT);
+        oreChunks = new ItemOreChunks(ItemIDs.ORE_CHUNK);
 
         /* Register + Initialize Smelting Recipes */
 

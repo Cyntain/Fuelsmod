@@ -1,15 +1,12 @@
+package com.cyntain.Fm.item;
 
-package com.cyntain.Fm.Item;
-
-
-import com.cyntain.Fm.CreativeTab.CreativeTabFm;
+import com.cyntain.Fm.creativetab.CreativeTabFm;
 import com.cyntain.Fm.lib.Strings;
 
 
+public class ItemCopperIngot extends ItemFm {
 
-
-public class itemCopperIngot extends ItemFm {
-    public itemCopperIngot(int id) {
+    public ItemCopperIngot(int id) {
 
         super(id);
         this.setUnlocalizedName(Strings.COPPER_INGOT_NAME);

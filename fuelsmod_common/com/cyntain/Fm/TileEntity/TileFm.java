@@ -1,5 +1,5 @@
 
-package com.cyntain.Fm.TileEntity;
+package com.cyntain.Fm.tileentity;
 
 
 import net.minecraft.entity.player.EntityPlayer;

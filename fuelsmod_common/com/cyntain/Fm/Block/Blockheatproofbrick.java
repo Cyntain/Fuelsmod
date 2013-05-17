@@ -1,8 +1,8 @@
 
-package com.cyntain.Fm.Block;
+package com.cyntain.Fm.block;
 
 
-import com.cyntain.Fm.CreativeTab.CreativeTabFm;
+import com.cyntain.Fm.creativetab.CreativeTabFm;
 import com.cyntain.Fm.lib.Reference;
 
 import cpw.mods.fml.relauncher.Side;

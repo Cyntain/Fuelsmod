@@ -1,15 +1,12 @@
+package com.cyntain.Fm.item;
 
-package com.cyntain.Fm.Item;
-
-
-import com.cyntain.Fm.CreativeTab.CreativeTabFm;
+import com.cyntain.Fm.creativetab.CreativeTabFm;
 import com.cyntain.Fm.lib.Strings;
 
 
+public class ItemOsmiumGrate extends ItemFm {
 
-
-public class itemOsmiumGrate extends ItemFm {
-    public itemOsmiumGrate(int id) {
+    public ItemOsmiumGrate(int id) {
 
         super(id);
         this.setUnlocalizedName(Strings.OSMIUM_GRATE_NAME);

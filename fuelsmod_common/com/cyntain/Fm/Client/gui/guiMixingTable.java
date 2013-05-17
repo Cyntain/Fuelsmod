@@ -1,6 +1,4 @@
-
-package com.cyntain.Fm.Client.gui;
-
+package com.cyntain.Fm.client.gui;
 
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -8,20 +6,17 @@ import net.minecraft.util.StatCollector;
 
 import org.lwjgl.opengl.GL11;
 
-import com.cyntain.Fm.TileEntity.tileMixingTable;
+import com.cyntain.Fm.tileentity.TileMixingTable;
 import com.cyntain.Fm.lib.Strings;
 
 
+public class GuiMixingTable extends GuiContainer {
 
+    private TileMixingTable tilemixingtable;
 
-public class guiMixingTable extends GuiContainer {
+    public GuiMixingTable(InventoryPlayer player, TileMixingTable tilemixingtable) {
 
-    private tileMixingTable tilemixingtable;
-
-    public guiMixingTable(InventoryPlayer player,
-            tileMixingTable tilemixingtable) {
-
-        super(new containerMixingTable(player, tilemixingtable));
+        super(new ContainerMixingTable(player, tilemixingtable));
         ySize = 176;
         xSize = 176;
         this.tilemixingtable = tilemixingtable;
@@ -30,14 +25,11 @@ public class guiMixingTable extends GuiContainer {
     @Override
     protected void drawGuiContainerForegroundLayer(int par1, int par2) {
 
-        String containerName = tilemixingtable.isInvNameLocalized() ? tilemixingtable
-                .getInvName() : StatCollector.translateToLocal(tilemixingtable
-                .getInvName());
+        String containerName = tilemixingtable.isInvNameLocalized() ? tilemixingtable.getInvName()
+                : StatCollector.translateToLocal(tilemixingtable.getInvName());
         fontRenderer.drawString(containerName,
-                xSize / 2 - fontRenderer.getStringWidth(containerName) / 2, 6,
-                4210752);
-        fontRenderer.drawString(
-                StatCollector.translateToLocal(Strings.CONTAINER_INVENTORY), 8,
+                xSize / 2 - fontRenderer.getStringWidth(containerName) / 2, 6, 4210752);
+        fontRenderer.drawString(StatCollector.translateToLocal(Strings.CONTAINER_INVENTORY), 8,
                 ySize - 104 + 2, 4210752);
     }
 

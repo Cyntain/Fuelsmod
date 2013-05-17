@@ -1,8 +1,10 @@
 
-package com.cyntain.Fm.Item;
+package com.cyntain.Fm.item;
 
 
 import java.util.List;
+
+import org.lwjgl.input.Keyboard;
 
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
@@ -12,7 +14,8 @@ import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.Icon;
 import net.minecraft.util.MathHelper;
 
-import com.cyntain.Fm.CreativeTab.CreativeTabFmAlchemy;
+import com.cyntain.Fm.creativetab.CreativeTabFmAlchemy;
+import com.cyntain.Fm.lib.Colours;
 import com.cyntain.Fm.lib.Reference;
 import com.cyntain.Fm.lib.Strings;
 
@@ -24,15 +27,15 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 /* Alchemy - side project :P*/
 
-public class itemZeoliteDyed extends ItemFm {
+public class ItemZeoliteDyed extends ItemFm {
 
     private static final String[] ZEOLITE_DUST_DYED_NAMES = new String[] {
-            "reden", "greue", "yellen", "lueel"};
+            "reden", "greue", "yellen", "lueel"          };
 
     @SideOnly(Side.CLIENT)
     private Icon[]                icons;
 
-    public itemZeoliteDyed(int id) {
+    public ItemZeoliteDyed(int id) {
 
         super(id);
         this.setUnlocalizedName(Strings.ZEOLITE_DYED_NAME);
@@ -103,19 +106,44 @@ public class itemZeoliteDyed extends ItemFm {
 
         switch (meta) {
             case 0:
-                list.add("Zeolite and redscar");
+                list.add("Press " + Colours.GOLD + "shift" + Colours.GRAY
+                        + " to see more information");
+                if (Keyboard.isKeyDown(Keyboard.KEY_RSHIFT)
+                        || Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) {
+                    list.add("Zeolite and redscar");
+                }
                 break;
             case 1:
-                list.add("Zeolite and greenite");
+                list.add("Press " + Colours.GOLD + "shift" + Colours.GRAY
+                        + " to see more information");
+                if (Keyboard.isKeyDown(Keyboard.KEY_RSHIFT)
+                        || Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) {
+                    list.add("Zeolite and greenite");
+                }
                 break;
             case 2:
-                list.add("Zeolite and yellownale");
+                list.add("Press " + Colours.GOLD + "shift" + Colours.GRAY
+                        + " to see more information");
+                if (Keyboard.isKeyDown(Keyboard.KEY_RSHIFT)
+                        || Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) {
+                    list.add("Zeolite and yellownale");
+                }
                 break;
             case 3:
-                list.add("Zeolite and bluetonium");
+                list.add("Press " + Colours.GOLD + "shift" + Colours.GRAY
+                        + " to see more information");
+                if (Keyboard.isKeyDown(Keyboard.KEY_RSHIFT)
+                        || Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) {
+                    list.add("Zeolite and bluetonium");
+                }
                 break;
             default:
-                list.add("Zeolite and unknown");
+                list.add("Press " + Colours.GOLD + "shift" + Colours.GRAY
+                        + " to see more information");
+                if (Keyboard.isKeyDown(Keyboard.KEY_RSHIFT)
+                        || Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) {
+                    list.add("Zeolite and unknown");
+                }
                 break;
         }
 

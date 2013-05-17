@@ -1,5 +1,5 @@
 
-package com.cyntain.Fm.Client.gui;
+package com.cyntain.Fm.client.gui;
 
 
 import net.minecraft.entity.player.EntityPlayer;
@@ -8,24 +8,24 @@ import net.minecraft.inventory.Container;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 
-import com.cyntain.Fm.Item.itemCompounds;
-import com.cyntain.Fm.TileEntity.tileMixingTable;
+import com.cyntain.Fm.item.ItemCompounds;
+import com.cyntain.Fm.tileentity.TileMixingTable;
 
 
 
 
 /* DO NOT SHIFT CLICK*/
 
-public class containerMixingTable extends Container {
+public class ContainerMixingTable extends Container {
 
-    public containerMixingTable(InventoryPlayer inventoryPlayer,
-            tileMixingTable mixingTable) {
+    public ContainerMixingTable(InventoryPlayer inventoryPlayer,
+            TileMixingTable mixingTable) {
 
         this.addSlotToContainer(new Slot(mixingTable, 0, 44, 16) {
             @Override
             public boolean isItemValid(ItemStack itemstack) {
 
-                if (itemstack.getItem() instanceof itemCompounds) {
+                if (itemstack.getItem() instanceof ItemCompounds) {
                     return true;
                 } else {
                     return false;
@@ -40,7 +40,7 @@ public class containerMixingTable extends Container {
             @Override
             public boolean isItemValid(ItemStack itemstack) {
 
-                if (itemstack.getItem() instanceof itemCompounds) {
+                if (itemstack.getItem() instanceof ItemCompounds) {
                     return true;
                 } else {
                     return false;

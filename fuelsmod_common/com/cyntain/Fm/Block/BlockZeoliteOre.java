@@ -1,10 +1,10 @@
 
-package com.cyntain.Fm.Block;
+package com.cyntain.Fm.block;
 
 
 import java.util.Random;
 
-import com.cyntain.Fm.CreativeTab.CreativeTabFm;
+import com.cyntain.Fm.creativetab.CreativeTabFm;
 import com.cyntain.Fm.lib.ItemIDs;
 import com.cyntain.Fm.lib.Reference;
 

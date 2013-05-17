@@ -1,6 +1,4 @@
-
-package com.cyntain.Fm.Item;
-
+package com.cyntain.Fm.item;
 
 import java.util.List;
 
@@ -13,7 +11,7 @@ import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.Icon;
 import net.minecraft.util.MathHelper;
 
-import com.cyntain.Fm.CreativeTab.CreativeTabFmAlchemy;
+import com.cyntain.Fm.creativetab.CreativeTabFmAlchemy;
 import com.cyntain.Fm.lib.Reference;
 import com.cyntain.Fm.lib.Strings;
 
@@ -21,17 +19,15 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 
+public class ItemCompounds extends Item {
 
-
-public class itemCompounds extends Item {
-
-    private static final String[] COMPOUND_NAMES = new String[] { "redscar",
-            "greenite", "yellownale", "bluetonium" };
+    private static final String[] COMPOUND_NAMES = new String[]{ "redscar" , "greenite" ,
+            "yellownale" , "bluetonium"         };
 
     @SideOnly(Side.CLIENT)
     private Icon[]                icons;
 
-    public itemCompounds(int id) {
+    public ItemCompounds(int id) {
 
         super(id);
         this.setHasSubtypes(true);
@@ -63,9 +59,8 @@ public class itemCompounds extends Item {
         icons = new Icon[COMPOUND_NAMES.length];
 
         for (int i = 0; i < COMPOUND_NAMES.length; ++i) {
-            icons[i] = iconregister.registerIcon(Reference.MOD_ID.toLowerCase()
-                    + ":" + Strings.ITEM_COMPOUND_NAME + "_"
-                    + COMPOUND_NAMES[i]);
+            icons[i] = iconregister.registerIcon(Reference.MOD_ID.toLowerCase() + ":"
+                    + Strings.ITEM_COMPOUND_NAME + "_" + COMPOUND_NAMES[i]);
         }
 
     }
@@ -77,27 +72,22 @@ public class itemCompounds extends Item {
 
         switch (meta) {
             case 0:
-                return EnumChatFormatting.RED
-                        + super.getItemDisplayName(itemStack);
+                return EnumChatFormatting.RED + super.getItemDisplayName(itemStack);
             case 1:
-                return EnumChatFormatting.GREEN
-                        + super.getItemDisplayName(itemStack);
+                return EnumChatFormatting.GREEN + super.getItemDisplayName(itemStack);
             case 2:
-                return EnumChatFormatting.YELLOW
-                        + super.getItemDisplayName(itemStack);
+                return EnumChatFormatting.YELLOW + super.getItemDisplayName(itemStack);
             case 3:
-                return EnumChatFormatting.BLUE
-                        + super.getItemDisplayName(itemStack);
+                return EnumChatFormatting.BLUE + super.getItemDisplayName(itemStack);
             default:
-                return EnumChatFormatting.WHITE
-                        + super.getItemDisplayName(itemStack);
+                return EnumChatFormatting.WHITE + super.getItemDisplayName(itemStack);
         }
     }
 
-    @SuppressWarnings({ "unchecked", "rawtypes" })
+    @SuppressWarnings({ "unchecked" , "rawtypes" })
     @SideOnly(Side.CLIENT)
-    public void addInformation(ItemStack par1ItemStack,
-            EntityPlayer par2EntityPlayer, List par3List, boolean par4) {
+    public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer,
+            List par3List, boolean par4) {
 
         int meta = MathHelper.clamp_int(par1ItemStack.getItemDamage(), 0, 3);
 
@@ -122,7 +112,7 @@ public class itemCompounds extends Item {
     }
 
     @Override
-    @SuppressWarnings({ "unchecked", "rawtypes" })
+    @SuppressWarnings({ "unchecked" , "rawtypes" })
     @SideOnly(Side.CLIENT)
     public void getSubItems(int id, CreativeTabs creativeTab, List list) {
 

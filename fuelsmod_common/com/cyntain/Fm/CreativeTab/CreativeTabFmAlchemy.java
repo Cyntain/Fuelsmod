@@ -1,8 +1,8 @@
 
-package com.cyntain.Fm.CreativeTab;
+package com.cyntain.Fm.creativetab;
 
 
-import com.cyntain.Fm.Item.ModItem;
+import com.cyntain.Fm.item.ModItem;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;

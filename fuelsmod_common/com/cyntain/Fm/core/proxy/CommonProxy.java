@@ -6,9 +6,9 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeDirection;
 
-import com.cyntain.Fm.Client.gui.containerMixingTable;
-import com.cyntain.Fm.Client.gui.guiMixingTable;
-import com.cyntain.Fm.TileEntity.tileMixingTable;
+import com.cyntain.Fm.client.gui.ContainerMixingTable;
+import com.cyntain.Fm.client.gui.GuiMixingTable;
+import com.cyntain.Fm.tileentity.TileMixingTable;
 import com.cyntain.Fm.lib.GUIIDs;
 import com.cyntain.Fm.lib.Strings;
 
@@ -26,7 +26,7 @@ public class CommonProxy implements IGuiHandler {
 
     public void registerTileEntities() {
 
-        GameRegistry.registerTileEntity(tileMixingTable.class,
+        GameRegistry.registerTileEntity(TileMixingTable.class,
                 Strings.TE_MIXINGTABLE);
     }
 
@@ -35,10 +35,10 @@ public class CommonProxy implements IGuiHandler {
             int x, int y, int z) {
 
         if (ID == GUIIDs.mixingTable) {
-            tileMixingTable mixingtable = (tileMixingTable) world
+            TileMixingTable mixingtable = (TileMixingTable) world
                     .getBlockTileEntity(x, y, z);
 
-            return new containerMixingTable(player.inventory, mixingtable);
+            return new ContainerMixingTable(player.inventory, mixingtable);
 
         }
         return null;
@@ -50,10 +50,10 @@ public class CommonProxy implements IGuiHandler {
             int x, int y, int z) {
 
         if (ID == GUIIDs.mixingTable) {
-            tileMixingTable mixingtable = (tileMixingTable) world
+            TileMixingTable mixingtable = (TileMixingTable) world
                     .getBlockTileEntity(x, y, z);
 
-            return new guiMixingTable(player.inventory, mixingtable);
+            return new GuiMixingTable(player.inventory, mixingtable);
 
         }
         return null;

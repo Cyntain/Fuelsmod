@@ -1,5 +1,5 @@
 
-package com.cyntain.Fm.Network.packet;
+package com.cyntain.Fm.network.packet;
 
 
 import java.io.DataInputStream;
@@ -10,7 +10,7 @@ import net.minecraft.network.INetworkManager;
 import net.minecraftforge.common.ForgeDirection;
 
 import com.cyntain.Fm.FuelsMod;
-import com.cyntain.Fm.Network.PacketTypeHandler;
+import com.cyntain.Fm.network.PacketTypeHandler;
 
 import cpw.mods.fml.common.network.Player;
 

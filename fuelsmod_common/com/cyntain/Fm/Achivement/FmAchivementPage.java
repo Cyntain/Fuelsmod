@@ -1,5 +1,5 @@
 
-package com.cyntain.Fm.Achivement;
+package com.cyntain.Fm.achivement;
 
 
 import com.cyntain.Fm.lib.Strings;

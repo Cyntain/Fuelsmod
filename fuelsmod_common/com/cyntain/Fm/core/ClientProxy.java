@@ -5,7 +5,7 @@ package com.cyntain.Fm.core;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.ForgeDirection;
 
-import com.cyntain.Fm.TileEntity.TileFm;
+import com.cyntain.Fm.tileentity.TileFm;
 import com.cyntain.Fm.core.proxy.CommonProxy;
 
 import cpw.mods.fml.client.FMLClientHandler;

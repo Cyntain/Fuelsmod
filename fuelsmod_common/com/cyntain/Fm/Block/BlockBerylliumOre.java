@@ -1,5 +1,5 @@
 
-package com.cyntain.Fm.Block;
+package com.cyntain.Fm.block;
 
 
 import java.util.Random;
@@ -8,8 +8,8 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 
-import com.cyntain.Fm.CreativeTab.CreativeTabFm;
-import com.cyntain.Fm.Item.ModItem;
+import com.cyntain.Fm.creativetab.CreativeTabFm;
+import com.cyntain.Fm.item.ModItem;
 import com.cyntain.Fm.lib.Reference;
 
 import cpw.mods.fml.relauncher.Side;

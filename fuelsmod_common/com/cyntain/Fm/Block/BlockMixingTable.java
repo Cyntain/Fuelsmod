@@ -1,5 +1,5 @@
 
-package com.cyntain.Fm.Block;
+package com.cyntain.Fm.block;
 
 
 import java.util.Random;
@@ -13,17 +13,16 @@ import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
-//import net.minecraft.entity.player.EntityPlayer;
+
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
-//import net.minecraft.world.World;
 
 import com.cyntain.Fm.FuelsMod;
-//import com.cyntain.Fm.FuelsMod;
-import com.cyntain.Fm.CreativeTab.CreativeTabFm;
-import com.cyntain.Fm.TileEntity.tileMixingTable;
+
+import com.cyntain.Fm.creativetab.CreativeTabFm;
+import com.cyntain.Fm.tileentity.TileMixingTable;
 import com.cyntain.Fm.lib.GUIIDs;
-//import com.cyntain.Fm.lib.GUIIDs;
+
 import com.cyntain.Fm.lib.Reference;
 
 import cpw.mods.fml.relauncher.Side;
@@ -76,7 +75,7 @@ public class BlockMixingTable extends BlockFm implements ITileEntityProvider {
     @Override
     public TileEntity createNewTileEntity(World world) {
 
-        return new tileMixingTable();
+        return new TileMixingTable();
     }
 
     @Override
@@ -88,11 +87,10 @@ public class BlockMixingTable extends BlockFm implements ITileEntityProvider {
 
         else {
             if (!world.isRemote) {
-                tileMixingTable mixingtable = (tileMixingTable) world
+                TileMixingTable mixingtable = (TileMixingTable) world
                         .getBlockTileEntity(x, y, z);
 
                 if (mixingtable != null) {
-                    System.out.println("Block activated");
                     player.openGui(FuelsMod.instance, GUIIDs.mixingTable,
                             world, x, y, z);
                 }

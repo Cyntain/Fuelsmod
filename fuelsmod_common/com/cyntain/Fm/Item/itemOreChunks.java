@@ -1,6 +1,4 @@
-
-package com.cyntain.Fm.Item;
-
+package com.cyntain.Fm.item;
 
 import java.util.List;
 
@@ -11,7 +9,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import net.minecraft.util.MathHelper;
 
-import com.cyntain.Fm.CreativeTab.CreativeTabFm;
+import com.cyntain.Fm.creativetab.CreativeTabFm;
 import com.cyntain.Fm.lib.Reference;
 import com.cyntain.Fm.lib.Strings;
 
@@ -19,18 +17,14 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 
+public class ItemOreChunks extends ItemFm {
 
-
-public class itemOreChunks extends ItemFm {
-    private static final String[] CHUNK_NAMES = new String[]
-            { 
-        "beryllium","copper", "osmium"  
-        };
+    private static final String[] CHUNK_NAMES = new String[]{ "beryllium" , "copper" , "osmium" };
 
     @SideOnly(Side.CLIENT)
     private Icon[]                icons;
 
-    public itemOreChunks(int id) {
+    public ItemOreChunks(int id) {
 
         super(id);
         this.setHasSubtypes(true);
@@ -61,16 +55,15 @@ public class itemOreChunks extends ItemFm {
         icons = new Icon[CHUNK_NAMES.length];
 
         for (int i = 0; i < CHUNK_NAMES.length; ++i) {
-            icons[i] = iconregister.registerIcon(Reference.MOD_ID.toLowerCase()
-                    + ":" + Strings.ORE_CHUNK + CHUNK_NAMES[i]);
+            icons[i] = iconregister.registerIcon(Reference.MOD_ID.toLowerCase() + ":"
+                    + Strings.ORE_CHUNK + CHUNK_NAMES[i]);
         }
 
     }
 
-    @SuppressWarnings({ "unchecked", "rawtypes" })
+    @SuppressWarnings({ "unchecked" , "rawtypes" })
     @SideOnly(Side.CLIENT)
-    public void addInformation(ItemStack itemStack, EntityPlayer player,
-            List list, boolean par4) {
+    public void addInformation(ItemStack itemStack, EntityPlayer player, List list, boolean par4) {
 
         int meta = MathHelper.clamp_int(itemStack.getItemDamage(), 0, 3);
 
@@ -92,7 +85,7 @@ public class itemOreChunks extends ItemFm {
     }
 
     @Override
-    @SuppressWarnings({ "unchecked", "rawtypes" })
+    @SuppressWarnings({ "unchecked" , "rawtypes" })
     @SideOnly(Side.CLIENT)
     public void getSubItems(int id, CreativeTabs creativeTab, List list) {
 

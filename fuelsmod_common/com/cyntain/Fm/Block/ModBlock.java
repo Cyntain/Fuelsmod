@@ -1,8 +1,8 @@
 
-package com.cyntain.Fm.Block;
+package com.cyntain.Fm.block;
 
 
-import com.cyntain.Fm.Item.ModItem;
+import com.cyntain.Fm.item.ModItem;
 import com.cyntain.Fm.lib.BlockIDs;
 import com.cyntain.Fm.lib.Reference;
 import com.cyntain.Fm.lib.Strings;

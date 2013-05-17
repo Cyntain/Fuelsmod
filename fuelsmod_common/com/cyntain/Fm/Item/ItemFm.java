@@ -1,5 +1,5 @@
 
-package com.cyntain.Fm.Item;
+package com.cyntain.Fm.item;
 
 
 import com.cyntain.Fm.lib.Reference;

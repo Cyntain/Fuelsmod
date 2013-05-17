@@ -1,5 +1,5 @@
 
-package com.cyntain.Fm.Item;
+package com.cyntain.Fm.item;
 
 
 import java.util.List;
@@ -15,7 +15,9 @@ import net.minecraft.util.Icon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
-import com.cyntain.Fm.CreativeTab.CreativeTabFmAlchemy;
+import org.lwjgl.input.Keyboard;
+
+import com.cyntain.Fm.creativetab.CreativeTabFmAlchemy;
 import com.cyntain.Fm.lib.Colours;
 import com.cyntain.Fm.lib.ItemIDs;
 import com.cyntain.Fm.lib.Reference;
@@ -27,7 +29,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 
 
-public class itemZeoliteVial extends ItemFood {
+public class ItemZeoliteVial extends ItemFood {
 
     public static final String[] VIAL_NAME      = new String[] { "Zeo",
             "Reden", "Greue", "Yellen", "Lueel" };
@@ -46,7 +48,7 @@ public class itemZeoliteVial extends ItemFood {
     @SideOnly(Side.CLIENT)
     private Icon[]               icons;
 
-    public itemZeoliteVial(int id) {
+    public ItemZeoliteVial(int id) {
 
         super(id, 0, 0F, false);
         this.setUnlocalizedName(Strings.ZEOLITE_DUST_GLASS_NAME);
@@ -92,60 +94,89 @@ public class itemZeoliteVial extends ItemFood {
         switch (meta) {
             case 0:
                 list.add("Tasty! But where does it keep going?");
-
-                if (effect1 == true) {
-                    list.add(Colours.WHITE + "Effect:" + " " + Colours.RED
-                            + DISCOVER[meta].toUpperCase());
-                } else {
-                    list.add(Colours.WHITE + "Effect:" + " " + Colours.GRAY
-                            + "Unknown".toUpperCase());
+                list.add("Press " + Colours.GOLD + "shift" + Colours.GRAY
+                        + " to see more information");
+                if (Keyboard.isKeyDown(Keyboard.KEY_RSHIFT)
+                        || Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) {
+                    if (effect1 == true) {
+                        list.add(Colours.WHITE + "Effect:" + " " + Colours.RED
+                                + DISCOVER[meta].toUpperCase());
+                    } else {
+                        list.add(Colours.WHITE + "Effect:" + " " + Colours.GRAY
+                                + "Unknown".toUpperCase());
+                    }
                 }
                 break;
 
             case 1:
                 list.add("Tasty! But where does that smoke come from?");
-                if (effect2 == true) {
-                    list.add(Colours.WHITE + "Effect:" + " " + Colours.RED
-                            + DISCOVER[meta].toUpperCase());
-                } else {
-                    list.add(Colours.WHITE + "Effect:" + " " + Colours.GRAY
-                            + "Unknown".toUpperCase());
+                list.add("Press " + Colours.GOLD + "shift" + Colours.GRAY
+                        + " to see more information");
+                if (Keyboard.isKeyDown(Keyboard.KEY_RSHIFT)
+                        || Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) {
+                    if (effect2 == true) {
+                        list.add(Colours.WHITE + "Effect:" + " " + Colours.RED
+                                + DISCOVER[meta].toUpperCase());
+                    } else {
+                        list.add(Colours.WHITE + "Effect:" + " " + Colours.GRAY
+                                + "Unknown".toUpperCase());
+                    }
                 }
                 break;
             case 2:
                 list.add("Tasty! But why is there iron in there?");
-                if (effect3 == true) {
-                    list.add(Colours.WHITE + "Effect:" + " " + Colours.RED
-                            + DISCOVER[meta].toUpperCase());
-                } else {
-                    list.add(Colours.WHITE + "Effect:" + " " + Colours.GRAY
-                            + "Unknown".toUpperCase());
+                list.add("Press " + Colours.GOLD + "shift" + Colours.GRAY
+                        + " to see more information");
+                if (Keyboard.isKeyDown(Keyboard.KEY_RSHIFT)
+                        || Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) {
+                    if (effect3 == true) {
+                        list.add(Colours.WHITE + "Effect:" + " " + Colours.RED
+                                + DISCOVER[meta].toUpperCase());
+                    } else {
+                        list.add(Colours.WHITE + "Effect:" + " " + Colours.GRAY
+                                + "Unknown".toUpperCase());
+                    }
                 }
                 break;
             case 3:
                 list.add("Tasty! But why is it glowing?");
-                if (effect4 == true) {
-                    list.add(Colours.WHITE + "Effect:" + " " + Colours.RED
-                            + DISCOVER[meta].toUpperCase());
-                } else {
-                    list.add(Colours.WHITE + "Effect:" + " " + Colours.GRAY
-                            + "Unknown".toUpperCase());
+                list.add("Press " + Colours.GOLD + "shift" + Colours.GRAY
+                        + " to see more information");
+                if (Keyboard.isKeyDown(Keyboard.KEY_RSHIFT)
+                        || Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) {
+                    if (effect4 == true) {
+                        list.add(Colours.WHITE + "Effect:" + " " + Colours.RED
+                                + DISCOVER[meta].toUpperCase());
+                    } else {
+                        list.add(Colours.WHITE + "Effect:" + " " + Colours.GRAY
+                                + "Unknown".toUpperCase());
+                    }
                 }
                 break;
             case 4:
                 list.add("Tasty! But why is it dripping water?");
-                if (effect5 == true) {
-                    list.add(Colours.WHITE + "Effect:" + " " + Colours.RED
-                            + DISCOVER[meta].toUpperCase());
-                } else {
-                    list.add(Colours.WHITE + "Effect:" + " " + Colours.GRAY
-                            + "Unknown".toUpperCase());
+                list.add("Press " + Colours.GOLD + "shift" + Colours.GRAY
+                        + " to see more information");
+                if (Keyboard.isKeyDown(Keyboard.KEY_RSHIFT)
+                        || Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) {
+                    if (effect5 == true) {
+                        list.add(Colours.WHITE + "Effect:" + " " + Colours.RED
+                                + DISCOVER[meta].toUpperCase());
+                    } else {
+                        list.add(Colours.WHITE + "Effect:" + " " + Colours.GRAY
+                                + "Unknown".toUpperCase());
+                    }
                 }
                 break;
             default:
                 list.add("Tasty!");
-                list.add(Colours.WHITE + "Effect:" + " " + Colours.GRAY
-                        + "Unknown".toUpperCase());
+                list.add("Press " + Colours.GOLD + "shift" + Colours.GRAY
+                        + " to see more information");
+                if (Keyboard.isKeyDown(Keyboard.KEY_RSHIFT)
+                        || Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) {
+                    list.add(Colours.WHITE + "Effect:" + " " + Colours.GRAY
+                            + "Unknown".toUpperCase());
+                }
                 break;
 
         }

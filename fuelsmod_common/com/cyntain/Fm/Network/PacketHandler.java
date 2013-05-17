@@ -1,8 +1,8 @@
 
-package com.cyntain.Fm.Network;
+package com.cyntain.Fm.network;
 
 
-import com.cyntain.Fm.Network.packet.PacketFm;
+import com.cyntain.Fm.network.packet.PacketFm;
 
 import net.minecraft.network.INetworkManager;
 import net.minecraft.network.packet.Packet250CustomPayload;
