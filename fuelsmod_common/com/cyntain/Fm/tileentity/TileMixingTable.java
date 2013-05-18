@@ -8,10 +8,12 @@ import net.minecraft.network.INetworkManager;
 import net.minecraft.network.packet.Packet;
 import net.minecraft.network.packet.Packet132TileEntityData;
 
-import com.cyntain.Fm.core.helper.MixingTableRecipes;
+import com.cyntain.Fm.core.helper.MixingTableHelper;
 import com.cyntain.Fm.lib.Strings;
 
 import cpw.mods.fml.common.network.PacketDispatcher;
+
+
 /*TODO make it so if slots 0 and 1 have one item in it, it sets the slot to null*/
 
 public class TileMixingTable extends TileFm implements IInventory {
@@ -20,6 +22,8 @@ public class TileMixingTable extends TileFm implements IInventory {
     private final int   INVENTORY_SIZE = 3;
     private int         tickCount;
     private int         progress;
+    public ItemStack    changeSlot1;
+    public ItemStack    changeSlot0;
 
     public TileMixingTable() {
 
@@ -50,6 +54,7 @@ public class TileMixingTable extends TileFm implements IInventory {
                 itemStack = itemStack.splitStack(amount);
                 if (itemStack.stackSize == 1) {
                     setInventorySlotContents(slot, null);
+
                 }
             }
         }
@@ -70,26 +75,28 @@ public class TileMixingTable extends TileFm implements IInventory {
             return;
         }
 
-        if (MixingTableRecipes.canSmelt(inventory[0], inventory[1]) == false && inventory[2] != null) {
+        if (MixingTableHelper.canSmelt(inventory[0], inventory[1]) == false && inventory[2] != null) {
             return;
         }
         ++progress;
-        
-        inventory[0] = decrStackSize(0, 1);
-        inventory[1] = decrStackSize(1, 1);
 
-        ItemStack result = MixingTableRecipes.getResult(inventory[0], inventory[1]);
+       
+               
+        
+        ItemStack result = MixingTableHelper.getResult(inventory[0], inventory[1]);
 
         if (progress >= 50) {
+            
             inventory[2] = result;
+            System.out.println(inventory[1] + " and " + inventory[0] + " = " + result);
             progress = 0;
         }
 
     }
 
     {
-
         boolean hasToUpdate = false;
+
         if (hasToUpdate) {
 
             PacketDispatcher.sendPacketToAllAround(xCoord, yCoord, zCoord, 8,
@@ -169,6 +176,7 @@ public class TileMixingTable extends TileFm implements IInventory {
     public void setInventorySlotContents(int slot, ItemStack itemStack) {
 
         inventory[slot] = itemStack;
+
         if (itemStack != null && itemStack.stackSize > getInventoryStackLimit()) {
             itemStack.stackSize = getInventoryStackLimit();
         }
@@ -188,8 +196,7 @@ public class TileMixingTable extends TileFm implements IInventory {
 
     @Override
     public int getInventoryStackLimit() {
-
-        return 64;
+       return 1;
     }
 
     @Override

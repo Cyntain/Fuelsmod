@@ -77,11 +77,10 @@ public class ModItem {
         GameRegistry.addRecipe(new ItemStack(ModItem.zeoliteDust, 8), "X",
                 Character.valueOf('X'), ModItem.zeoliteDustVial);
 
-        /**********************************
-         * ALCHEMY START
-         ********************************** 
-         */
-
+        ///////////////////////
+       //  ALCHEMY RECIPES  //
+      ///////////////////////
+        
         /* Compound recipes */
         GameRegistry.addRecipe(new ItemStack(ModItem.compounds, 1, 0), "RRR",
                 "RZR", "GGG", Character.valueOf('R'), Item.redstone,

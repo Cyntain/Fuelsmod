@@ -21,8 +21,9 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemCompounds extends Item {
 
+    
     private static final String[] COMPOUND_NAMES = new String[]{ "redscar" , "greenite" ,
-            "yellownale" , "bluetonium"         };
+            "yellownale" , "bluetonium" };
 
     @SideOnly(Side.CLIENT)
     private Icon[]                icons;
@@ -93,18 +94,23 @@ public class ItemCompounds extends Item {
 
         switch (meta) {
             case 0:
+               // System.out.println("Red : " + meta);
                 par3List.add("Strange, a red hue to the compound");
                 break;
             case 1:
+                //System.out.println("green : " + meta);
                 par3List.add("Strange, a green hue to the compound");
                 break;
             case 2:
+                //System.out.println("yellow : " + meta);
                 par3List.add("Strange, a yellow hue to the compound");
                 break;
             case 3:
+              //  System.out.println("blue : " + meta);
                 par3List.add("Strange, a blue hue to the compound");
                 break;
             default:
+               // System.out.println("void : ");
                 par3List.add("Strange, a white hue to the compound");
                 break;
         }
