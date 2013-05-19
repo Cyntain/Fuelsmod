@@ -1,6 +1,4 @@
-
 package com.cyntain.Fm.item;
-
 
 import com.cyntain.Fm.lib.Reference;
 
@@ -12,9 +10,8 @@ import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.Item;
 
 
-
-
 public class ItemFm extends Item {
+
     public ItemFm(int id) {
 
         super(id - Reference.SHIFTED_ID_RANGE_CORRECTION);
@@ -24,12 +21,9 @@ public class ItemFm extends Item {
 
     @SideOnly(Side.CLIENT)
     @Override
-    public void updateIcons(IconRegister iconRegister) {
+    public void registerIcons(IconRegister iconregister) {
 
-        this.iconIndex = iconRegister.registerIcon(Reference.MOD_ID
-                + ":"
-                + this.getUnlocalizedName().substring(
-                        this.getUnlocalizedName().indexOf(".") + 1));
-
+        this.itemIcon = iconregister.registerIcon(Reference.MOD_ID + ":"
+                + this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
     }
 }

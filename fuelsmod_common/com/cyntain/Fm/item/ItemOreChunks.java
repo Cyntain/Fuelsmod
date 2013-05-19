@@ -48,9 +48,10 @@ public class ItemOreChunks extends ItemFm {
         return icons[j];
     }
 
+    
     @Override
     @SideOnly(Side.CLIENT)
-    public void updateIcons(IconRegister iconregister) {
+    public void registerIcons(IconRegister iconregister) {
 
         icons = new Icon[CHUNK_NAMES.length];
 

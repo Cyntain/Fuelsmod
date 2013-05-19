@@ -53,9 +53,10 @@ public class ItemCompounds extends Item {
         return icons[j];
     }
 
+   
     @Override
     @SideOnly(Side.CLIENT)
-    public void updateIcons(IconRegister iconregister) {
+    public void registerIcons(IconRegister iconregister) {
 
         icons = new Icon[COMPOUND_NAMES.length];
 

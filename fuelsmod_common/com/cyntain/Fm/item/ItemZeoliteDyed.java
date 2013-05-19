@@ -59,9 +59,10 @@ public class ItemZeoliteDyed extends ItemFm {
         return icons[j];
     }
 
+  
     @Override
     @SideOnly(Side.CLIENT)
-    public void updateIcons(IconRegister iconregister) {
+    public void registerIcons(IconRegister iconregister) {
 
         icons = new Icon[ZEOLITE_DUST_DYED_NAMES.length];
 

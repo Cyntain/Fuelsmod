@@ -1,6 +1,4 @@
-
 package com.cyntain.Fm.item;
-
 
 import java.util.List;
 
@@ -27,15 +25,13 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 
-
-
 public class ItemZeoliteVial extends ItemFood {
 
-    public static final String[] VIAL_NAME      = new String[] { "Zeo",
-            "Reden", "Greue", "Yellen", "Lueel" };
-    public static final String[] DISCOVER       = new String[] { "Invisablity",
-            "Fire Resistance", "Healing", "Night Vision", "Breath" };
-    private int[]                potionEffect   = { 14, 12, 10, 16, 13 };
+    public static final String[] VIAL_NAME      = new String[]{ "Zeo" , "Reden" , "Greue" ,
+            "Yellen" , "Lueel"                 };
+    public static final String[] DISCOVER       = new String[]{ "Invisablity" , "Fire Resistance" ,
+            "Healing" , "Night Vision" , "Breath" };
+    private int[]                potionEffect   = { 14 , 12 , 10 , 16 , 13 };
     private int[]                potionDuration = { 60 };
     private int[]                potionTeir     = { 3 };
 
@@ -69,26 +65,22 @@ public class ItemZeoliteVial extends ItemFood {
     @SideOnly(Side.CLIENT)
     public Icon getIconFromDamage(int meta) {
 
-        int j = MathHelper.clamp_int(meta, 0, 5);
+        int j = MathHelper.clamp_int(meta, 0, 6);
         return icons[j];
     }
 
     @Override
     @SideOnly(Side.CLIENT)
-    public void updateIcons(IconRegister iconregister) {
-
+    public void registerIcons(IconRegister iconregister) {
         icons = new Icon[VIAL_NAME.length];
-
-        for (int i = 0; i < VIAL_NAME.length; ++i) {
-            icons[i] = iconregister.registerIcon(Reference.MOD_ID.toLowerCase()
-                    + ":" + Strings.ZEOLITE_DUST_GLASS_NAME + VIAL_NAME[i]);
+        
+        for(int i = 0; i < VIAL_NAME.length; ++i){
+            icons[i] = iconregister.registerIcon(Reference.MOD_ID + ":" + Strings.ZEOLITE_DUST_GLASS_NAME + VIAL_NAME[i]);
         }
-
     }
 
-    @SuppressWarnings({ "unchecked", "rawtypes" })
-    public void addInformation(ItemStack itemStack, EntityPlayer player,
-            List list, boolean par) {
+    @SuppressWarnings({ "unchecked" , "rawtypes" })
+    public void addInformation(ItemStack itemStack, EntityPlayer player, List list, boolean par) {
 
         int meta = MathHelper.clamp_int(itemStack.getItemDamage(), 0, 4);
         switch (meta) {
@@ -182,73 +174,62 @@ public class ItemZeoliteVial extends ItemFood {
         }
     }
 
-    public void onFoodEaten(ItemStack itemStack, World world,
-            EntityPlayer player) {
+    public void onFoodEaten(ItemStack itemStack, World world, EntityPlayer player) {
 
         player.getFoodStats().addStats(this);
         this.addPotionEffects(itemStack, world, player);
         int meta = MathHelper.clamp_int(itemStack.getItemDamage(), 0, 4);
         if (meta == 0) {
-            player.inventory.addItemStackToInventory(new ItemStack(
-                    ModItem.emptyVial));
+            player.inventory.addItemStackToInventory(new ItemStack(ModItem.emptyVial));
             player.inventory.consumeInventoryItem(ItemIDs.ZEOLITE_DUST_VIAL);
             effect1 = true;
         } else if (meta == 1) {
-            player.inventory.addItemStackToInventory(new ItemStack(
-                    ModItem.emptyVial));
-            player.inventory.consumeInventoryItem(ItemIDs.ZEOLITE_DUST_VIAL
-                    + meta);
+            player.inventory.addItemStackToInventory(new ItemStack(ModItem.emptyVial));
+            player.inventory.consumeInventoryItem(ItemIDs.ZEOLITE_DUST_VIAL + meta);
             effect2 = true;
         } else if (meta == 2) {
-            player.inventory.addItemStackToInventory(new ItemStack(
-                    ModItem.emptyVial));
-            player.inventory.consumeInventoryItem(ItemIDs.ZEOLITE_DUST_VIAL
-                    + meta);
+            player.inventory.addItemStackToInventory(new ItemStack(ModItem.emptyVial));
+            player.inventory.consumeInventoryItem(ItemIDs.ZEOLITE_DUST_VIAL + meta);
             effect3 = true;
         } else if (meta == 3) {
-            player.inventory.addItemStackToInventory(new ItemStack(
-                    ModItem.emptyVial));
-            player.inventory.consumeInventoryItem(ItemIDs.ZEOLITE_DUST_VIAL
-                    + meta);
+            player.inventory.addItemStackToInventory(new ItemStack(ModItem.emptyVial));
+            player.inventory.consumeInventoryItem(ItemIDs.ZEOLITE_DUST_VIAL + meta);
             effect4 = true;
         } else {
-            player.inventory.addItemStackToInventory(new ItemStack(
-                    ModItem.emptyVial));
-            player.inventory.consumeInventoryItem(ItemIDs.ZEOLITE_DUST_VIAL
-                    + meta);
+            player.inventory.addItemStackToInventory(new ItemStack(ModItem.emptyVial));
+            player.inventory.consumeInventoryItem(ItemIDs.ZEOLITE_DUST_VIAL + meta);
             effect5 = true;
         }
     }
 
-    private void addPotionEffects(ItemStack itemStack, World world,
-            EntityPlayer player) {
+    private void addPotionEffects(ItemStack itemStack, World world, EntityPlayer player) {
 
         int meta = MathHelper.clamp_int(itemStack.getItemDamage(), 0, 5);
         switch (meta) {
             case 0:
-                player.addPotionEffect(new PotionEffect(potionEffect[0],
-                        potionDuration[0] * 20, potionTeir[0]));
+                player.addPotionEffect(new PotionEffect(potionEffect[0], potionDuration[0] * 20,
+                        potionTeir[0]));
                 break;
             case 1:
-                player.addPotionEffect(new PotionEffect(potionEffect[1],
-                        potionDuration[0] * 20, potionTeir[0]));
+                player.addPotionEffect(new PotionEffect(potionEffect[1], potionDuration[0] * 20,
+                        potionTeir[0]));
                 break;
             case 2:
-                player.addPotionEffect(new PotionEffect(potionEffect[2],
-                        potionDuration[0] * 20, potionTeir[0]));
+                player.addPotionEffect(new PotionEffect(potionEffect[2], potionDuration[0] * 20,
+                        potionTeir[0]));
                 break;
             case 3:
-                player.addPotionEffect(new PotionEffect(potionEffect[3],
-                        potionDuration[0] * 20, potionTeir[0]));
+                player.addPotionEffect(new PotionEffect(potionEffect[3], potionDuration[0] * 20,
+                        potionTeir[0]));
                 break;
             case 4:
-                player.addPotionEffect(new PotionEffect(potionEffect[4],
-                        potionDuration[0] * 20, potionTeir[0]));
+                player.addPotionEffect(new PotionEffect(potionEffect[4], potionDuration[0] * 20,
+                        potionTeir[0]));
                 break;
 
             default:
-                player.addPotionEffect(new PotionEffect(potionEffect[4],
-                        potionDuration[0] * 20, potionTeir[0]));
+                player.addPotionEffect(new PotionEffect(potionEffect[4], potionDuration[0] * 20,
+                        potionTeir[0]));
                 break;
         }
     }
@@ -258,8 +239,7 @@ public class ItemZeoliteVial extends ItemFood {
         return EnumAction.drink;
     }
 
-    public ItemStack onItemRightClick(ItemStack itemStack, World world,
-            EntityPlayer player) {
+    public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer player) {
 
         player.setItemInUse(itemStack, this.getMaxItemUseDuration(itemStack));
         return itemStack;
@@ -271,7 +251,7 @@ public class ItemZeoliteVial extends ItemFood {
     }
 
     @Override
-    @SuppressWarnings({ "unchecked", "rawtypes" })
+    @SuppressWarnings({ "unchecked" , "rawtypes" })
     @SideOnly(Side.CLIENT)
     public void getSubItems(int id, CreativeTabs creativeTab, List list) {
 
