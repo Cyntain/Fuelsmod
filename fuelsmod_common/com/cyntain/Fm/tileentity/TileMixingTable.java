@@ -18,12 +18,12 @@ import cpw.mods.fml.common.network.PacketDispatcher;
 
 public class TileMixingTable extends TileFm implements IInventory {
 
-    private ItemStack[] inventory;
-    private final int   INVENTORY_SIZE = 3;
-    private int         tickCount;
-    private int         progress;
-    public ItemStack    changeSlot1;
-    public ItemStack    changeSlot0;
+    private ItemStack[]     inventory;
+    public final static int INVENTORY_SIZE = 3;
+    private int             tickCount;
+    private int             progress;
+    public ItemStack        changeSlot1;
+    public ItemStack        changeSlot0;
 
     public TileMixingTable() {
 
@@ -80,15 +80,12 @@ public class TileMixingTable extends TileFm implements IInventory {
         }
         ++progress;
 
-       
-               
-        
         ItemStack result = MixingTableHelper.getResult(inventory[0], inventory[1]);
 
         if (progress >= 50) {
-            
+
             inventory[2] = result;
-            System.out.println(inventory[1] + " and " + inventory[0] + " = " + result);
+            // System.out.println(inventory[1] + " and " + inventory[0] + " = " + result);
             progress = 0;
         }
 
@@ -196,7 +193,8 @@ public class TileMixingTable extends TileFm implements IInventory {
 
     @Override
     public int getInventoryStackLimit() {
-       return 1;
+
+        return 1;
     }
 
     @Override

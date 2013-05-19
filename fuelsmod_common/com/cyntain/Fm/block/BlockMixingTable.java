@@ -1,6 +1,4 @@
-
 package com.cyntain.Fm.block;
-
 
 import java.util.Random;
 
@@ -13,27 +11,23 @@ import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
-
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
 
 import com.cyntain.Fm.FuelsMod;
-
 import com.cyntain.Fm.creativetab.CreativeTabFm;
-import com.cyntain.Fm.tileentity.TileMixingTable;
 import com.cyntain.Fm.lib.GUIIDs;
-
 import com.cyntain.Fm.lib.Reference;
+import com.cyntain.Fm.tileentity.TileMixingTable;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 
-
-
 public class BlockMixingTable extends BlockFm implements ITileEntityProvider {
+
     private Random        rand  = new Random();
-    public final String[] FACES = new String[] { "top", "bottom", "side" };
+    
     @SideOnly(Side.CLIENT)
     private Icon[]        icons;
 
@@ -41,36 +35,23 @@ public class BlockMixingTable extends BlockFm implements ITileEntityProvider {
 
         super(id, material);
         this.setCreativeTab(CreativeTabFm.tabsFuelMod);
+        
         this.setHardness(5f);
-
+System.out.println(getUnlocalizedName());
     }
 
-    @SideOnly(Side.CLIENT)
-    public Icon sides, bottom, top;
+   
+    
 
-    // Textures
+   
     @SideOnly(Side.CLIENT)
-    public void registerIcons(IconRegister iconregister) {
+    public void registerIcons(IconRegister iconRegister) {
 
-        this.bottom = iconregister.registerIcon(Reference.MOD_ID + ":"
-                + this.getUnlocalizedName2() + "_" + FACES[0]);
-        this.top = iconregister.registerIcon(Reference.MOD_ID + ":"
-                + this.getUnlocalizedName2() + "_" + FACES[1]);
-        this.sides = iconregister.registerIcon(Reference.MOD_ID + ":"
-                + this.getUnlocalizedName2() + "_" + FACES[2]);
+        this.blockIcon = iconRegister.registerIcon(Reference.MOD_ID + ":"
+                + this.getUnlocalizedName2());
     }
 
-    @SideOnly(Side.CLIENT)
-    public Icon getBlockTextureFromSideAndMetadata(int side, int meta) {
-
-        if (side == 0) {
-            return top;
-        } else if (side == 1) {
-            return bottom;
-        } else {
-            return sides;
-        }
-    }
+   
 
     @Override
     public TileEntity createNewTileEntity(World world) {
@@ -79,20 +60,18 @@ public class BlockMixingTable extends BlockFm implements ITileEntityProvider {
     }
 
     @Override
-    public boolean onBlockActivated(World world, int x, int y, int z,
-            EntityPlayer player, int par6, float par7, float par8, float par9) {
+    public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player,
+            int par6, float par7, float par8, float par9) {
 
         if (player.isSneaking())
             return false;
 
         else {
             if (!world.isRemote) {
-                TileMixingTable mixingtable = (TileMixingTable) world
-                        .getBlockTileEntity(x, y, z);
+                TileMixingTable mixingtable = (TileMixingTable) world.getBlockTileEntity(x, y, z);
 
                 if (mixingtable != null) {
-                    player.openGui(FuelsMod.instance, GUIIDs.mixingTable,
-                            world, x, y, z);
+                    player.openGui(FuelsMod.instance, GUIIDs.mixingTable, world, x, y, z);
                 }
             }
         }
@@ -124,9 +103,9 @@ public class BlockMixingTable extends BlockFm implements ITileEntityProvider {
                 float dY = rand.nextFloat() * 0.8F + 0.1F;
                 float dZ = rand.nextFloat() * 0.8F + 0.1F;
 
-                EntityItem entityItem = new EntityItem(world, x + dX, y + dY, z
-                        + dZ, new ItemStack(itemStack.itemID,
-                        itemStack.stackSize, itemStack.getItemDamage()));
+                EntityItem entityItem = new EntityItem(world, x + dX, y + dY, z + dZ,
+                        new ItemStack(itemStack.itemID, itemStack.stackSize,
+                                itemStack.getItemDamage()));
 
                 if (itemStack.hasTagCompound()) {
                     entityItem.getEntityItem().setTagCompound(
