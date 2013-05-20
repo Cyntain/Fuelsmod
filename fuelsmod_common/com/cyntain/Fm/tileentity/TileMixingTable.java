@@ -85,7 +85,8 @@ public class TileMixingTable extends TileFm implements IInventory {
         if (progress >= 50) {
 
             inventory[2] = result;
-            // System.out.println(inventory[1] + " and " + inventory[0] + " = " + result);
+            // System.out.println(inventory[1] + " and " + inventory[0] + " = "
+// + result);
             progress = 0;
         }
 

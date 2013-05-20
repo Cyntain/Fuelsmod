@@ -7,13 +7,13 @@ import com.cyntain.Fm.achivement.FmAchivementPage;
 import com.cyntain.Fm.block.ModBlock;
 import com.cyntain.Fm.block.WorldGenerator;
 import com.cyntain.Fm.configuration.ConfigurationHandler;
-import com.cyntain.Fm.item.ModItem;
-import com.cyntain.Fm.network.PacketHandler;
 import com.cyntain.Fm.core.handlers.LocalizationHandler;
 import com.cyntain.Fm.core.helper.MixingTableHelper;
 import com.cyntain.Fm.core.proxy.CommonProxy;
+import com.cyntain.Fm.item.ModItem;
 import com.cyntain.Fm.lib.ModLoaded;
 import com.cyntain.Fm.lib.Reference;
+import com.cyntain.Fm.network.PacketHandler;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
@@ -47,6 +47,7 @@ public class FuelsMod {
         LocalizationHandler.loadLanguages();
         ModItem.init();
         ModBlock.init();
+        proxy.PreInitRenders();
         FmAchivementPage.Init();
         MixingTableHelper.initRecipes();
         ModLoaded.PreInit_modloaded();
@@ -59,7 +60,7 @@ public class FuelsMod {
         FmAchivement.addAchievementLocalizations();
         GameRegistry.registerWorldGenerator(new WorldGenerator());
         NetworkRegistry.instance().registerGuiHandler(instance, proxy);
-        
+
         proxy.registerTileEntities();
         ModLoaded.Mod_Loaded();
 

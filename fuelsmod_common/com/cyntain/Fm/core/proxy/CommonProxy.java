@@ -1,6 +1,4 @@
-
 package com.cyntain.Fm.core.proxy;
-
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
@@ -16,8 +14,6 @@ import cpw.mods.fml.common.network.IGuiHandler;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 
-
-
 public class CommonProxy implements IGuiHandler {
 
     public void registerRenders() {
@@ -26,17 +22,14 @@ public class CommonProxy implements IGuiHandler {
 
     public void registerTileEntities() {
 
-        GameRegistry.registerTileEntity(TileMixingTable.class,
-                Strings.TE_MIXINGTABLE);
+        GameRegistry.registerTileEntity(TileMixingTable.class, Strings.TE_MIXINGTABLE);
     }
 
     @Override
-    public Object getServerGuiElement(int ID, EntityPlayer player, World world,
-            int x, int y, int z) {
+    public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
 
         if (ID == GUIIDs.mixingTable) {
-            TileMixingTable mixingtable = (TileMixingTable) world
-                    .getBlockTileEntity(x, y, z);
+            TileMixingTable mixingtable = (TileMixingTable) world.getBlockTileEntity(x, y, z);
 
             return new ContainerMixingTable(player.inventory, mixingtable);
 
@@ -46,12 +39,10 @@ public class CommonProxy implements IGuiHandler {
     }
 
     @Override
-    public Object getClientGuiElement(int ID, EntityPlayer player, World world,
-            int x, int y, int z) {
+    public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
 
         if (ID == GUIIDs.mixingTable) {
-            TileMixingTable mixingtable = (TileMixingTable) world
-                    .getBlockTileEntity(x, y, z);
+            TileMixingTable mixingtable = (TileMixingTable) world.getBlockTileEntity(x, y, z);
 
             return new GuiMixingTable(player.inventory, mixingtable);
 
@@ -59,8 +50,12 @@ public class CommonProxy implements IGuiHandler {
         return null;
     }
 
-    public void handleTileEntityPacket(int x, int y, int z,
-            ForgeDirection orientation, byte state, String customName) {
+    public void handleTileEntityPacket(int x, int y, int z, ForgeDirection orientation, byte state,
+            String customName) {
+
+    }
+
+    public void PreInitRenders() {
 
     }
 }

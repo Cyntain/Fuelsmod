@@ -33,4 +33,5 @@
 	<entry key="tile.steamSmelterBlock.name">Steam Smelter</entry>
 	<entry key="tile.worktableBlock.name">Worktable</entry>
 	<entry key="tile.workshopTableBlock.name">Workshop table</entry>
- </properties>
+	<entry key="tile.mixingTableBlock.name">Mixing Table</entry>
+</properties>

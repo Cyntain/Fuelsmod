@@ -1,5 +1,12 @@
 package com.cyntain.Fm.block;
 
+import static net.minecraftforge.common.ForgeDirection.DOWN;
+import static net.minecraftforge.common.ForgeDirection.EAST;
+import static net.minecraftforge.common.ForgeDirection.NORTH;
+import static net.minecraftforge.common.ForgeDirection.SOUTH;
+import static net.minecraftforge.common.ForgeDirection.UP;
+import static net.minecraftforge.common.ForgeDirection.WEST;
+
 import java.util.Random;
 
 import net.minecraft.block.ITileEntityProvider;
@@ -13,8 +20,10 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
+import net.minecraftforge.common.ForgeDirection;
 
 import com.cyntain.Fm.FuelsMod;
+import com.cyntain.Fm.core.ClientProxy;
 import com.cyntain.Fm.creativetab.CreativeTabFm;
 import com.cyntain.Fm.lib.GUIIDs;
 import com.cyntain.Fm.lib.Reference;
@@ -26,32 +35,63 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockMixingTable extends BlockFm implements ITileEntityProvider {
 
-    private Random        rand  = new Random();
-    
+    private Random rand = new Random();
+
     @SideOnly(Side.CLIENT)
-    private Icon[]        icons;
+    private Icon[] icons;
 
     public BlockMixingTable(int id, Material material) {
 
         super(id, material);
         this.setCreativeTab(CreativeTabFm.tabsFuelMod);
-        
+
         this.setHardness(5f);
-System.out.println(getUnlocalizedName());
+
     }
 
-   
-    
+    @Override
+    public boolean canPlaceBlockOnSide(World par1World, int par2, int par3, int par4, int par5) {
 
-   
+        ForgeDirection dir = ForgeDirection.getOrientation(par5);
+        return (dir == DOWN && par1World.isBlockSolidOnSide(par2, par3 + 1, par4, DOWN))
+                || (dir == UP && par1World.isBlockSolidOnSide(par2, par3 - 1, par4, UP))
+                || (dir == NORTH && par1World.isBlockSolidOnSide(par2, par3, par4 + 1, NORTH))
+                || (dir == SOUTH && par1World.isBlockSolidOnSide(par2, par3, par4 - 1, SOUTH))
+                || (dir == WEST && par1World.isBlockSolidOnSide(par2 + 1, par3, par4, WEST))
+                || (dir == EAST && par1World.isBlockSolidOnSide(par2 - 1, par3, par4, EAST));
+    }
+
+    @Override
+    public boolean canPlaceBlockAt(World par1World, int par2, int par3, int par4) {
+
+        return par1World.isBlockSolidOnSide(par2 - 1, par3, par4, EAST)
+                || par1World.isBlockSolidOnSide(par2 + 1, par3, par4, WEST)
+                || par1World.isBlockSolidOnSide(par2, par3, par4 - 1, SOUTH)
+                || par1World.isBlockSolidOnSide(par2, par3, par4 + 1, NORTH);
+    }
+
+    @Override
+    public int getRenderType() {
+
+        return ClientProxy.MIXINGTABLE;
+    }
+
+    public boolean renderAsNormalBlock() {
+
+        return false;
+    }
+
+    public boolean isOpaqueCube() {
+
+        return false;
+    }
+
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister iconRegister) {
 
         this.blockIcon = iconRegister.registerIcon(Reference.MOD_ID + ":"
                 + this.getUnlocalizedName2());
     }
-
-   
 
     @Override
     public TileEntity createNewTileEntity(World world) {

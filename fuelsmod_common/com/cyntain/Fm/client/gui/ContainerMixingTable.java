@@ -74,7 +74,7 @@ public class ContainerMixingTable extends Container {
         return true;
 
     }
-
+// TODO Get Shift clicking working, so it knows what kind of item to put into the slots.
     @Override
     public ItemStack transferStackInSlot(EntityPlayer player, int slotIndex) {
 
@@ -86,6 +86,7 @@ public class ContainerMixingTable extends Container {
             itemstack = itemstack1.copy();
 
             if (slotIndex < TileMixingTable.INVENTORY_SIZE) {
+               
                 if (!this.mergeItemStack(itemstack1, TileMixingTable.INVENTORY_SIZE,
                         inventorySlots.size(), false)) {
                     return null;
@@ -100,9 +101,9 @@ public class ContainerMixingTable extends Container {
             } else {
                 slot.onSlotChanged();
             }
+        
         }
-
         return itemstack;
     }
-
+    
 }
