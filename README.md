@@ -15,6 +15,6 @@ How to Contribute:
 - 2|| Click the little branch/plus icon at the top-right of this page (below your username).
 - 3|| Make the changes that you want to.
 - 4|| Click Pull Request at the top-middle of the page (left of your fork's name, to the right of Watch and Fork).
-- 5|| Enter your PR's title, and create a detailed description telling pahimar what you changed.
+- 5|| Enter your PR's title, and create a detailed description telling us what you changed.
 - 6|| Click Send pull request, and you're done!
-- *(pahimar's guide to contributing)*
+
