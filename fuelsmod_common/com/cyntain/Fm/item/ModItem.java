@@ -29,6 +29,10 @@ public class ModItem {
     public static Item emptyVial;
     public static Item compounds;
     public static Item boiler;
+    public static Item woodenCog;
+    public static Item stoneCog;
+    public static Item ironCog;
+    public static Item copperCog;
 
     public static void init() {
 
@@ -56,6 +60,13 @@ public class ModItem {
         compounds = new ItemCompounds(ItemIDs.COMPOUND);
         boiler = new ItemBoiler(ItemIDs.BOILER_DEFAULT);
         oreChunks = new ItemOreChunks(ItemIDs.ORE_CHUNK);
+        
+        // COG ITEMs
+        woodenCog = new ItemWoodenCog(ItemIDs.WOODEN_COG);
+        stoneCog = new ItemStoneCog(ItemIDs.STONE_COG);
+        ironCog = new ItemIronCog(ItemIDs.IRON_COG);
+        copperCog = new ItemCopperCog(ItemIDs.COPPER_COG);
+        
 
         /* Register + Initialize Smelting Recipes */
 
@@ -76,6 +87,14 @@ public class ModItem {
                 ModItem.zeoliteDust, Character.valueOf('Y'), ModItem.emptyVial);
         GameRegistry.addRecipe(new ItemStack(ModItem.zeoliteDust, 8), "X",
                 Character.valueOf('X'), ModItem.zeoliteDustVial);
+        GameRegistry.addRecipe(new ItemStack(ModItem.woodenCog, 1), "XXX",
+                "X X", "XXX", Character.valueOf('X'), Item.stick);
+        GameRegistry.addRecipe(new ItemStack(ModItem.stoneCog, 1), "XXX",
+                "XYX", "XXX", Character.valueOf('X'), Block.cobblestone, Character.valueOf('Y'), ModItem.woodenCog);
+        GameRegistry.addRecipe(new ItemStack(ModItem.ironCog, 1), "XXX",
+                "XYX", "XXX", Character.valueOf('X'), Item.ingotIron, Character.valueOf('Y'), ModItem.stoneCog);
+        GameRegistry.addRecipe(new ItemStack(ModItem.copperCog, 1), "XXX",
+                "XYX", "XXX", Character.valueOf('X'), ModItem.copperIngot, Character.valueOf('Y'), ModItem.stoneCog);
 
         ///////////////////////
        //  ALCHEMY RECIPES  //

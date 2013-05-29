@@ -12,7 +12,7 @@
 	<entry key="item.oreChunkberyllium.name">Beryllium Ore Chunk</entry>
 	<entry key="item.berylliumOreCluster.name">Beryllium Ore Cluster</entry>
 	<entry key="item.zeoliteDust.name">Zeolite Dust</entry>
-   	 <entry key="item.zeoliteDyedlueel.name">Lueel Zeolite Dust</entry>
+   	<entry key="item.zeoliteDyedlueel.name">Lueel Zeolite Dust</entry>
 	<entry key="item.zeoliteDyedyellen.name">Yellen Zeolite Dust</entry>
 	<entry key="item.zeoliteDyedgreue.name">Greue Zeolite Dust</entry>
 	<entry key="item.zeoliteDyedreden.name">Reden Zeolite Dust</entry>
@@ -20,10 +20,14 @@
    	<entry key="item.emptyVial.name">Empty Glass Vial</entry>
 	<entry key="item.compoundredscar.name">Compound Of Redscar</entry>
 	<entry key="item.compoundgreenite.name">Compound Of Greenite</entry>
-    	<entry key="item.compoundyellownale.name">Compound Of Yellownale</entry>
+    <entry key="item.compoundyellownale.name">Compound Of Yellownale</entry>
 	<entry key="item.compoundbluetonium.name">Compound Of Bluetonium</entry>
+	<entry key="item.woodenCog.name">Wooden Cog</entry>
+	<entry key="item.stoneCog.name">Stone Cog</entry>
+	<entry key="item.ironCog.name">Iron Cog</entry>
+	<entry key="item.copperCog.name">Copper Cog</entry>
 	<entry key="tile.copperOre.name">Copper Ore</entry>
-    	<entry key="tile.osmiumOre.name">Osmium Ore</entry>
+    <entry key="tile.osmiumOre.name">Osmium Ore</entry>
 	<entry key="tile.berylliumOre.name">Beryllium Ore</entry>
 	<entry key="tile.zeoliteOre.name">Zeolite Ore</entry>
 	<entry key="tile.copperBlock.name">Block of Copper</entry>
