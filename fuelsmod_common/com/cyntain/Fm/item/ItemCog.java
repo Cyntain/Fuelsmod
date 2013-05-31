@@ -63,7 +63,7 @@ public class ItemCog extends ItemFm {
     @SideOnly(Side.CLIENT)
     public void getSubItems(int id, CreativeTabs creativeTab, List list) {
 
-        for (int meta = 0; meta < 5; ++meta) {
+        for (int meta = 0; meta < 4; ++meta) {
             list.add(new ItemStack(id, 1, meta));
         }
     }

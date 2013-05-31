@@ -1,10 +1,8 @@
-
 package com.cyntain.Fm.lib;
 
 public class BlockIDs {
 
     /* Default Block id */
-
     public static int COPPER_ORE_DEFAULT           = 700;
     public static int OSMIUM_ORE_DEFAULT           = 701;
     public static int BERYLLIUM_ORE_DEFAULT        = 702;
@@ -13,11 +11,9 @@ public class BlockIDs {
     public static int OSMIUM_BLOCK_DEFAULT         = 705;
     public static int BERYLLIUM_BLOCK_DEFAULT      = 706;
     public static int HEATPROOFBRICK_BLOCK_DEFAULT = 707;
-
     public static int STEAM_SMELTER_BLOCK_DEFAULT  = 800;
     public static int WORKTABLE_BLOCK_DEFAULT      = 801;
     public static int WORKSHOPTABLE_BLOCK_DEFAULT  = 802;
-
     public static int MIXINGTABLE_BLOCK_DEFAULT    = 850;
 
     /* Current Block id - config tba */

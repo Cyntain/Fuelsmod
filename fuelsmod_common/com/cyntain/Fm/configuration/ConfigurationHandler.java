@@ -49,6 +49,9 @@ public class ConfigurationHandler {
 
             ItemIDs.COMPOUND = configuration.getItem(Strings.ITEM_COMPOUND_NAME,
                     ItemIDs.COMPOUND_DEFAULT).getInt(ItemIDs.COMPOUND_DEFAULT);
+            
+            ItemIDs.COG = configuration.getItem(Strings.COG_NAME,
+                    ItemIDs.COG_DEFAULT).getInt(ItemIDs.COG_DEFAULT);
 
         } catch (Exception e) {
             FMLLog.log(Level.SEVERE, e, Reference.MOD_NAME

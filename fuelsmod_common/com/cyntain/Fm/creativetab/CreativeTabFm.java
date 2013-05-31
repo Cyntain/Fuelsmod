@@ -15,7 +15,7 @@ import net.minecraft.creativetab.CreativeTabs;
 public final class CreativeTabFm extends CreativeTabs {
     public CreativeTabFm() {
 
-        super("Fuels Mod");
+        super("Fuels Mod: Tech.");
     }
 
     @SideOnly(Side.CLIENT)

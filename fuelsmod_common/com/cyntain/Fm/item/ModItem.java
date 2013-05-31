@@ -28,20 +28,18 @@ public class ModItem {
 
         /* Initialise each mod item individually */
 
-       
         rawIngot = new ItemIngot(ItemIDs.RAW_INGOT);
-        cluster = new ItemCluster(ItemIDs.CLUSTER);   
+        cluster = new ItemCluster(ItemIDs.CLUSTER);
         zeoliteDust = new ItemZeoliteDust(ItemIDs.ZEOLITE_DUST);
         zeoliteDustVial = new ItemZeoliteVial(ItemIDs.ZEOLITE_DUST_VIAL);
-        zeoliteDustDyed = new ItemZeoliteDyed(ItemIDs.ZEOLITE_DYED);     
+        zeoliteDustDyed = new ItemZeoliteDyed(ItemIDs.ZEOLITE_DYED);
         emptyVial = new ItemEmptyVial(ItemIDs.EMPTY_VIAL);
         compounds = new ItemCompounds(ItemIDs.COMPOUND);
         boiler = new ItemBoiler(ItemIDs.BOILER_DEFAULT);
         oreChunks = new ItemOreChunks(ItemIDs.ORE_CHUNK);
         osmiumGrate = new ItemOsmiumGrate(ItemIDs.OSMIUM_GRATE);
-        cog = new ItemCog(ItemIDs.COG_DEFAULT); // need to add to the config.
-        
-        
+        cog = new ItemCog(ItemIDs.COG);
+
         /* Register + Initialize Smelting + Crafting Recipes */
 
         GameRegistry.addRecipe(new ItemStack(ModItem.osmiumGrate, 4), "WXW", "XXX", "WXW",

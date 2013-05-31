@@ -9,11 +9,13 @@ import net.minecraft.network.packet.Packet;
 import net.minecraft.network.packet.Packet132TileEntityData;
 
 import com.cyntain.Fm.core.helper.MixingTableHelper;
+import com.cyntain.Fm.item.ModItem;
 import com.cyntain.Fm.lib.Strings;
 
 import cpw.mods.fml.common.network.PacketDispatcher;
 
 
+/* TODO Get the graphical progress bar working.*/
 public class TileMixingTable extends TileFm implements IInventory {
 
     private ItemStack[]     mixingTableInv;
@@ -78,13 +80,20 @@ public class TileMixingTable extends TileFm implements IInventory {
 
         if (MixingTableHelper.canSmelt(mixingTableInv[0], mixingTableInv[1]) == false
                 && mixingTableInv[2] != null) {
+
             return;
         }
         ++progress;
 
         ItemStack result = MixingTableHelper.getResult(mixingTableInv[0], mixingTableInv[1]);
 
-        if (progress >= 100) {
+        if (MixingTableHelper.canSmelt(mixingTableInv[0], mixingTableInv[0]) == false) {
+            if (progress >= 100) {
+                mixingTableInv[0] = null;
+                mixingTableInv[1] = null;
+                mixingTableInv[2] = new ItemStack(ModItem.zeoliteDust, 0, 1);
+            }
+        } else if (progress >= 100) {
             mixingTableInv[0] = null;
             mixingTableInv[1] = null;
             mixingTableInv[2] = result;
@@ -95,20 +104,19 @@ public class TileMixingTable extends TileFm implements IInventory {
             progress = 0;
         }
 
-    }
+        {
+            boolean hasToUpdate = false;
 
-    {
-        boolean hasToUpdate = false;
+            if (hasToUpdate) {
 
-        if (hasToUpdate) {
+                PacketDispatcher.sendPacketToAllAround(xCoord, yCoord, zCoord, 8,
+                        this.worldObj.provider.dimensionId, getDescriptionPacket());
 
-            PacketDispatcher.sendPacketToAllAround(xCoord, yCoord, zCoord, 8,
-                    this.worldObj.provider.dimensionId, getDescriptionPacket());
+            }
 
-        }
-
-        if (tickCount >= 20) {
-            tickCount = 0;
+            if (tickCount >= 20) {
+                tickCount = 0;
+            }
         }
     }
 

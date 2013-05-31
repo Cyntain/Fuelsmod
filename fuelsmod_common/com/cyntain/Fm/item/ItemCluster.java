@@ -35,6 +35,7 @@ public class ItemCluster extends ItemFm {
     public String getUnlocalizedName(ItemStack itemstack) {
 
         int meta = MathHelper.clamp_int(itemstack.getItemDamage(), 0, 1);
+       // System.out.println(meta + super.getUnlocalizedName());
         return super.getUnlocalizedName() + CLUSTER_NAME[meta];
     }
 
@@ -54,7 +55,7 @@ public class ItemCluster extends ItemFm {
 
         for (int i = 0; i < CLUSTER_NAME.length; ++i) {
             icons[i] = iconregister.registerIcon(Reference.MOD_ID.toLowerCase() + ":"
-                    + CLUSTER_NAME[i].toLowerCase() + Strings.CLUSTER_NAME);
+                    + Strings.CLUSTER_NAME + CLUSTER_NAME[i]);
         }
 
     }
@@ -64,7 +65,7 @@ public class ItemCluster extends ItemFm {
     @SideOnly(Side.CLIENT)
     public void getSubItems(int id, CreativeTabs creativeTab, List list) {
 
-        for (int meta = 0; meta < 3; ++meta) {
+        for (int meta = 0; meta < 2; ++meta) {
             list.add(new ItemStack(id, 1, meta));
         }
     }

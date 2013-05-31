@@ -5,7 +5,7 @@ public class Strings {
     /* Item Names */
     public static final String ORE_CHUNK               = "oreChunk";
     public static final String INGOT_NAME              = "rawIngots";
-    public static final String CLUSTER_NAME            = "OreCluster";
+    public static final String CLUSTER_NAME            = "oreCluster";
     public static final String OSMIUM_GRATE_NAME       = "osmiumGrate";
     public static final String BERYLLIUM_CLUSTER_NAME  = "berylliumOreCluster";
     public static final String ZEOLITE_DUST_NAME       = "zeoliteDust";
