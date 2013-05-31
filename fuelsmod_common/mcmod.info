@@ -2,7 +2,7 @@
 {
   "modid": "Fm",
   "name": "Fuels Mod",
-  "description": "Additional fuels into the game that will allow complex machines to work.",
+  "description": "Additional fuels into the game that will allow complex machines to work. With the added  alchemy to give the full aspect of science from the begining!",
   "version": "a: 0.0.0",
   "url": "",
   "updateUrl": "",
@@ -10,7 +10,7 @@
     "Cyntain",
     "Anton"
   ],
-  "credits": "Visual_Argonian, Pahimar and fuj1n",
+  "credits": " PaleoCrafter (MultiIO framework) fuj1n",
   "logoFile": "",
   "screenshots": [
   ],

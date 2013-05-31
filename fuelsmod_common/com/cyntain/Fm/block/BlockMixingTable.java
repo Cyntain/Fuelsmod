@@ -24,7 +24,7 @@ import net.minecraftforge.common.ForgeDirection;
 
 import com.cyntain.Fm.FuelsMod;
 import com.cyntain.Fm.core.ClientProxy;
-import com.cyntain.Fm.creativetab.CreativeTabFm;
+import com.cyntain.Fm.creativetab.CreativeTabFmAlchemy;
 import com.cyntain.Fm.lib.GUIIDs;
 import com.cyntain.Fm.lib.Reference;
 import com.cyntain.Fm.tileentity.TileMixingTable;
@@ -43,7 +43,7 @@ public class BlockMixingTable extends BlockFm implements ITileEntityProvider {
     public BlockMixingTable(int id, Material material) {
 
         super(id, material);
-        this.setCreativeTab(CreativeTabFm.tabsFuelMod);
+        this.setCreativeTab(CreativeTabFmAlchemy.tabsFuelsmodAlchemy);
 
         this.setHardness(5f);
 

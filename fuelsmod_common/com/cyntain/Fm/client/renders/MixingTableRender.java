@@ -18,7 +18,7 @@ import cpw.mods.fml.client.registry.ISimpleBlockRenderingHandler;
  * 
  *  Created the render. 
  *  (c) fuj1n
- *  
+ *  TODO Make this into a .obj file 
  */
 public class MixingTableRender implements ISimpleBlockRenderingHandler {
 

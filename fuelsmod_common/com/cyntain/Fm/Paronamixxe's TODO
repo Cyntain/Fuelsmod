@@ -3,16 +3,4 @@ Pending:
 • Rendered models
 • Add steam smelter + worktable  + workshop table to all lang files. (done en_US)
 
-• To talk about adding the buildcraft api for power.
-
-Extra:
-• Mining helmet (code + texture) 
-
 Done: 
-• Set up development environment
-• Ore blocks (Copper, Osmium, Beryllium, zeolite*redstone drop*)
-• Metal blocks (Block of Copper, Block of Osmium, block of beryllium)
-• Try to relocate the block code to its propper place
-• Languages
-• Pirate language file
-• to add the steam smelter name to the langauge files.

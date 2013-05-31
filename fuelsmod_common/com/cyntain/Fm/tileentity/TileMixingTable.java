@@ -14,52 +14,53 @@ import com.cyntain.Fm.lib.Strings;
 import cpw.mods.fml.common.network.PacketDispatcher;
 
 
-/*TODO make it so if slots 0 and 1 have one item in it, it sets the slot to null*/
-
 public class TileMixingTable extends TileFm implements IInventory {
 
-    private ItemStack[]     inventory;
+    private ItemStack[]     mixingTableInv;
     public final static int INVENTORY_SIZE = 3;
     private int             tickCount;
     private int             progress;
     public ItemStack        changeSlot1;
     public ItemStack        changeSlot0;
+    public boolean          debug          = false;
 
     public TileMixingTable() {
 
-        inventory = new ItemStack[INVENTORY_SIZE];
+        mixingTableInv = new ItemStack[INVENTORY_SIZE];
 
     }
 
     @Override
     public int getSizeInventory() {
 
-        return this.inventory.length;
+        return this.mixingTableInv.length;
     }
 
     @Override
     public ItemStack getStackInSlot(int slot) {
 
-        return inventory[slot];
+        return mixingTableInv[slot];
     }
 
     @Override
     public ItemStack decrStackSize(int slot, int amount) {
 
-        ItemStack itemStack = getStackInSlot(slot);
-        if (itemStack != null) {
-            if (itemStack.stackSize <= amount) {
-                setInventorySlotContents(slot, null);
+        if (this.mixingTableInv[slot] != null) {
+            ItemStack itemStack;
+            if (this.mixingTableInv[slot].stackSize >= amount) {
+                itemStack = this.mixingTableInv[slot];
+                this.mixingTableInv[slot] = null;
+                return itemStack;
             } else {
-                itemStack = itemStack.splitStack(amount);
-                if (itemStack.stackSize == 1) {
-                    setInventorySlotContents(slot, null);
-
+                itemStack = this.mixingTableInv[slot].splitStack(amount);
+                if (this.mixingTableInv[slot].stackSize == 0) {
+                    this.mixingTableInv[slot] = null;
                 }
+                return itemStack;
             }
+        } else {
+            return null;
         }
-
-        return itemStack;
     }
 
     @Override
@@ -71,22 +72,26 @@ public class TileMixingTable extends TileFm implements IInventory {
             return;
         }
 
-        if (inventory[0] == null || inventory[1] == null) {
+        if (mixingTableInv[0] == null || mixingTableInv[1] == null) {
             return;
         }
 
-        if (MixingTableHelper.canSmelt(inventory[0], inventory[1]) == false && inventory[2] != null) {
+        if (MixingTableHelper.canSmelt(mixingTableInv[0], mixingTableInv[1]) == false
+                && mixingTableInv[2] != null) {
             return;
         }
         ++progress;
 
-        ItemStack result = MixingTableHelper.getResult(inventory[0], inventory[1]);
+        ItemStack result = MixingTableHelper.getResult(mixingTableInv[0], mixingTableInv[1]);
 
-        if (progress >= 50) {
-
-            inventory[2] = result;
-            // System.out.println(inventory[1] + " and " + inventory[0] + " = "
-// + result);
+        if (progress >= 100) {
+            mixingTableInv[0] = null;
+            mixingTableInv[1] = null;
+            mixingTableInv[2] = result;
+            if (debug) {
+                System.out
+                        .println(mixingTableInv[1] + " and " + mixingTableInv[0] + " = " + result);
+            }
             progress = 0;
         }
 
@@ -129,12 +134,12 @@ public class TileMixingTable extends TileFm implements IInventory {
 
         // Read in the ItemStacks in the inventory from NBT
         NBTTagList tagList = nbtTagCompound.getTagList("Items");
-        inventory = new ItemStack[this.getSizeInventory()];
+        mixingTableInv = new ItemStack[this.getSizeInventory()];
         for (int i = 0; i < tagList.tagCount(); ++i) {
             NBTTagCompound tagCompound = (NBTTagCompound) tagList.tagAt(i);
             byte slot = tagCompound.getByte("Slot");
-            if (slot >= 0 && slot < inventory.length) {
-                inventory[slot] = ItemStack.loadItemStackFromNBT(tagCompound);
+            if (slot >= 0 && slot < mixingTableInv.length) {
+                mixingTableInv[slot] = ItemStack.loadItemStackFromNBT(tagCompound);
             }
         }
         progress = nbtTagCompound.getInteger("Progress");
@@ -148,11 +153,11 @@ public class TileMixingTable extends TileFm implements IInventory {
 
         // Write the ItemStacks in the inventory to NBT
         NBTTagList tagList = new NBTTagList();
-        for (int currentIndex = 0; currentIndex < inventory.length; ++currentIndex) {
-            if (inventory[currentIndex] != null) {
+        for (int currentIndex = 0; currentIndex < mixingTableInv.length; ++currentIndex) {
+            if (mixingTableInv[currentIndex] != null) {
                 NBTTagCompound tagCompound = new NBTTagCompound();
                 tagCompound.setByte("Slot", (byte) currentIndex);
-                inventory[currentIndex].writeToNBT(tagCompound);
+                mixingTableInv[currentIndex].writeToNBT(tagCompound);
                 tagList.appendTag(tagCompound);
             }
         }
@@ -173,7 +178,7 @@ public class TileMixingTable extends TileFm implements IInventory {
     @Override
     public void setInventorySlotContents(int slot, ItemStack itemStack) {
 
-        inventory[slot] = itemStack;
+        mixingTableInv[slot] = itemStack;
 
         if (itemStack != null && itemStack.stackSize > getInventoryStackLimit()) {
             itemStack.stackSize = getInventoryStackLimit();

@@ -22,32 +22,28 @@ public class ModItem {
     public static Item emptyVial;
     public static Item compounds;
     public static Item boiler;
+    public static Item cog;
 
     public static void init() {
 
         /* Initialise each mod item individually */
 
-        // COPPER ITEMs
+       
         rawIngot = new ItemIngot(ItemIDs.RAW_INGOT);
-        cluster = new ItemCluster(ItemIDs.CLUSTER);
-
-        
-
-        
-        // ZEOLITE ITEMs
+        cluster = new ItemCluster(ItemIDs.CLUSTER);   
         zeoliteDust = new ItemZeoliteDust(ItemIDs.ZEOLITE_DUST);
         zeoliteDustVial = new ItemZeoliteVial(ItemIDs.ZEOLITE_DUST_VIAL);
-        zeoliteDustDyed = new ItemZeoliteDyed(ItemIDs.ZEOLITE_DYED);
-
-        // OTHER ITEMs
+        zeoliteDustDyed = new ItemZeoliteDyed(ItemIDs.ZEOLITE_DYED);     
         emptyVial = new ItemEmptyVial(ItemIDs.EMPTY_VIAL);
         compounds = new ItemCompounds(ItemIDs.COMPOUND);
         boiler = new ItemBoiler(ItemIDs.BOILER_DEFAULT);
         oreChunks = new ItemOreChunks(ItemIDs.ORE_CHUNK);
         osmiumGrate = new ItemOsmiumGrate(ItemIDs.OSMIUM_GRATE);
+        cog = new ItemCog(ItemIDs.COG_DEFAULT); // need to add to the config.
+        
+        
+        /* Register + Initialize Smelting + Crafting Recipes */
 
-        /* Register + Initialize Smelting Recipes */       
-       
         GameRegistry.addRecipe(new ItemStack(ModItem.osmiumGrate, 4), "WXW", "XXX", "WXW",
                 Character.valueOf('W'), Item.ingotIron, Character.valueOf('X'), new ItemStack(
                         ModItem.rawIngot, 1, 3));
@@ -55,8 +51,6 @@ public class ModItem {
         // /////////////////////
         // ALCHEMY RECIPES /////
         // /////////////////////
-
-        /* Shaped Crafting Recipe */
 
         GameRegistry.addRecipe(new ItemStack(ModItem.emptyVial, 1), "X X", "X X", " X ",
                 Character.valueOf('X'), Block.glass);

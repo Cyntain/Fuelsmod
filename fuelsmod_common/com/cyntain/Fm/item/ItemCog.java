@@ -16,33 +16,33 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 
-public class ItemCluster extends ItemFm {
+public class ItemCog extends ItemFm {
 
-    public static final String[] CLUSTER_NAME = { "Beryllium" , "Copper" };
+    public static final String[] COG_NAME = new String[]{ "Wood" , "Stone" , "Iron", "Copper" };
+
     @SideOnly(Side.CLIENT)
     private Icon[]               icons;
 
-    public ItemCluster(int id) {
+    public ItemCog(int id) {
 
         super(id);
         this.setHasSubtypes(true);
-        this.setCreativeTab(CreativeTabFm.tabsFuelMod);
-        this.setUnlocalizedName(Strings.CLUSTER_NAME);
-
+        this.setUnlocalizedName(Strings.COG_NAME);
+        setCreativeTab(CreativeTabFm.tabsFuelMod);
     }
 
     @Override
     public String getUnlocalizedName(ItemStack itemstack) {
 
-        int meta = MathHelper.clamp_int(itemstack.getItemDamage(), 0, 1);
-        return super.getUnlocalizedName() + CLUSTER_NAME[meta];
+        int meta = MathHelper.clamp_int(itemstack.getItemDamage(), 0, 3);
+        return super.getUnlocalizedName() + COG_NAME[meta];
     }
 
     @Override
     @SideOnly(Side.CLIENT)
     public Icon getIconFromDamage(int meta) {
 
-        int j = MathHelper.clamp_int(meta, 0, 1);
+        int j = MathHelper.clamp_int(meta, 0, 3);
         return icons[j];
     }
 
@@ -50,13 +50,12 @@ public class ItemCluster extends ItemFm {
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister iconregister) {
 
-        icons = new Icon[CLUSTER_NAME.length];
+        icons = new Icon[COG_NAME.length];
 
-        for (int i = 0; i < CLUSTER_NAME.length; ++i) {
-            icons[i] = iconregister.registerIcon(Reference.MOD_ID.toLowerCase() + ":"
-                    + CLUSTER_NAME[i].toLowerCase() + Strings.CLUSTER_NAME);
+        for (int i = 0; i < COG_NAME.length; ++i) {
+            icons[i] = iconregister.registerIcon(Reference.MOD_ID + ":" + Strings.COG_NAME
+                    + COG_NAME[i]);
         }
-
     }
 
     @Override
@@ -64,7 +63,7 @@ public class ItemCluster extends ItemFm {
     @SideOnly(Side.CLIENT)
     public void getSubItems(int id, CreativeTabs creativeTab, List list) {
 
-        for (int meta = 0; meta < 3; ++meta) {
+        for (int meta = 0; meta < 5; ++meta) {
             list.add(new ItemStack(id, 1, meta));
         }
     }
