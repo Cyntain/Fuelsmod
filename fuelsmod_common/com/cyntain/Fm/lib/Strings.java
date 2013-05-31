@@ -1,15 +1,14 @@
-
 package com.cyntain.Fm.lib;
 
 public class Strings {
 
     /* Item Names */
     public static final String ORE_CHUNK               = "oreChunk";
-    public static final String COPPER_INGOT_NAME       = "copperIngot";
-    public static final String COPPER_CLUSTER_NAME     = "copperOreCluster";
-    public static final String OSMIUM_INGOT_NAME       = "osmiumIngot";
+    public static final String INGOT_NAME              = "rawIngots";
+    public static final String CLUSTER_NAME            = "oreCluster";
+
     public static final String OSMIUM_GRATE_NAME       = "osmiumGrate";
-    public static final String BERYLLIUM_INGOT_NAME    = "berylliumIngot";
+
     public static final String BERYLLIUM_CLUSTER_NAME  = "berylliumOreCluster";
     public static final String ZEOLITE_DUST_NAME       = "zeoliteDust";
     public static final String ZEOLITE_DYED_NAME       = "zeoliteDyed";

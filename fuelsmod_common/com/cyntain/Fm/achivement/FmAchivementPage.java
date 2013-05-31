@@ -21,7 +21,7 @@ public class FmAchivementPage extends AchievementPage {
 
     public static AchievementPage FmPage = new AchievementPage(
                                                  Strings.Page1_Name,
-                                                 FmAchivement.CopperCluster,
+                                                
                                                  FmAchivement.ZeoliteDust);
 
     public static void Init() {

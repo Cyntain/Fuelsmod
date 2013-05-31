@@ -2,7 +2,7 @@ package com.cyntain.Fm;
 
 import java.io.File;
 
-import com.cyntain.Fm.achivement.FmAchivement;
+//import com.cyntain.Fm.achivement.FmAchivement;
 import com.cyntain.Fm.achivement.FmAchivementPage;
 import com.cyntain.Fm.block.ModBlock;
 import com.cyntain.Fm.block.WorldGenerator;
@@ -57,7 +57,7 @@ public class FuelsMod {
     @Init
     public void load(FMLInitializationEvent event) {
 
-        FmAchivement.addAchievementLocalizations();
+       // FmAchivement.addAchievementLocalizations();
         GameRegistry.registerWorldGenerator(new WorldGenerator());
         NetworkRegistry.instance().registerGuiHandler(instance, proxy);
 

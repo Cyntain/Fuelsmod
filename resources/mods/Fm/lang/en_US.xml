@@ -2,21 +2,26 @@
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties version="1.0">
 	<comment>English (en_US) Localization File</comment>
-	<entry key="item.copperIngot.name">Copper Ingot</entry>
+	<entry key="item.rawIngotsCopper.name">Copper Ingot</entry>
 	<entry key="item.oreChunkcopper.name">Copper Ore Chunk</entry>
 	<entry key="item.copperOreCluster.name">Copper Ore Cluster</entry>
-	<entry key="item.osmiumIngot.name">Osmium Ingot</entry>
+	<entry key="item.rawIngotsOsmium.name">Osmium Ingot</entry>
 	<entry key="item.oreChunkosmium.name">Osmium Ore Chunk</entry>
 	<entry key="item.osmiumGrate.name">Osmium Grate</entry>
-	<entry key="item.berylliumIngot.name">Beryllium Ingot</entry>
+	<entry key="item.rawIngotsBeryllium.name">Beryllium Ingot</entry>
 	<entry key="item.oreChunkberyllium.name">Beryllium Ore Chunk</entry>
+        <entry key="item.boiler.name">Boiler</entry>
 	<entry key="item.berylliumOreCluster.name">Beryllium Ore Cluster</entry>
 	<entry key="item.zeoliteDust.name">Zeolite Dust</entry>
-   	 <entry key="item.zeoliteDyedlueel.name">Lueel Zeolite Dust</entry>
+   	<entry key="item.zeoliteDyedlueel.name">Lueel Zeolite Dust</entry>
 	<entry key="item.zeoliteDyedyellen.name">Yellen Zeolite Dust</entry>
 	<entry key="item.zeoliteDyedgreue.name">Greue Zeolite Dust</entry>
 	<entry key="item.zeoliteDyedreden.name">Reden Zeolite Dust</entry>
-	<entry key="item.glassZeoliteDust.name">Vial Of Zeolite</entry>
+	<entry key="item.glassZeoliteDustZeo.name">Vial Of Zeolite</entry>
+        <entry key="item.glassZeoliteDustReden.name">Vial Of Reden</entry>
+	<entry key="item.glassZeoliteDustGreue.name">Vial Of Greue</entry>
+	<entry key="item.glassZeoliteDustYellen.name">Vial Of Yellen</entry>
+	<entry key="item.glassZeoliteDustLueel.name">Vial Of Lueel</entry>
    	<entry key="item.emptyVial.name">Empty Glass Vial</entry>
 	<entry key="item.compoundredscar.name">Compound Of Redscar</entry>
 	<entry key="item.compoundgreenite.name">Compound Of Greenite</entry>
