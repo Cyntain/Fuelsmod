@@ -1,5 +1,7 @@
 package com.cyntain.Fm.lib;
 
+import com.cyntain.Fm.item.ItemWoodenCog;
+
 public class Strings {
 
     /* Item Names */
@@ -16,6 +18,10 @@ public class Strings {
     public static final String EMPTY_VIAL_NAME         = "emptyVial";
     public static final String ITEM_COMPOUND_NAME      = "compound";
     public static final String BOILER_NAME             = "boiler";
+    public static final String WOODEN_COG_NAME         = "woodenCog";
+    public static final String STONE_COG_NAME          = "stoneCog";
+    public static final String IRON_COG_NAME           = "ironCog";
+    public static final String COPPER_COG_NAME         = "copperCog";
 
     /* Block Names */
     public static final String COPPER_ORE              = "copperOre";

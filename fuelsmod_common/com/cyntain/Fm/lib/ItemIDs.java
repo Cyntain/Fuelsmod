@@ -13,6 +13,11 @@ public class ItemIDs {
     public static int ZEOLITE_DYED_DEFAULT      = 6496;
     public static int COMPOUND_DEFAULT          = 6497;
     public static int BOILER_DEFAULT            = 6490;
+    
+    public static int WOODEN_COG                = 6491;
+    public static int STONE_COG                 = 6492;
+    public static int IRON_COG                  = 6493;
+    public static int COPPER_COG                = 6494;
 
     /* Config Id */
     public static int ORE_CHUNK;

@@ -25,10 +25,14 @@
    	<entry key="item.emptyVial.name">Empty Glass Vial</entry>
 	<entry key="item.compoundredscar.name">Compound Of Redscar</entry>
 	<entry key="item.compoundgreenite.name">Compound Of Greenite</entry>
-    	<entry key="item.compoundyellownale.name">Compound Of Yellownale</entry>
+    <entry key="item.compoundyellownale.name">Compound Of Yellownale</entry>
 	<entry key="item.compoundbluetonium.name">Compound Of Bluetonium</entry>
+	<entry key="item.woodenCog.name">Wooden Cog</entry>
+	<entry key="item.stoneCog.name">Stone Cog</entry>
+	<entry key="item.ironCog.name">Iron Cog</entry>
+	<entry key="item.copperCog.name">Copper Cog</entry>
 	<entry key="tile.copperOre.name">Copper Ore</entry>
-    	<entry key="tile.osmiumOre.name">Osmium Ore</entry>
+    <entry key="tile.osmiumOre.name">Osmium Ore</entry>
 	<entry key="tile.berylliumOre.name">Beryllium Ore</entry>
 	<entry key="tile.zeoliteOre.name">Zeolite Ore</entry>
 	<entry key="tile.copperBlock.name">Block of Copper</entry>
