@@ -22,8 +22,7 @@ public class TileMixingTable extends TileFm implements IInventory {
     public final static int INVENTORY_SIZE = 3;
     private int             tickCount;
     private int             progress;
-    public ItemStack        changeSlot1;
-    public ItemStack        changeSlot0;
+
     public boolean          debug          = false;
 
     public TileMixingTable() {

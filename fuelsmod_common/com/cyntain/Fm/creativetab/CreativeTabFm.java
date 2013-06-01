@@ -1,8 +1,7 @@
-
 package com.cyntain.Fm.creativetab;
 
-
 import com.cyntain.Fm.item.ModItem;
+import com.cyntain.Fm.lib.Colours;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -10,12 +9,11 @@ import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.creativetab.CreativeTabs;
 
 
-
-
 public final class CreativeTabFm extends CreativeTabs {
+
     public CreativeTabFm() {
 
-        super("Fuels Mod: Tech.");
+        super(Colours.PURPLE + "Fuels Mod: Technology");
     }
 
     @SideOnly(Side.CLIENT)

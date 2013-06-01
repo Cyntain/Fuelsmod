@@ -6,8 +6,8 @@ import net.minecraft.util.StatCollector;
 
 import org.lwjgl.opengl.GL11;
 
-import com.cyntain.Fm.tileentity.TileMixingTable;
 import com.cyntain.Fm.lib.Strings;
+import com.cyntain.Fm.tileentity.TileMixingTable;
 
 
 public class GuiMixingTable extends GuiContainer {
@@ -43,4 +43,5 @@ public class GuiMixingTable extends GuiContainer {
         this.drawTexturedModalRect(var5, var6, 0, 0, xSize, ySize);
 
     }
+
 }
