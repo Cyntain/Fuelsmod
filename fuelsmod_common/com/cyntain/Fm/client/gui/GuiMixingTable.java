@@ -41,7 +41,9 @@ public class GuiMixingTable extends GuiContainer {
         int var5 = (width - xSize) / 2;
         int var6 = (height - ySize) / 2;
         this.drawTexturedModalRect(var5, var6, 0, 0, xSize, ySize);
-
+        
+        int scaledProgress = tilemixingtable.getProgress() * 27 / 100;
+        this.drawTexturedModalRect(var5 + 63, var6 + 23, 176, 3, 49, scaledProgress);
     }
 
 }

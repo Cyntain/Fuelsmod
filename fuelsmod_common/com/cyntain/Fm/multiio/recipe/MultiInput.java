@@ -9,7 +9,7 @@ import net.minecraft.item.ItemStack;
 
 /**
  * 
- * MMO Materials
+ * PaleoMachineFramework
  * 
  * MultiInput
  * 

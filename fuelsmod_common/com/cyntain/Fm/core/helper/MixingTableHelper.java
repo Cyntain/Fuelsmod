@@ -46,7 +46,7 @@ public class MixingTableHelper {
      */
     public static void addRecipe(ItemStack input1, ItemStack input2,
             ItemStack output) {
-        instance().addRecipe(output, input1, input2);
+        instance().addRecipe(new ItemStack[] {input1, input2}, output);
     }
 
     /**

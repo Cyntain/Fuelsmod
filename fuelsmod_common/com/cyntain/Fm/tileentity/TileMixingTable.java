@@ -9,7 +9,7 @@ import net.minecraft.network.packet.Packet;
 import net.minecraft.network.packet.Packet132TileEntityData;
 
 import com.cyntain.Fm.core.helper.MixingTableHelper;
-import com.cyntain.Fm.item.ModItem;
+//import com.cyntain.Fm.item.ModItem;
 import com.cyntain.Fm.lib.Strings;
 
 import cpw.mods.fml.common.network.PacketDispatcher;
@@ -22,6 +22,7 @@ public class TileMixingTable extends TileFm implements IInventory {
     public final static int INVENTORY_SIZE = 3;
     private int             tickCount;
     private int             progress;
+    
 
     public boolean          debug          = false;
 
@@ -66,6 +67,7 @@ public class TileMixingTable extends TileFm implements IInventory {
 
     @Override
     public void updateEntity() {
+        boolean hasToUpdate = false;
 
         ++tickCount;
 
@@ -82,20 +84,17 @@ public class TileMixingTable extends TileFm implements IInventory {
 
             return;
         }
+        
         ++progress;
-
+        hasToUpdate = true;
         ItemStack result = MixingTableHelper.getResult(mixingTableInv[0], mixingTableInv[1]);
 
         if (MixingTableHelper.canSmelt(mixingTableInv[0], mixingTableInv[0]) == false) {
             if (progress >= 100) {
-                mixingTableInv[0] = null;
-                mixingTableInv[1] = null;
-                mixingTableInv[2] = new ItemStack(ModItem.zeoliteDust, 0, 1);
-            }
-        } else if (progress >= 100) {
             mixingTableInv[0] = null;
             mixingTableInv[1] = null;
             mixingTableInv[2] = result;
+            hasToUpdate = true;
             if (debug) {
                 System.out
                         .println(mixingTableInv[1] + " and " + mixingTableInv[0] + " = " + result);
@@ -104,7 +103,7 @@ public class TileMixingTable extends TileFm implements IInventory {
         }
 
         {
-            boolean hasToUpdate = false;
+           
 
             if (hasToUpdate) {
 
@@ -117,6 +116,11 @@ public class TileMixingTable extends TileFm implements IInventory {
                 tickCount = 0;
             }
         }
+        }
+    }
+    
+    public int getProgress(){
+        return progress;
     }
 
     public void onDataPacket(INetworkManager net, Packet132TileEntityData pkt) {
