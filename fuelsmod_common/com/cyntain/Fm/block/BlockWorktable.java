@@ -2,10 +2,13 @@
 package com.cyntain.Fm.block;
 
 
+import java.util.List;
+
 import com.cyntain.Fm.lib.Strings;
 
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
 
@@ -35,6 +38,12 @@ public class BlockWorktable extends BlockFm {
 
         }
 
+    }
+    
+    @SuppressWarnings({ "unchecked" , "rawtypes" })
+    public void addInformation(ItemStack itemStack, EntityPlayer player, List list, boolean par4) {
+
+        list.add("Crafting benches are so last year!");
     }
 
 }

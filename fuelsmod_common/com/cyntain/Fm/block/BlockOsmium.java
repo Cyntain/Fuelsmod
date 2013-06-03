@@ -1,10 +1,13 @@
 package com.cyntain.Fm.block;
 
+import java.util.List;
 import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
 
 import com.cyntain.Fm.creativetab.CreativeTabFm;
 import com.cyntain.Fm.item.ModItem;
@@ -46,6 +49,12 @@ public class BlockOsmium extends Block {
     public int quantityDropped(Random par1Random) {
 
         return 9;
+    }
+    
+    @SuppressWarnings({ "unchecked" , "rawtypes" })
+    public void addInformation(ItemStack itemStack, EntityPlayer player, List list, boolean par4) {
+
+        list.add("A block... Just, Osmium.");
     }
 
 }

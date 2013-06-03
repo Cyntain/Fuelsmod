@@ -4,6 +4,7 @@ import java.util.List;
 
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import net.minecraft.util.MathHelper;
@@ -67,4 +68,32 @@ public class ItemCog extends ItemFm {
             list.add(new ItemStack(id, 1, meta));
         }
     }
+
+@SuppressWarnings({ "unchecked" , "rawtypes" })
+@SideOnly(Side.CLIENT)
+public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer,
+        List par3List, boolean par4) {
+
+    int meta = MathHelper.clamp_int(par1ItemStack.getItemDamage(), 0, 3);
+
+    switch (meta) {
+        case 0:
+            par3List.add("It spins.");
+            break;
+        case 1:
+            par3List.add("It spins.");
+            break;
+        case 2:
+            par3List.add("It spins.");
+            break;
+        case 3:
+            par3List.add("It spins.");
+            break;
+        default:
+            par3List.add("It spins.");
+            break;
+    }
+
+}
+
 }

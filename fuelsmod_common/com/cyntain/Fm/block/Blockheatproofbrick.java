@@ -2,6 +2,8 @@
 package com.cyntain.Fm.block;
 
 
+import java.util.List;
+
 import com.cyntain.Fm.creativetab.CreativeTabFm;
 import com.cyntain.Fm.lib.Reference;
 
@@ -10,6 +12,9 @@ import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.MathHelper;
 
 
 
@@ -29,6 +34,13 @@ public class Blockheatproofbrick extends Block {
 
         this.blockIcon = iconRegister.registerIcon(Reference.MOD_ID + ":"
                 + this.getUnlocalizedName2());
+    }
+    
+    @SideOnly(Side.CLIENT)
+    @SuppressWarnings({ "unchecked" , "rawtypes" })
+    public void addInformation(ItemStack itemStack, EntityPlayer player, List list, boolean par4) {
+
+        list.add("Fire... HOT!");
     }
 
 }
