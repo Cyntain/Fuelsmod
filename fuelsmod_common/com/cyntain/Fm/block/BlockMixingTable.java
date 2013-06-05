@@ -7,6 +7,7 @@ import static net.minecraftforge.common.ForgeDirection.SOUTH;
 import static net.minecraftforge.common.ForgeDirection.UP;
 import static net.minecraftforge.common.ForgeDirection.WEST;
 
+import java.util.List;
 import java.util.Random;
 
 import net.minecraft.block.ITileEntityProvider;
@@ -161,4 +162,11 @@ public class BlockMixingTable extends BlockFm implements ITileEntityProvider {
             }
         }
     }
+    
+    @SuppressWarnings({ "unchecked" , "rawtypes" })
+    public void addInformation(ItemStack itemStack, EntityPlayer player, List list, boolean par4) {
+
+        list.add("Mixin' and mixin'");
+    }
+    
 }
