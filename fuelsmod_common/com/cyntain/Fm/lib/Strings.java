@@ -32,9 +32,10 @@ public class Strings {
 
     /* Tile Entities */
     public static final String TE_MIXINGTABLE          = "tileMixingTable";
-
+    public static final String TE_WORKTABLE          = "tileWorkTable";
     /* Inventory Text */
     public static final String CONTAINER_INVENTORY     = "container.inventory";
     public static final String CONTAINER_MIXINGTABLE   = "MixingTable";
+    public static final String CONTAINER_WORKSHOPTABLE = "WorkShopTable";
 
 }

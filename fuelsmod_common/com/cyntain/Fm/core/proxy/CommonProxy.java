@@ -5,8 +5,11 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeDirection;
 
 import com.cyntain.Fm.client.gui.ContainerMixingTable;
+import com.cyntain.Fm.client.gui.ContainerWorkTable;
 import com.cyntain.Fm.client.gui.GuiMixingTable;
+import com.cyntain.Fm.client.gui.GuiWorkTable;
 import com.cyntain.Fm.tileentity.TileMixingTable;
+import com.cyntain.Fm.tileentity.TileWorkTable;
 import com.cyntain.Fm.lib.GUIIDs;
 import com.cyntain.Fm.lib.Strings;
 
@@ -23,6 +26,7 @@ public class CommonProxy implements IGuiHandler {
     public void registerTileEntities() {
 
         GameRegistry.registerTileEntity(TileMixingTable.class, Strings.TE_MIXINGTABLE);
+        GameRegistry.registerTileEntity(TileWorkTable.class, Strings.TE_WORKTABLE);
     }
 
     @Override
@@ -33,6 +37,10 @@ public class CommonProxy implements IGuiHandler {
 
             return new ContainerMixingTable(player.inventory, mixingtable);
 
+        }else if(ID == GUIIDs.workTable){
+            TileWorkTable workTable = (TileWorkTable) world.getBlockTileEntity(x, y, z);
+
+            return new ContainerWorkTable(player.inventory, workTable);
         }
         return null;
 
@@ -46,6 +54,10 @@ public class CommonProxy implements IGuiHandler {
 
             return new GuiMixingTable(player.inventory, mixingtable);
 
+        } else if(ID == GUIIDs.workTable){
+            TileWorkTable workTable = (TileWorkTable) world.getBlockTileEntity(x, y, z);
+
+            return new GuiWorkTable(player.inventory, workTable);
         }
         return null;
     }

@@ -19,6 +19,7 @@ public class ItemZeoliteDust extends ItemFm {
     }
 
     @SuppressWarnings({ "unchecked" , "rawtypes" })
+    @Override
     public void addInformation(ItemStack itemStack, EntityPlayer player, List list, boolean par4) {
 
         list.add("Na12 (Al12 Si12 O48)27 H2O");

@@ -78,7 +78,7 @@ public class ItemZeoliteVial extends ItemFood {
             icons[i] = iconregister.registerIcon(Reference.MOD_ID + ":" + Strings.ZEOLITE_DUST_GLASS_NAME + VIAL_NAME[i]);
         }
     }
-
+    @Override
     @SuppressWarnings({ "unchecked" , "rawtypes" })
     public void addInformation(ItemStack itemStack, EntityPlayer player, List list, boolean par) {
 

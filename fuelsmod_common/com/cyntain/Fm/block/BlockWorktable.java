@@ -1,17 +1,18 @@
-
 package com.cyntain.Fm.block;
 
-
-import com.cyntain.Fm.lib.Strings;
-
+import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
+import com.cyntain.Fm.FuelsMod;
+import com.cyntain.Fm.lib.GUIIDs;
+import com.cyntain.Fm.lib.Strings;
+import com.cyntain.Fm.tileentity.TileWorkTable;
 
 
-
-public class BlockWorktable extends BlockFm {
+public class BlockWorktable extends BlockFm implements ITileEntityProvider{
 
     public BlockWorktable(int id, Material material) {
 
@@ -20,21 +21,28 @@ public class BlockWorktable extends BlockFm {
         setHardness(5F);
 
     }
+    @Override
+    public TileEntity createNewTileEntity(World world) {
 
-    public boolean onBlockActivated(World world, int x, int y, int z,
-            EntityPlayer player, int par6, float par7, float par8, float par9) {
+        return new TileWorkTable();
+    }
+    public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player,
+            int par6, float par7, float par8, float par9) {
 
-        if (player.isSneaking() == false) {
-
-            player.displayGUIWorkbench(x, y, z);
-            return true;
-
-        } else {
-            player.displayGUIWorkbench(x, y, z);
+        if (player.isSneaking())
             return false;
 
+        else {
+            if (!world.isRemote) {
+               TileWorkTable worktable = (TileWorkTable) world.getBlockTileEntity(x, y, z);
+
+                if (worktable != null) {
+                    System.out.println("SHOULD WORK");
+                    player.openGui(FuelsMod.instance, GUIIDs.workTable, world, x, y, z);
+                }
+            }
         }
+        return true;
 
     }
-
 }

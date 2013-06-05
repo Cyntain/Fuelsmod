@@ -15,7 +15,6 @@ import com.cyntain.Fm.lib.Strings;
 import cpw.mods.fml.common.network.PacketDispatcher;
 
 
-/* TODO Get the graphical progress bar working.*/
 public class TileMixingTable extends TileFm implements IInventory {
 
     private ItemStack[]     mixingTableInv;

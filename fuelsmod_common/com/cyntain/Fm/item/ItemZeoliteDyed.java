@@ -97,7 +97,7 @@ public class ItemZeoliteDyed extends ItemFm {
                         + super.getItemDisplayName(itemStack);
         }
     }
-
+    @Override
     @SuppressWarnings({ "unchecked", "rawtypes" })
     @SideOnly(Side.CLIENT)
     public void addInformation(ItemStack itemStack, EntityPlayer player,
