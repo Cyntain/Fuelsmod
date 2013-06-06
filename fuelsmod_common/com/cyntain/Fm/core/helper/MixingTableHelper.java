@@ -1,7 +1,8 @@
 package com.cyntain.Fm.core.helper;
 
 import com.cyntain.Fm.item.ModItem;
-import com.cyntain.Fm.multiio.MultiInputRecipes;
+
+import de.paleocrafter.pmfw.recipes.MultiInputRecipes;
 
 import net.minecraft.item.ItemStack;
 
@@ -46,7 +47,7 @@ public class MixingTableHelper {
      */
     public static void addRecipe(ItemStack input1, ItemStack input2,
             ItemStack output) {
-        instance().addRecipe(new ItemStack[] {input1, input2}, output);
+        instance().addRecipe(new ItemStack[] { input1, input2 }, output);
     }
 
     /**

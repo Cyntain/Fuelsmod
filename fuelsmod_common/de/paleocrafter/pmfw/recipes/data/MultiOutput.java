@@ -1,4 +1,4 @@
-package com.cyntain.Fm.multiio.recipe;
+package de.paleocrafter.pmfw.recipes.data;
 
 import java.util.ArrayList;
 import net.minecraft.item.ItemStack;
