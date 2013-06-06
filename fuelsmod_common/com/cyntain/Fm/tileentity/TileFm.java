@@ -1,40 +1,40 @@
-
 package com.cyntain.Fm.tileentity;
 
-
+import de.paleocrafter.pmfw.network.data.DataForgeDirection;
+import de.paleocrafter.pmfw.network.data.TileData;
+import de.paleocrafter.pmfw.tileentity.TileEntityWithData;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.ForgeDirection;
 
+public class TileFm extends TileEntityWithData {
 
-
-
-public class TileFm extends TileEntity {
-
-    protected ForgeDirection orientation;
-    protected byte           state;
-    protected String         customName;
+    @TileData
+    protected DataForgeDirection orientation;
+    @TileData
+    protected byte state;
+    @TileData
+    protected String customName;
 
     public TileFm() {
-
-        orientation = ForgeDirection.SOUTH;
+        orientation = new DataForgeDirection(ForgeDirection.SOUTH);
         state = 0;
         customName = "";
     }
 
     public ForgeDirection getOrientation() {
 
-        return orientation;
+        return orientation.getDirection();
     }
 
     public void setOrientation(ForgeDirection orientation) {
 
-        this.orientation = orientation;
+        this.orientation = new DataForgeDirection(orientation);
     }
 
     public void setOrientation(int orientation) {
 
-        this.orientation = ForgeDirection.getOrientation(orientation);
+        this.orientation = new DataForgeDirection(
+                ForgeDirection.getOrientation(orientation));
     }
 
     public short getState() {
