@@ -28,7 +28,8 @@ import de.paleocrafter.pmfw.network.PaleoPacketHandler;
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION_NUMBER)
 @NetworkMod(channels = { Reference.CHANNEL_NAME }, clientSideRequired = true, serverSideRequired = false, packetHandler = PacketHandler.class)
 public class FuelsMod {
-
+    
+   
     @Instance(Reference.MOD_ID)
     public static FuelsMod instance;
 

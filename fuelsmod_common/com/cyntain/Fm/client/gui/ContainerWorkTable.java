@@ -9,10 +9,21 @@ import net.minecraft.item.ItemStack;
 import com.cyntain.Fm.tileentity.TileMixingTable;
 import com.cyntain.Fm.tileentity.TileWorkTable;
 
-//TODO Add slot locations
+
 public class ContainerWorkTable extends Container {
 
     public ContainerWorkTable(InventoryPlayer inventoryPlayer, TileWorkTable workTable) {
+
+        this.addSlotToContainer(new Slot(workTable, 0, 28, 15));
+        this.addSlotToContainer(new Slot(workTable, 1, 8, 35));
+        this.addSlotToContainer(new Slot(workTable, 2, 28, 55));
+        this.addSlotToContainer(new Slot(workTable, 3, 44, 16));
+        this.addSlotToContainer(new Slot(workTable, 4, 48, 35));
+        this.addSlotToContainer(new Slot(workTable, 6, 89, 11));
+        this.addSlotToContainer(new Slot(workTable, 7, 110, 11));
+        /* OUTPUTS */
+        this.addSlotToContainer(new Slot(workTable, 8, 94, 36));
+        this.addSlotToContainer(new Slot(workTable, 9, 144, 36));
 
         for (int inventoryRowIndex = 0; inventoryRowIndex < 3; ++inventoryRowIndex) {
             for (int inventoryColumnIndex = 0; inventoryColumnIndex < 9; ++inventoryColumnIndex) {
