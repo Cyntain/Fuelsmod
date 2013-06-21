@@ -15,7 +15,7 @@ import net.minecraft.network.packet.Packet132TileEntityData;
 public class TileWorkTable extends TileFm implements IInventory {
 
     private ItemStack[]     workTableInv;
-    public final static int INVENTORY_SIZE = 8;
+    public final static int INVENTORY_SIZE = 9;
 
     public TileWorkTable() {
 
@@ -59,7 +59,7 @@ public class TileWorkTable extends TileFm implements IInventory {
     public void updateEntity() {
         boolean hasToUpdate = false;
 
-        //TODO 
+       
         
         if (hasToUpdate) {
 

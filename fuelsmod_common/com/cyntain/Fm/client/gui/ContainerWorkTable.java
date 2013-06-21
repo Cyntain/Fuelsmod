@@ -14,19 +14,29 @@ public class ContainerWorkTable extends Container {
 
     public ContainerWorkTable(InventoryPlayer inventoryPlayer, TileWorkTable workTable) {
 
-        this.addSlotToContainer(new Slot(workTable, 0, 28, 15));
-        this.addSlotToContainer(new Slot(workTable, 1, 8, 35));
-        this.addSlotToContainer(new Slot(workTable, 2, 28, 55));
-        this.addSlotToContainer(new Slot(workTable, 3, 44, 16));
-        this.addSlotToContainer(new Slot(workTable, 4, 48, 35));
-        this.addSlotToContainer(new Slot(workTable, 6, 89, 11));
-        this.addSlotToContainer(new Slot(workTable, 7, 110, 11));
-        /* OUTPUTS */
-        this.addSlotToContainer(new Slot(workTable, 8, 94, 36));
-        this.addSlotToContainer(new Slot(workTable, 9, 144, 36));
+        /* Cog layout slots */
+        for (int slotRowIndex = 0; slotRowIndex < 3; ++slotRowIndex) {
+            this.addSlotToContainer(new Slot(workTable, slotRowIndex, (slotRowIndex * 5) * 4 + 8,
+                    35));
+        }
+        for (int slotColumIndex = 0; slotColumIndex < 2; ++slotColumIndex) {
+            this.addSlotToContainer(new Slot(workTable, slotColumIndex + 3, 28,
+                    (slotColumIndex * 5) * 8 + 15));
+        }
+        /* two slots above one output */
+        for (int slotRowIndex = 0; slotRowIndex < 2; ++slotRowIndex) {
+            this.addSlotToContainer(new Slot(workTable, slotRowIndex + 5,
+                    (slotRowIndex * 5) * 4 + 89, 11));
+        }
+        /* OUTPUT */
+        for (int slotRowIndex = 0; slotRowIndex < 2; ++slotRowIndex) {
+            this.addSlotToContainer(new Slot(workTable, slotRowIndex + 7,
+                    (slotRowIndex * 5) * 10 + 93, 35));
+        }
 
         for (int inventoryRowIndex = 0; inventoryRowIndex < 3; ++inventoryRowIndex) {
             for (int inventoryColumnIndex = 0; inventoryColumnIndex < 9; ++inventoryColumnIndex) {
+
                 this.addSlotToContainer(new Slot(inventoryPlayer, inventoryColumnIndex
                         + inventoryRowIndex * 9 + 9, 8 + inventoryColumnIndex * 18,
                         84 + inventoryRowIndex * 18));
