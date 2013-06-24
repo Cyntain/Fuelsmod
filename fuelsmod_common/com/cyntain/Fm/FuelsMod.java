@@ -2,10 +2,13 @@ package com.cyntain.Fm;
 
 import java.io.File;
 
+import net.minecraftforge.common.MinecraftForge;
+
 import com.cyntain.Fm.block.ModBlock;
 import com.cyntain.Fm.block.WorldGenerator;
 import com.cyntain.Fm.configuration.ConfigurationHandler;
 import com.cyntain.Fm.core.handlers.LocalizationHandler;
+import com.cyntain.Fm.core.handlers.PlayerHandler;
 import com.cyntain.Fm.core.helper.MixingTableHelper;
 import com.cyntain.Fm.core.proxy.CommonProxy;
 import com.cyntain.Fm.item.ModItem;
@@ -25,26 +28,27 @@ import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import de.paleocrafter.pmfw.network.PaleoPacketHandler;
 
+
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION_NUMBER)
 @NetworkMod(channels = { Reference.CHANNEL_NAME }, clientSideRequired = true, serverSideRequired = false, packetHandler = PacketHandler.class)
 public class FuelsMod {
-    
-   
+
+    public static PlayerHandler playerTracker;
+
     @Instance(Reference.MOD_ID)
-    public static FuelsMod instance;
+    public static FuelsMod      instance;
 
     @SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.SERVER_PROXY_CLASS)
-    public static CommonProxy proxy;
+    public static CommonProxy   proxy;
 
     @PreInit
     public void preInit(FMLPreInitializationEvent event) {
+
         PaleoPacketHandler.registerChannel();
         proxy.registerRenders();
-        ConfigurationHandler.init(new File(event.getModConfigurationDirectory()
-                .getAbsolutePath()
-                + File.separator
-                + Reference.CHANNEL_NAME
-                + File.separator + Reference.MOD_ID + ".cfg"));
+        ConfigurationHandler.init(new File(event.getModConfigurationDirectory().getAbsolutePath()
+                + File.separator + Reference.CHANNEL_NAME + File.separator + Reference.MOD_ID
+                + ".cfg"));
         LocalizationHandler.loadLanguages();
         ModItem.init();
         ModBlock.init();
@@ -60,7 +64,9 @@ public class FuelsMod {
 
         GameRegistry.registerWorldGenerator(new WorldGenerator());
         NetworkRegistry.instance().registerGuiHandler(instance, proxy);
-
+        playerTracker = new PlayerHandler();
+        GameRegistry.registerPlayerTracker(playerTracker);
+        MinecraftForge.EVENT_BUS.register(playerTracker);
         proxy.registerTileEntities();
         ModLoaded.Mod_Loaded();
 

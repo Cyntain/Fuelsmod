@@ -15,6 +15,7 @@ import net.minecraft.world.World;
 
 import org.lwjgl.input.Keyboard;
 
+import com.cyntain.Fm.core.handlers.PlayerHandler;
 import com.cyntain.Fm.creativetab.CreativeTabFmAlchemy;
 import com.cyntain.Fm.lib.Colours;
 import com.cyntain.Fm.lib.ItemIDs;
@@ -35,11 +36,11 @@ public class ItemZeoliteVial extends ItemFood {
     private int[]                potionDuration = { 60 };
     private int[]                potionTeir     = { 3 };
 
-    public boolean               effect1        = false;
-    public boolean               effect2        = false;
-    public boolean               effect3        = false;
-    public boolean               effect4        = false;
-    public boolean               effect5        = false;
+    public static boolean        effect1        = false;
+    public static boolean        effect2        = false;
+    public static boolean        effect3        = false;
+    public static boolean        effect4        = false;
+    public static boolean        effect5        = false;
 
     @SideOnly(Side.CLIENT)
     private Icon[]               icons;
@@ -72,12 +73,15 @@ public class ItemZeoliteVial extends ItemFood {
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister iconregister) {
+
         icons = new Icon[VIAL_NAME.length];
-        
-        for(int i = 0; i < VIAL_NAME.length; ++i){
-            icons[i] = iconregister.registerIcon(Reference.MOD_ID + ":" + Strings.ZEOLITE_DUST_GLASS_NAME + VIAL_NAME[i]);
+
+        for (int i = 0; i < VIAL_NAME.length; ++i) {
+            icons[i] = iconregister.registerIcon(Reference.MOD_ID + ":"
+                    + Strings.ZEOLITE_DUST_GLASS_NAME + VIAL_NAME[i]);
         }
     }
+
     @Override
     @SuppressWarnings({ "unchecked" , "rawtypes" })
     public void addInformation(ItemStack itemStack, EntityPlayer player, List list, boolean par) {
@@ -90,7 +94,7 @@ public class ItemZeoliteVial extends ItemFood {
                         + " to see more information");
                 if (Keyboard.isKeyDown(Keyboard.KEY_RSHIFT)
                         || Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) {
-                    if (effect1 == true) {
+                    if (PlayerHandler.getDiscEffectState(player, meta) == true) {
                         list.add(Colours.WHITE + "Effect:" + " " + Colours.RED
                                 + DISCOVER[meta].toUpperCase());
                     } else {
@@ -106,7 +110,7 @@ public class ItemZeoliteVial extends ItemFood {
                         + " to see more information");
                 if (Keyboard.isKeyDown(Keyboard.KEY_RSHIFT)
                         || Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) {
-                    if (effect2 == true) {
+                    if (PlayerHandler.getDiscEffectState(player, meta) == true) {
                         list.add(Colours.WHITE + "Effect:" + " " + Colours.RED
                                 + DISCOVER[meta].toUpperCase());
                     } else {
@@ -121,7 +125,7 @@ public class ItemZeoliteVial extends ItemFood {
                         + " to see more information");
                 if (Keyboard.isKeyDown(Keyboard.KEY_RSHIFT)
                         || Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) {
-                    if (effect3 == true) {
+                    if (PlayerHandler.getDiscEffectState(player, meta) == true) {
                         list.add(Colours.WHITE + "Effect:" + " " + Colours.RED
                                 + DISCOVER[meta].toUpperCase());
                     } else {
@@ -136,7 +140,7 @@ public class ItemZeoliteVial extends ItemFood {
                         + " to see more information");
                 if (Keyboard.isKeyDown(Keyboard.KEY_RSHIFT)
                         || Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) {
-                    if (effect4 == true) {
+                    if (PlayerHandler.getDiscEffectState(player, meta) == true) {
                         list.add(Colours.WHITE + "Effect:" + " " + Colours.RED
                                 + DISCOVER[meta].toUpperCase());
                     } else {
@@ -151,7 +155,7 @@ public class ItemZeoliteVial extends ItemFood {
                         + " to see more information");
                 if (Keyboard.isKeyDown(Keyboard.KEY_RSHIFT)
                         || Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) {
-                    if (effect5 == true) {
+                    if (PlayerHandler.getDiscEffectState(player, meta) == true) {
                         list.add(Colours.WHITE + "Effect:" + " " + Colours.RED
                                 + DISCOVER[meta].toUpperCase());
                     } else {
@@ -257,6 +261,34 @@ public class ItemZeoliteVial extends ItemFood {
 
         for (int meta = 0; meta < 5; ++meta) {
             list.add(new ItemStack(id, 1, meta));
+        }
+    }
+
+    /**
+     * Getter for the effect states (true/false)
+     * 
+     * @return The different effect states
+     * @param
+     */
+    public static boolean getEffectState(int Meta) {
+
+        if (Meta > VIAL_NAME.length) {
+            Meta = VIAL_NAME.length;
+        }
+
+        switch (Meta) {
+            case 0:
+                return effect1;
+            case 1:
+                return effect2;
+            case 2:
+                return effect3;
+            case 3:
+                return effect4;
+            case 4:
+                return effect5;
+            default:
+                return false;
         }
     }
 }
