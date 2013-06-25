@@ -13,11 +13,7 @@ import net.minecraft.util.Icon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
-import org.lwjgl.input.Keyboard;
-
-import com.cyntain.Fm.core.handlers.PlayerHandler;
 import com.cyntain.Fm.creativetab.CreativeTabFmAlchemy;
-import com.cyntain.Fm.lib.Colours;
 import com.cyntain.Fm.lib.ItemIDs;
 import com.cyntain.Fm.lib.Reference;
 import com.cyntain.Fm.lib.Strings;
@@ -35,12 +31,6 @@ public class ItemZeoliteVial extends ItemFood {
     private int[]                potionEffect   = { 14 , 12 , 10 , 16 , 13 };
     private int[]                potionDuration = { 60 };
     private int[]                potionTeir     = { 3 };
-
-    public static boolean        effect1        = false;
-    public static boolean        effect2        = false;
-    public static boolean        effect3        = false;
-    public static boolean        effect4        = false;
-    public static boolean        effect5        = false;
 
     @SideOnly(Side.CLIENT)
     private Icon[]               icons;
@@ -90,91 +80,22 @@ public class ItemZeoliteVial extends ItemFood {
         switch (meta) {
             case 0:
                 list.add("Tasty! But where does it keep going?");
-                list.add("Press " + Colours.GOLD + "shift" + Colours.GRAY
-                        + " to see more information");
-                if (Keyboard.isKeyDown(Keyboard.KEY_RSHIFT)
-                        || Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) {
-                    if (PlayerHandler.getDiscEffectState(player, meta) == true) {
-                        list.add(Colours.WHITE + "Effect:" + " " + Colours.RED
-                                + DISCOVER[meta].toUpperCase());
-                    } else {
-                        list.add(Colours.WHITE + "Effect:" + " " + Colours.GRAY
-                                + "Unknown".toUpperCase());
-                    }
-                }
                 break;
-
             case 1:
                 list.add("Tasty! But where does that smoke come from?");
-                list.add("Press " + Colours.GOLD + "shift" + Colours.GRAY
-                        + " to see more information");
-                if (Keyboard.isKeyDown(Keyboard.KEY_RSHIFT)
-                        || Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) {
-                    if (PlayerHandler.getDiscEffectState(player, meta) == true) {
-                        list.add(Colours.WHITE + "Effect:" + " " + Colours.RED
-                                + DISCOVER[meta].toUpperCase());
-                    } else {
-                        list.add(Colours.WHITE + "Effect:" + " " + Colours.GRAY
-                                + "Unknown".toUpperCase());
-                    }
-                }
                 break;
             case 2:
                 list.add("Tasty! But why is there iron in there?");
-                list.add("Press " + Colours.GOLD + "shift" + Colours.GRAY
-                        + " to see more information");
-                if (Keyboard.isKeyDown(Keyboard.KEY_RSHIFT)
-                        || Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) {
-                    if (PlayerHandler.getDiscEffectState(player, meta) == true) {
-                        list.add(Colours.WHITE + "Effect:" + " " + Colours.RED
-                                + DISCOVER[meta].toUpperCase());
-                    } else {
-                        list.add(Colours.WHITE + "Effect:" + " " + Colours.GRAY
-                                + "Unknown".toUpperCase());
-                    }
-                }
                 break;
             case 3:
                 list.add("Tasty! But why is it glowing?");
-                list.add("Press " + Colours.GOLD + "shift" + Colours.GRAY
-                        + " to see more information");
-                if (Keyboard.isKeyDown(Keyboard.KEY_RSHIFT)
-                        || Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) {
-                    if (PlayerHandler.getDiscEffectState(player, meta) == true) {
-                        list.add(Colours.WHITE + "Effect:" + " " + Colours.RED
-                                + DISCOVER[meta].toUpperCase());
-                    } else {
-                        list.add(Colours.WHITE + "Effect:" + " " + Colours.GRAY
-                                + "Unknown".toUpperCase());
-                    }
-                }
                 break;
             case 4:
                 list.add("Tasty! But why is it dripping water?");
-                list.add("Press " + Colours.GOLD + "shift" + Colours.GRAY
-                        + " to see more information");
-                if (Keyboard.isKeyDown(Keyboard.KEY_RSHIFT)
-                        || Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) {
-                    if (PlayerHandler.getDiscEffectState(player, meta) == true) {
-                        list.add(Colours.WHITE + "Effect:" + " " + Colours.RED
-                                + DISCOVER[meta].toUpperCase());
-                    } else {
-                        list.add(Colours.WHITE + "Effect:" + " " + Colours.GRAY
-                                + "Unknown".toUpperCase());
-                    }
-                }
                 break;
             default:
                 list.add("Tasty!");
-                list.add("Press " + Colours.GOLD + "shift" + Colours.GRAY
-                        + " to see more information");
-                if (Keyboard.isKeyDown(Keyboard.KEY_RSHIFT)
-                        || Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) {
-                    list.add(Colours.WHITE + "Effect:" + " " + Colours.GRAY
-                            + "Unknown".toUpperCase());
-                }
                 break;
-
         }
     }
 
@@ -186,23 +107,23 @@ public class ItemZeoliteVial extends ItemFood {
         if (meta == 0) {
             player.inventory.addItemStackToInventory(new ItemStack(ModItem.emptyVial));
             player.inventory.consumeInventoryItem(ItemIDs.ZEOLITE_DUST_VIAL);
-            effect1 = true;
+
         } else if (meta == 1) {
             player.inventory.addItemStackToInventory(new ItemStack(ModItem.emptyVial));
             player.inventory.consumeInventoryItem(ItemIDs.ZEOLITE_DUST_VIAL + meta);
-            effect2 = true;
+
         } else if (meta == 2) {
             player.inventory.addItemStackToInventory(new ItemStack(ModItem.emptyVial));
             player.inventory.consumeInventoryItem(ItemIDs.ZEOLITE_DUST_VIAL + meta);
-            effect3 = true;
+
         } else if (meta == 3) {
             player.inventory.addItemStackToInventory(new ItemStack(ModItem.emptyVial));
             player.inventory.consumeInventoryItem(ItemIDs.ZEOLITE_DUST_VIAL + meta);
-            effect4 = true;
+
         } else {
             player.inventory.addItemStackToInventory(new ItemStack(ModItem.emptyVial));
             player.inventory.consumeInventoryItem(ItemIDs.ZEOLITE_DUST_VIAL + meta);
-            effect5 = true;
+
         }
     }
 
@@ -264,31 +185,4 @@ public class ItemZeoliteVial extends ItemFood {
         }
     }
 
-    /**
-     * Getter for the effect states (true/false)
-     * 
-     * @return The different effect states
-     * @param
-     */
-    public static boolean getEffectState(int Meta) {
-
-        if (Meta > VIAL_NAME.length) {
-            Meta = VIAL_NAME.length;
-        }
-
-        switch (Meta) {
-            case 0:
-                return effect1;
-            case 1:
-                return effect2;
-            case 2:
-                return effect3;
-            case 3:
-                return effect4;
-            case 4:
-                return effect5;
-            default:
-                return false;
-        }
-    }
 }
