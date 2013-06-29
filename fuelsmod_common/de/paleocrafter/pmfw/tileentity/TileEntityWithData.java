@@ -212,7 +212,7 @@ public class TileEntityWithData extends TileEntity {
         for (Field field : clazz.getDeclaredFields()) {
             field.setAccessible(true);
             Annotation anno = field.getAnnotation(TileData.class);
-            if (anno != null && ((TileData) anno).storeToPacket())
+            if (anno != null)
                 fieldCount++;
         }
         out.writeInt(fieldCount);

@@ -10,6 +10,7 @@ import com.cyntain.Fm.configuration.ConfigurationHandler;
 import com.cyntain.Fm.core.handlers.LocalizationHandler;
 import com.cyntain.Fm.core.handlers.PlayerHandler;
 import com.cyntain.Fm.core.helper.MixingTableHelper;
+import com.cyntain.Fm.core.helper.WorkTableCogHelper;
 import com.cyntain.Fm.core.proxy.CommonProxy;
 import com.cyntain.Fm.item.ModItem;
 import com.cyntain.Fm.lib.ModLoaded;
@@ -52,8 +53,9 @@ public class FuelsMod {
         LocalizationHandler.loadLanguages();
         ModItem.init();
         ModBlock.init();
+        
         proxy.PreInitRenders();
-
+        WorkTableCogHelper.initRecipes();
         MixingTableHelper.initRecipes();
         ModLoaded.PreInit_modloaded();
 

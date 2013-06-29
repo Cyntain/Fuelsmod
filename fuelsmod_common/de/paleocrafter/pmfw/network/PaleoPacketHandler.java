@@ -27,7 +27,7 @@ import de.paleocrafter.pmfw.network.packet.PaleoPacket.ProtocolException;
  */
 public class PaleoPacketHandler implements IPacketHandler {
 
-    public static String CHANNEL_NAME = "FMTileData";
+    public static String CHANNEL_NAME = "PMFW";
 
     public static void registerChannel() {
         NetworkRegistry.instance().registerChannel(new PaleoPacketHandler(),

@@ -59,6 +59,7 @@ public class ModItem {
                 ModItem.zeoliteDustVial);
 
         /* Compound recipes */
+        /*
         GameRegistry.addRecipe(new ItemStack(ModItem.compounds, 1, 0), "RRR", "RZR", "GGG",
                 Character.valueOf('R'), Item.redstone, Character.valueOf('Z'), ModItem.zeoliteDust,
                 Character.valueOf('G'), Item.lightStoneDust);
@@ -73,7 +74,8 @@ public class ModItem {
                 Character.valueOf('L'), new ItemStack(Item.dyePowder, 1, 4),
                 Character.valueOf('Z'), ModItem.zeoliteDust, Character.valueOf('G'),
                 Item.lightStoneDust);
-
+*/
+        
         /* Dyed Zeolite dust recipes, Shapeless recipes */
         GameRegistry.addShapelessRecipe(new ItemStack(ModItem.zeoliteDustDyed, 1, 0),
                 ModItem.zeoliteDust, new ItemStack(ModItem.compounds, 1, 0));

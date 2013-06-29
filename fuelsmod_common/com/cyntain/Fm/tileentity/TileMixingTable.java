@@ -4,6 +4,10 @@ import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
+import net.minecraft.network.INetworkManager;
+import net.minecraft.network.packet.Packet;
+import net.minecraft.network.packet.Packet132TileEntityData;
+
 import com.cyntain.Fm.core.helper.MixingTableHelper;
 import com.cyntain.Fm.item.ModItem;
 //import com.cyntain.Fm.item.ModItem;
@@ -12,17 +16,20 @@ import cpw.mods.fml.common.network.PacketDispatcher;
 import de.paleocrafter.pmfw.network.data.TileData;
 import de.paleocrafter.pmfw.recipes.data.RecipeItemStack;
 
+
 public class TileMixingTable extends TileFm implements IInventory {
 
-    private ItemStack[] mixingTableInv;
-    public final static int INVENTORY_SIZE = 3;
-    private int tickCount;
+    private ItemStack[]     mixingTableInv;
+    public final static int INVENTORY_SIZE    = 3;
+    public int              tickCount;
     @TileData
-    private int progress;
-    private boolean processing;
-    private ItemStack currentResult;
-
-    public boolean debug = false;
+    private int             progress;
+    private boolean         processing;
+    private ItemStack       currentResult;
+    public static int       input1_SLOT_INDEX = 0;
+    public static int       input2_SLOT_INDEX = 1;
+    public static int       OUTPUT_SLOT_INDEX = 2;
+    public boolean          debug             = true;
 
     public TileMixingTable() {
 
@@ -65,6 +72,7 @@ public class TileMixingTable extends TileFm implements IInventory {
 
     @Override
     public void updateEntity() {
+
         boolean hasToUpdate = false;
 
         ++tickCount;
@@ -73,23 +81,21 @@ public class TileMixingTable extends TileFm implements IInventory {
             return;
         }
 
-        if (!processing
-                && (mixingTableInv[0] == null || mixingTableInv[1] == null))
+        if (!processing && (mixingTableInv[0] == null || mixingTableInv[1] == null))
             return;
 
         if (!processing) {
-            currentResult = MixingTableHelper.getResult(mixingTableInv[0],
-                    mixingTableInv[1]);
+            currentResult = MixingTableHelper.getResult(mixingTableInv[0], mixingTableInv[1]);
             if (currentResult == null)
-                currentResult = new ItemStack(ModItem.zeoliteDustDyed, 1, 0);
+                currentResult = new ItemStack(ModItem.zeoliteDust, 1);
             processing = true;
         }
         if (currentResult == null) {
             return;
         } else {
             if (mixingTableInv[2] == null
-                    || new RecipeItemStack(mixingTableInv[2])
-                            .equals(new RecipeItemStack(currentResult))) {
+                    || new RecipeItemStack(mixingTableInv[2]).equals(new RecipeItemStack(
+                            currentResult))) {
                 progress++;
                 hasToUpdate = true;
 
@@ -117,8 +123,8 @@ public class TileMixingTable extends TileFm implements IInventory {
                     }
                     hasToUpdate = true;
                     if (debug) {
-                        System.out.println(mixingTableInv[1] + " and "
-                                + mixingTableInv[0] + " = " + currentResult);
+                        System.out.println(mixingTableInv[1] + " and " + mixingTableInv[0] + " = "
+                                + currentResult);
                     }
                     progress = 0;
                     processing = false;
@@ -139,23 +145,24 @@ public class TileMixingTable extends TileFm implements IInventory {
     }
 
     public int getProgress() {
+
         return progress;
     }
 
-    /*
-     * public void onDataPacket(INetworkManager net, Packet132TileEntityData
-     * pkt) {
-     * 
-     * if (pkt.customParam1 != null) { progress =
-     * pkt.customParam1.getInteger("Progress"); } }
-     * 
-     * @Override public Packet getDescriptionPacket() {
-     * 
-     * NBTTagCompound nbtTag = new NBTTagCompound();
-     * nbtTag.setInteger("Progress", progress); return new
-     * Packet132TileEntityData(this.xCoord, this.yCoord, this.zCoord, 1,
-     * nbtTag); }
-     */
+    public void onDataPacket(INetworkManager net, Packet132TileEntityData pkt) {
+
+        if (pkt.customParam1 != null) {
+            progress = pkt.customParam1.getInteger("Progress");
+        }
+    }
+
+    @Override
+    public Packet getDescriptionPacket() {
+
+        NBTTagCompound nbtTag = new NBTTagCompound();
+        nbtTag.setInteger("Progress", progress);
+        return new Packet132TileEntityData(this.xCoord, this.yCoord, this.zCoord, 1, nbtTag);
+    }
 
     @Override
     public void readFromNBT(NBTTagCompound nbtTagCompound) {
@@ -169,11 +176,10 @@ public class TileMixingTable extends TileFm implements IInventory {
             NBTTagCompound tagCompound = (NBTTagCompound) tagList.tagAt(i);
             byte slot = tagCompound.getByte("Slot");
             if (slot >= 0 && slot < mixingTableInv.length) {
-                mixingTableInv[slot] = ItemStack
-                        .loadItemStackFromNBT(tagCompound);
+                mixingTableInv[slot] = ItemStack.loadItemStackFromNBT(tagCompound);
             }
         }
-        // progress = nbtTagCompound.getInteger("Progress");
+         progress = nbtTagCompound.getInteger("Progress");
 
     }
 
@@ -193,7 +199,7 @@ public class TileMixingTable extends TileFm implements IInventory {
             }
         }
         nbtTagCompound.setTag("Items", tagList);
-        // nbtTagCompound.setInteger("Progress", progress);
+       nbtTagCompound.setInteger("Progress", progress);
     }
 
     @Override
@@ -219,8 +225,7 @@ public class TileMixingTable extends TileFm implements IInventory {
     @Override
     public String getInvName() {
 
-        return this.hasCustomName() ? this.getCustomName()
-                : Strings.CONTAINER_MIXINGTABLE;
+        return this.hasCustomName() ? this.getCustomName() : Strings.CONTAINER_MIXINGTABLE;
     }
 
     @Override
@@ -237,12 +242,12 @@ public class TileMixingTable extends TileFm implements IInventory {
 
     @Override
     public void openChest() {
-
+        
     }
 
     @Override
     public void closeChest() {
-
+        
     }
 
     @Override
